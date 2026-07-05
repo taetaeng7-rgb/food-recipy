@@ -272,5 +272,39 @@
       "백종원 분식 스타일 비율 참고(2인분: 물 2컵·설탕 3·간장 2.5·고추장 1·고춧가루 1.5).",
       "국물떡볶이로 즐기려면 물을 조금 더 넣는다."
     ]
+  },
+  {
+    "id": "kr-sundubu-jjigae",
+    "title": { "ko": "순두부찌개", "ja": "スンドゥブチゲ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["국물", "두부", "매운맛"],
+    "ingredients": [
+      { "name": { "ko": "순두부", "ja": "純豆腐/おぼろ豆腐" }, "amount": 350, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "돼지고기(잘게)", "ja": "豚肉" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "바지락", "ja": "あさり" }, "amount": 100, "unit": "g", "scaleType": "linear", "optional": true, "note": "해감한 것" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "국간장", "ja": "薄口醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "물(또는 멸치육수)", "ja": "水/煮干しだし" }, "amount": 400, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count", "note": "1인분당 1개, 마지막에" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "냄비(또는 뚝배기)에 참기름을 두르고 고춧가루를 약불에 살짝 볶아 고추기름을 낸다(태우지 않게).",
+      "돼지고기·다진 마늘·양파를 넣어 볶는다.",
+      "물을 붓고 국간장으로 간해 끓인다. (바지락을 쓰면 여기서 넣어 입을 벌린다)",
+      "순두부를 큼직하게 떠 넣고 끓이며 살짝만 부순다.",
+      "대파를 넣고 소금으로 간을 맞춘 뒤, 불을 끄기 직전 계란을 깨 넣는다."
+    ],
+    "tips": [
+      "고춧가루를 참기름에 볶아 고추기름을 내면 국물 색과 맛이 깊어진다(태우면 쓴맛).",
+      "바지락·새우를 넣으면 시원한 해물 순두부가 된다."
+    ]
   }
 ]

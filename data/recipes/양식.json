@@ -199,5 +199,38 @@
       "약불에서 천천히 구워야 속까지 촉촉하다.",
       "두꺼운 식빵일수록 계란물에 더 오래 적신다."
     ]
+  },
+  {
+    "id": "western-cabbage-roll",
+    "title": { "ko": "양배추롤", "ja": "ロールキャベツ" },
+    "category": "양식",
+    "baseServings": 2,
+    "time": { "prepMin": 20, "cookMin": 25 },
+    "difficulty": "normal",
+    "tags": ["양배추", "고기", "국물"],
+    "ingredients": [
+      { "name": { "ko": "양배추 잎", "ja": "キャベツの葉" }, "amount": 6, "unit": "장", "scaleType": "count", "note": "큰 잎, 1인분 3장" },
+      { "name": { "ko": "다진 고기(소·돼지 혼합)", "ja": "合いびき肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "빵가루", "ja": "パン粉" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 400, "unit": "ml", "scaleType": "linear", "group": "국물" },
+      { "name": { "ko": "콘소메(고형)", "ja": "コンソメ" }, "amount": 1, "unit": "개", "scaleType": "count", "group": "국물" },
+      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "국물" },
+      { "name": { "ko": "월계수잎", "ja": "ローリエ" }, "amount": 1, "unit": "장", "scaleType": "fixed", "optional": true }
+    ],
+    "steps": [
+      "양배추 잎을 통째로 데쳐 부드럽게 만들고 두꺼운 심을 저며 낸다.",
+      "볼에 다진 고기·다진 양파·빵가루·계란·소금·후추를 치대 소를 만든다.",
+      "양배추 잎에 소를 올려 돌돌 말고 끝을 이쑤시개로 고정한다.",
+      "냄비에 롤을 담고 물·콘소메·케첩·월계수잎을 부어 끓인다.",
+      "뚜껑을 덮고 중약불로 20~25분 끓여 속까지 익힌다."
+    ],
+    "tips": [
+      "말이 풀리면 이쑤시개나 데친 파 줄기로 묶는다.",
+      "토마토 통조림을 넣으면 토마토 스튜풍이 된다."
+    ]
   }
 ]

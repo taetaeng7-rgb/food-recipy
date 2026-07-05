@@ -195,5 +195,38 @@
       "마지막에 부추를 넣어 센불에 살짝만 볶아 마무리한다."
     ],
     "tips": ["부추는 맨 마지막에 넣어 숨만 죽여야 향이 산다."]
+  },
+  {
+    "id": "chinese-hoegwayuk",
+    "title": { "ko": "회과육(양배추 제육볶음)", "ja": "回鍋肉(ホイコーロー)" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 12 },
+    "difficulty": "normal",
+    "tags": ["양배추", "밥반찬", "매운맛"],
+    "ingredients": [
+      { "name": { "ko": "양배추", "ja": "キャベツ" }, "amount": 250, "unit": "g", "scaleType": "linear", "note": "이 요리의 메인" },
+      { "name": { "ko": "돼지고기(삼겹·목살 얇게)", "ja": "豚バラ薄切り" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "피망", "ja": "ピーマン" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "두반장", "ja": "豆板醤" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "춘장/톈멘장", "ja": "甜麺醤" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "없으면 된장+설탕으로 대체" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" }
+    ],
+    "steps": [
+      "양배추는 큼직하게 썰고 피망은 한입 크기, 대파는 어슷 썬다. 돼지고기는 먹기 좋게 썬다.",
+      "팬에 기름을 두르고 돼지고기를 노릇하게 볶아 덜어 둔다.",
+      "같은 팬에 다진 마늘·두반장·甜麺醤을 약불에 볶아 향을 낸다.",
+      "양배추·피망을 넣어 센불에 볶고, 고기를 다시 넣는다.",
+      "굴소스·간장·설탕으로 간하고 대파를 넣어 마무리한다."
+    ],
+    "tips": [
+      "양배추는 센불에 짧게 볶아야 아삭하다.",
+      "甜麺醤이 없으면 한국 된장 1큰술+설탕 1작은술로 대체."
+    ]
   }
 ]
