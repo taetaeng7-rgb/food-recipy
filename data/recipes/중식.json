@@ -228,5 +228,42 @@
       "양배추는 센불에 짧게 볶아야 아삭하다.",
       "甜麺醤이 없으면 한국 된장 1큰술+설탕 1작은술로 대체."
     ]
+  },
+  {
+    "id": "chinese-tangsuyuk",
+    "title": { "ko": "탕수육", "ja": "酢豚" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 20, "cookMin": 20 },
+    "difficulty": "hard",
+    "tags": ["튀김", "돼지고기", "손님상"],
+    "ingredients": [
+      { "name": { "ko": "돼지고기(등심·목살, 깍둑)", "ja": "豚肉(角切り)" }, "amount": 250, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "청주(밑간)", "ja": "料理酒" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "소금·후추(밑간)", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "계란(튀김옷)", "ja": "卵" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "전분(가타쿠리코)", "ja": "片栗粉" }, "amount": 4, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "피망", "ja": "ピーマン" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 40, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "튀김용 기름", "ja": "揚げ油" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "식초", "ja": "酢" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
+      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 4, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
+      { "name": { "ko": "전분(소스용)", "ja": "片栗粉" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "group": "단초소스", "note": "물에 개기" }
+    ],
+    "steps": [
+      "돼지고기는 깍둑 썰어 청주·소금·후추로 밑간하고 계란·전분을 넣어 튀김옷을 입힌다.",
+      "170~180℃ 기름에 2분 튀겨 건지고, 잠시 뒀다 한 번 더 바삭하게 튀긴다(두 번 튀기기).",
+      "양파·피망·당근은 한입 크기로 썰어 살짝 볶거나 기름에 데친다.",
+      "팬에 소스 재료(식초·설탕·간장·케첩·물)를 넣어 끓이고 전분물을 둘러 걸쭉하게 만든다.",
+      "채소와 튀긴 고기를 넣어 소스에 재빨리 버무린다(바삭함 유지)."
+    ],
+    "tips": [
+      "핵심: ① 두 번 튀기기(겉바속촉) ② 소스가 걸쭉해진 뒤 고기를 마지막에 재빨리 버무려야 눅눅해지지 않는다.",
+      "단초소스 비율 참고(2인분): 식초2·설탕2·간장1·케첩2·물4. 신맛·단맛은 취향껏."
+    ]
   }
 ]

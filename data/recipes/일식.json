@@ -232,5 +232,37 @@
       "양배추를 듬뿍 넣을수록 부드럽고 촉촉하다.",
       "소스가 없으면 우스터소스+케첩+굴소스를 섞어 대체."
     ]
+  },
+  {
+    "id": "jp-kakuni",
+    "title": { "ko": "돼지고기 카쿠니(삼겹 조림)", "ja": "豚の角煮" },
+    "category": "일식",
+    "baseServings": 2,
+    "time": { "prepMin": 15, "cookMin": 135 },
+    "difficulty": "hard",
+    "tags": ["돼지고기", "조림", "정통"],
+    "ingredients": [
+      { "name": { "ko": "삼겹살 덩어리", "ja": "豚バラ塊肉" }, "amount": 400, "unit": "g", "scaleType": "linear", "note": "4~5cm로 썰기" },
+      { "name": { "ko": "대파 파란 부분(밑삶기)", "ja": "長ねぎの青い部分" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "생강(편, 밑삶기)", "ja": "生姜" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "밑삶기용 물(또는 쌀뜨물)", "ja": "水/米のとぎ汁" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "note": "고기가 잠길 만큼" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 400, "unit": "ml", "scaleType": "linear", "group": "조림액" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 4, "unit": "큰술", "scaleType": "linear", "group": "조림액" },
+      { "name": { "ko": "청주", "ja": "料理酒" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "group": "조림액" },
+      { "name": { "ko": "미림", "ja": "みりん" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "조림액" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "조림액" },
+      { "name": { "ko": "삶은 계란", "ja": "ゆで卵" }, "amount": 2, "unit": "개", "scaleType": "count", "optional": true }
+    ],
+    "steps": [
+      "삼겹살을 큼직하게(4~5cm) 썬다. 팬에 기름 없이 겉면을 노릇하게 지져 여분 지방을 뺀다.",
+      "냄비에 고기·대파 파란부분·생강·잠길 만큼의 물(또는 쌀뜨물)을 넣고 끓여 약불로 40~60분 밑삶기 한 뒤, 삶은 물은 버리고 고기를 헹군다.",
+      "냄비에 고기와 조림액(물·간장·청주·미림·설탕)을 넣고 끓인다.",
+      "뚜껑(오토시부타)을 덮고 약불로 40~60분, 젓가락이 쑥 들어갈 때까지 조린다(삶은 계란은 후반 15분에 넣기).",
+      "불을 끄고 그대로 식히며 맛을 배게 한다(하룻밤 재우면 더 좋다)."
+    ],
+    "tips": [
+      "핵심: ① 겉을 지지고 오래 밑삶기 해 지방·잡내 제거 ② 낮은 불로 뭉근히(끓이면 질겨짐) ③ 식히는 동안 맛이 밴다 — 하룻밤 재우면 최고.",
+      "쌀뜨물로 밑삶기하면 더 부드럽다. 압력솥이 있으면 조림 시간을 크게 줄일 수 있다."
+    ]
   }
 ]
