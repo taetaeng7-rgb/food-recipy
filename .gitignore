@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# env / secrets (절대 커밋 금지)
+.env
+.env.*
+*.key
+*.pem
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# build / test output
+dist/
+coverage/
+*.log
