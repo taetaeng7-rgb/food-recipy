@@ -148,6 +148,23 @@ h1, h2 { margin: 0; }
 .wake-toggle { width: 100%; padding: 14px; border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text); font-weight: 700; }
 .wake-toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
 
+/* 장보기 액션 */
+.ing-actions { display: flex; gap: 8px; margin: 4px 0 10px; }
+.ghost-btn { flex: 1; padding: 11px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font-weight: 700; font-size: 14px; }
+.ghost-btn:active { background: var(--bg); }
+.ing.checked { opacity: .5; }
+.ing.checked .ko { text-decoration: line-through; }
+
+/* 조리 타이머 */
+.timer-btn { flex-basis: 100%; margin-top: 8px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--primary); font-weight: 700; font-size: 14px; }
+.timer-btn.running { background: var(--primary); border-color: var(--primary); color: #fff; }
+.timer-btn.done { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* 필터 칩 */
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
+.chip { flex: 0 0 auto; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text2); font-size: 13px; font-weight: 600; }
+.chip.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+
 /* 검색 */
 .search-input { flex: 1; padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text); font-size: 16px; }
 .search-hint { color: var(--text2); padding: 20px 4px; }

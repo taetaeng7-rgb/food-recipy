@@ -6,6 +6,24 @@ import * as store from './store.js';
 
 const enc = encodeURIComponent;
 let wakeLock = null;
+const activeTimers = new Set();
+
+function clearTimers() { for (const id of activeTimers) clearInterval(id); activeTimers.clear(); }
+function fmtClock(s) { const m = Math.floor(s / 60); return `${m}:${String(s % 60).padStart(2, '0')}`; }
+function beep() {
+  try {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    const ctx = new Ctx();
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine'; o.frequency.value = 880;
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    o.start(); o.stop(ctx.currentTime + 0.5);
+    o.onended = () => ctx.close();
+  } catch { /* noop */ }
+}
+function buzz() { try { if (navigator.vibrate) navigator.vibrate([300, 120, 300]); } catch { /* noop */ } }
 
 // ---------- 소형 DOM 헬퍼 ----------
 function el(tag, opts = {}, children = []) {
@@ -26,6 +44,7 @@ function releaseWake() {
 
 function clear(app) {
   releaseWake();
+  clearTimers();
   app.replaceChildren();
 }
 
@@ -92,6 +111,62 @@ function emptyState(icon, msg, ctaLabel, ctaHash) {
     el('p', { class: 'empty-msg', text: msg }),
     ctaLabel ? el('button', { class: 'btn', text: ctaLabel, attrs: { type: 'button' }, on: { click: () => go(ctaHash) } }) : null,
   ]);
+}
+
+// 조리 단계 텍스트에서 분(minutes) 추출 (예: "20~25분" → 25, 마지막 값)
+function stepMinutes(text) {
+  let m, last = null;
+  const re = /(\d+)\s*분/g;
+  while ((m = re.exec(text))) last = parseInt(m[1], 10);
+  return last;
+}
+
+// 조리 타이머 버튼 (탭 시작/취소, 완료 시 알람+진동)
+function stepTimerButton(minutes) {
+  const label = `⏱ ${minutes}분 타이머`;
+  const btn = el('button', { class: 'timer-btn', attrs: { type: 'button' }, text: label });
+  let id = null, remaining = 0;
+  const stop = () => { if (id) { clearInterval(id); activeTimers.delete(id); id = null; } };
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (id) { stop(); btn.classList.remove('running'); btn.textContent = label; return; }
+    remaining = minutes * 60;
+    btn.classList.remove('done'); btn.classList.add('running');
+    btn.textContent = `⏱ ${fmtClock(remaining)} · 취소`;
+    id = setInterval(() => {
+      remaining -= 1;
+      if (remaining <= 0) {
+        stop(); btn.classList.remove('running'); btn.classList.add('done');
+        btn.textContent = `⏰ ${minutes}분 완료!`; beep(); buzz(); return;
+      }
+      btn.textContent = `⏱ ${fmtClock(remaining)} · 취소`;
+    }, 1000);
+    activeTimers.add(id);
+  });
+  return btn;
+}
+
+// 장보기: 현재 인분 재료 목록을 클립보드로 복사
+function copyShopping(recipe, servings, btn) {
+  const scaled = scaleRecipe(recipe, servings);
+  const lines = [`🛒 ${recipe.title.ko} (${servings}인분) 재료`];
+  for (const ing of scaled.ingredients) {
+    const amt = ing.display === '기호에 따라' ? '' : ` — ${ing.display}`;
+    lines.push(`□ ${ing.name.ko}(${ing.name.ja})${amt}`);
+  }
+  const text = lines.join('\n');
+  const ok = () => { btn.textContent = '복사됨 ✓'; setTimeout(() => { btn.textContent = '🛒 재료 목록 복사'; }, 1500); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(ok).catch(() => fallbackCopy(text, ok));
+  } else fallbackCopy(text, ok);
+}
+function fallbackCopy(text, ok) {
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    if (document.body) { document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
+    ok();
+  } catch { /* noop */ }
 }
 
 // ---------- 화면: 홈 ----------
@@ -179,6 +254,13 @@ export function renderRecipe(app, recipe, initialServings) {
   const ingBox = el('ul', { class: 'ingredients' });
   const bulkNote = el('p', { class: 'bulk-note', attrs: { hidden: 'hidden' } });
 
+  // 장보기 액션 (재료 복사 · 체크 초기화)
+  const shopBtn = el('button', { class: 'ghost-btn', text: '🛒 재료 목록 복사', attrs: { type: 'button' } });
+  shopBtn.addEventListener('click', () => copyShopping(recipe, servings, shopBtn));
+  const clearBtn = el('button', { class: 'ghost-btn', text: '체크 초기화', attrs: { type: 'button' } });
+  clearBtn.addEventListener('click', () => { store.clearChecks(key(recipe)); update(); });
+  const ingActions = el('div', { class: 'ing-actions' }, [shopBtn, clearBtn]);
+
   // 조리 단계
   const total = recipe.steps.length;
   const progress = el('span', { class: 'progress' });
@@ -190,6 +272,8 @@ export function renderRecipe(app, recipe, initialServings) {
       el('span', { class: 'step-text', text: text }),
       check,
     ]);
+    const mins = stepMinutes(text);
+    if (mins) li.append(stepTimerButton(mins));
     const toggle = () => {
       const now = li.classList.toggle('done');
       check.textContent = now ? '☑' : '☐';
@@ -211,14 +295,21 @@ export function renderRecipe(app, recipe, initialServings) {
     minus.disabled = servings <= MIN_SERVINGS;
     plus.disabled = servings >= MAX_SERVINGS;
     ingBox.replaceChildren(...scaled.ingredients.map((ing) => {
-      const row = el('li', { class: 'ing' }, [
-        el('input', { class: 'ing-chk', attrs: { type: 'checkbox', 'aria-label': ing.name.ko } }),
+      const checked = store.isChecked(key(recipe), ing.name.ko);
+      const chk = el('input', { class: 'ing-chk', attrs: { type: 'checkbox', 'aria-label': ing.name.ko } });
+      chk.checked = checked;
+      const row = el('li', { class: 'ing' + (checked ? ' checked' : '') }, [
+        chk,
         el('span', { class: 'ing-name' }, [
           el('span', { class: 'ko', text: ing.name.ko + (ing.optional ? ' (선택)' : '') }),
           el('span', { class: 'ja', text: ing.name.ja }),
         ]),
         el('span', { class: 'ing-amt', text: ing.display }),
       ]);
+      chk.addEventListener('change', () => {
+        const on = store.toggleCheck(key(recipe), ing.name.ko);
+        row.classList.toggle('checked', on);
+      });
       if (ing.note) row.append(el('span', { class: 'ing-note', text: '※ ' + ing.note }));
       return row;
     }));
@@ -257,7 +348,7 @@ export function renderRecipe(app, recipe, initialServings) {
     el('div', { class: 'screen recipe' }, [
       hero, titleBlock,
       stepper,
-      ingLabel, ingBox, bulkNote,
+      ingLabel, ingActions, ingBox, bulkNote,
       el('h2', { class: 'section-title' }, [document.createTextNode('👩‍🍳 조리 순서 '), progress]),
       stepsBox, celebrate,
       tips, cooking,
@@ -270,31 +361,43 @@ export function renderRecipe(app, recipe, initialServings) {
 // ---------- 화면: 검색 ----------
 export function renderSearch(app, allRecipes) {
   clear(app);
+  let cat = null, tag = null;
   const input = el('input', { class: 'search-input', attrs: { type: 'search', placeholder: '요리명·재료명으로 검색', 'aria-label': '검색' } });
   const results = el('div', { class: 'menu-list' });
-  const hint = el('div', { class: 'search-hint' }, [
-    el('p', { text: '요리명·재료명(한/일)으로 검색' }),
-  ]);
+  const hint = el('div', { class: 'search-hint' }, [el('p', { text: '요리명·재료명(한/일)으로 검색하거나 아래 필터를 눌러보세요.' })]);
+  const catRow = el('div', { class: 'chips' });
+  const tagRow = el('div', { class: 'chips' });
+  const cats = ['한식', '양식', '중식', '일식'];
+  const tags = [...new Set(allRecipes.flatMap((r) => r.tags || []))].slice(0, 12);
+  const chip = (label, on, click) => el('button', { class: 'chip' + (on ? ' on' : ''), text: label, attrs: { type: 'button' }, on: { click } });
+
   function run() {
+    catRow.replaceChildren(
+      chip('전체', !cat, () => { cat = null; run(); }),
+      ...cats.map((c) => chip(c, cat === c, () => { cat = cat === c ? null : c; run(); })),
+    );
+    tagRow.replaceChildren(...tags.map((t) => chip('#' + t, tag === t, () => { tag = tag === t ? null : t; run(); })));
     const q = input.value.trim().toLowerCase();
-    if (!q) { results.replaceChildren(); results.append(hint); return; }
-    const hits = allRecipes.filter((r) => {
-      const hay = [r.title.ko, r.title.ja, ...(r.tags || []),
-        ...r.ingredients.flatMap((i) => [i.name.ko, i.name.ja])].join(' ').toLowerCase();
+    let hits = allRecipes;
+    if (cat) hits = hits.filter((r) => r.category === cat);
+    if (tag) hits = hits.filter((r) => (r.tags || []).includes(tag));
+    if (q) hits = hits.filter((r) => {
+      const hay = [r.title.ko, r.title.ja, ...(r.tags || []), ...r.ingredients.flatMap((i) => [i.name.ko, i.name.ja])].join(' ').toLowerCase();
       return hay.includes(q);
     });
-    results.replaceChildren(...(hits.length ? hits.map(menuCard) : [emptyState('🔍', `‘${input.value.trim()}’에 대한 결과가 없어요.`)]));
+    if (!q && !cat && !tag) { results.replaceChildren(hint); return; }
+    results.replaceChildren(...(hits.length ? hits.map(menuCard) : [emptyState('🔍', '조건에 맞는 레시피가 없어요.')]));
   }
   input.addEventListener('input', run);
-  results.append(hint);
   app.append(
     el('header', { class: 'app-header' }, [
       el('button', { class: 'icon-btn', text: '‹', attrs: { type: 'button', 'aria-label': '뒤로' }, on: { click: () => history.back() } }),
       input,
     ]),
-    el('div', { class: 'screen' }, [results]),
+    el('div', { class: 'screen' }, [catRow, tagRow, results]),
     tabBar('search'),
   );
+  run();
   input.focus();
 }
 

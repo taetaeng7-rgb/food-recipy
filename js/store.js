@@ -27,3 +27,23 @@ export function addRecent(key) {
   r.unshift(key);
   write(RECENT_KEY, r.slice(0, 6));
 }
+
+// 장보기 체크 상태: 레시피별로 체크한 재료 이름(한글) 집합을 저장 (인분 바뀌어도 유지)
+const CHECK_KEY = 'food-recipy:checks';
+function readChecks() { try { return JSON.parse(localStorage.getItem(CHECK_KEY)) || {}; } catch { return {}; } }
+export function getChecks(recipeKey) { return readChecks()[recipeKey] || []; }
+export function isChecked(recipeKey, name) { return getChecks(recipeKey).includes(name); }
+export function toggleCheck(recipeKey, name) {
+  const all = readChecks();
+  const list = all[recipeKey] || [];
+  const i = list.indexOf(name);
+  if (i >= 0) list.splice(i, 1); else list.push(name);
+  all[recipeKey] = list;
+  write(CHECK_KEY, all);
+  return list.includes(name);
+}
+export function clearChecks(recipeKey) {
+  const all = readChecks();
+  delete all[recipeKey];
+  write(CHECK_KEY, all);
+}

@@ -34,3 +34,10 @@ async function render() {
 }
 
 onRouteChange(render);
+
+// PWA: 오프라인·홈화면 앱 (https 또는 localhost에서만 등록됨)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => { /* 미지원/실패 무시 */ });
+  });
+}
