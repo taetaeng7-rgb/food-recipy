@@ -1,0 +1,147 @@
+[
+  {
+    "id": "kr-miyeokguk-beef",
+    "title": { "ko": "소고기미역국", "ja": "牛肉わかめスープ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 15, "cookMin": 30 },
+    "difficulty": "easy",
+    "tags": ["국물", "미역", "생일"],
+    "ingredients": [
+      { "name": { "ko": "마른 미역", "ja": "乾燥わかめ" }, "amount": 10, "unit": "g", "scaleType": "linear", "note": "찬물에 불리면 5~6배로 늘어남" },
+      { "name": { "ko": "소고기(국거리)", "ja": "牛肉(煮込み用)" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 1000, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "국간장", "ja": "薄口醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "薄口는 짜니 간 보며 조절" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "국물용 다시", "ja": "だしの素/牛だし" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "note": "마지막 간" }
+    ],
+    "steps": [
+      "마른 미역을 찬물에 15분 불린 뒤 두세 번 헹궈 물기를 꼭 짜고 먹기 좋게 썬다.",
+      "냄비에 참기름을 두르고 소고기를 중불에 볶아 겉면이 익으면 미역을 넣고 2~3분 함께 볶는다.",
+      "국간장을 넣어 30초 볶아 향을 낸 뒤 물·다진 마늘·다시를 넣는다.",
+      "끓어오르면 거품을 걷고 중약불로 20~25분 끓인다.",
+      "소금으로 최종 간을 맞춘다."
+    ],
+    "tips": [
+      "참기름에 미역을 충분히 볶아야 국물이 뽀얗고 고소하다.",
+      "소고기 대신 조갯살(あさり)로도 시원하게 낼 수 있다."
+    ]
+  },
+  {
+    "id": "kr-kimchi-fried-rice",
+    "title": { "ko": "김치볶음밥", "ja": "キムチチャーハン" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "김치", "볶음"],
+    "ingredients": [
+      { "name": { "ko": "신 김치", "ja": "酸っぱいキムチ" }, "amount": 200, "unit": "g", "scaleType": "linear", "note": "잘 익은 것일수록 좋음" },
+      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "고추장", "ja": "コチュジャン" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "note": "김치 신맛 완화" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "스팸(또는 돼지고기)", "ja": "ランチョンミート/豚肉" }, "amount": 100, "unit": "g", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "구운 김·김가루", "ja": "韓国のり/きざみのり" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "통깨", "ja": "いりごま" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "김치는 잘게 썰고 대파는 송송 썬다. 스팸을 쓰면 사방 1cm로 썬다.",
+      "팬에 식용유를 두르고 대파를 중불에 볶아 파기름을 낸다.",
+      "(스팸·고기 사용 시) 넣어 노릇하게 볶는다.",
+      "김치를 넣고 설탕을 뿌려 3~4분 볶아 신맛을 죽이고 숨을 죽인다.",
+      "밥을 넣고 고추장·간장을 넣어 덩어리 없이 골고루 볶는다.",
+      "불을 끄고 참기름·통깨를 두른다.",
+      "계란 프라이를 부쳐 위에 올리고 김가루를 뿌린다."
+    ],
+    "tips": [
+      "신맛이 부족하면 식초 몇 방울을 더한다.",
+      "고추장 대신 고춧가루 1큰술로 하면 더 개운하다."
+    ]
+  },
+  {
+    "id": "kr-gyeran-mari",
+    "title": { "ko": "계란말이", "ja": "卵焼き" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 10 },
+    "difficulty": "normal",
+    "tags": ["반찬", "계란"],
+    "ingredients": [
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 4, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "물(또는 우유)", "ja": "水/牛乳" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "부드럽게" },
+      { "name": { "ko": "맛술(미림)", "ja": "みりん" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 30, "unit": "g", "scaleType": "linear", "optional": true, "note": "아주 잘게 다지기" },
+      { "name": { "ko": "쪽파", "ja": "青ねぎ" }, "amount": 2, "unit": "대", "scaleType": "count", "optional": true },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" }
+    ],
+    "steps": [
+      "계란을 볼에 풀고 물·맛술·소금과 잘게 썬 당근·쪽파를 섞는다.",
+      "달군 팬에 기름을 얇게 두르고 계란물의 1/3을 부어 약불에서 반쯤 익힌다.",
+      "한쪽부터 돌돌 말고, 빈 자리에 계란물을 다시 부어 이어 말기를 반복한다.",
+      "한 김 식힌 뒤 먹기 좋게 썬다."
+    ],
+    "tips": ["약불에서 천천히 말아야 터지지 않고 예쁘게 말린다."]
+  },
+  {
+    "id": "kr-kongnamul-guk",
+    "title": { "ko": "콩나물국", "ja": "豆もやしスープ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["국물", "콩나물", "해장"],
+    "ingredients": [
+      { "name": { "ko": "콩나물", "ja": "大豆もやし" }, "amount": 200, "unit": "g", "scaleType": "linear", "note": "숙주(もやし)가 아닌 大豆もやし" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 800, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "국간장", "ja": "薄口醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "콩나물을 흐르는 물에 씻어 냄비에 담고 물을 붓는다.",
+      "뚜껑을 덮고 센불에 끓인다. (중간에 열면 비린내가 나니 끓을 때까지 열지 않는다)",
+      "끓기 시작하면 다진 마늘·국간장을 넣고 5분 더 끓인다.",
+      "대파를 넣고 소금으로 간한다. 매콤하게 원하면 고춧가루를 더한다."
+    ],
+    "tips": ["국이 끓기 전에 뚜껑을 열면 콩 비린내가 난다 — 처음부터 끝까지 덮거나 계속 열어두거나 하나로."]
+  },
+  {
+    "id": "kr-kimchi-jjigae",
+    "title": { "ko": "김치찌개", "ja": "キムチチゲ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 20 },
+    "difficulty": "easy",
+    "tags": ["국물", "김치", "매운맛"],
+    "ingredients": [
+      { "name": { "ko": "신 김치", "ja": "酸っぱいキムチ" }, "amount": 300, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "돼지고기(목살·삼겹)", "ja": "豚肉(肩ロース/バラ)" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "두부", "ja": "豆腐" }, "amount": 0.5, "unit": "모", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "물(또는 쌀뜨물)", "ja": "水/米のとぎ汁" }, "amount": 500, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "고추장", "ja": "コチュジャン" }, "amount": 0.5, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "국간장", "ja": "薄口醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" }
+    ],
+    "steps": [
+      "김치는 한입 크기로 썰고, 돼지고기도 먹기 좋게 썬다. 두부는 도톰하게 썬다.",
+      "냄비에 돼지고기와 김치를 넣고 고춧가루·다진 마늘을 넣어 중불에 5분 볶는다.",
+      "물을 붓고 고추장·설탕·국간장을 넣어 끓인다.",
+      "끓으면 중약불로 15분 끓여 김치가 무르게 되면 두부를 넣고 5분 더 끓인다.",
+      "대파를 넣고 한소끔 끓여 마무리한다."
+    ],
+    "tips": ["묵은지일수록 깊은 맛이 난다. 신맛이 강하면 설탕을 조금 더 넣어 균형을 잡는다."]
+  }
+]

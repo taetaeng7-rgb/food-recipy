@@ -1,0 +1,81 @@
+[
+  {
+    "id": "western-napolitan",
+    "title": { "ko": "나폴리탄 스파게티", "ja": "ナポリタン" },
+    "category": "양식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "면", "케첩"],
+    "ingredients": [
+      { "name": { "ko": "스파게티면", "ja": "スパゲッティ" }, "amount": 200, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "피망", "ja": "ピーマン" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "비엔나 소시지", "ja": "ウインナー" }, "amount": 4, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 4, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "우스터소스", "ja": "ウスターソース" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "파마산 치즈가루", "ja": "粉チーズ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "끓는 물에 소금을 넣고 스파게티면을 봉지 표기보다 1~2분 더 삶는다.",
+      "양파·피망은 채썰고 소시지는 어슷하게 썬다.",
+      "팬에 버터를 녹여 소시지·양파·피망을 볶는다.",
+      "케첩을 넣고 1분간 볶아 신맛을 날린 뒤 삶은 면을 넣어 버무린다.",
+      "우스터소스·소금·후추로 간하고, 그릇에 담아 치즈가루를 뿌린다."
+    ],
+    "tips": ["면을 푹 삶아 살짝 불은 듯한 식감이 나폴리탄 특유의 매력이다."]
+  },
+  {
+    "id": "western-omurice",
+    "title": { "ko": "오므라이스", "ja": "オムライス" },
+    "category": "양식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 15 },
+    "difficulty": "normal",
+    "tags": ["한그릇", "계란", "케첩"],
+    "ingredients": [
+      { "name": { "ko": "밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 4, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "닭고기(또는 햄)", "ja": "鶏肉/ハム" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "양파와 닭고기(또는 햄)를 잘게 썬다.",
+      "팬에 버터를 녹여 양파·닭고기를 볶고, 밥과 케첩을 넣어 볶은 뒤 소금·후추로 간해 케첩라이스를 만든다.",
+      "다른 팬에 풀어둔 계란(1인분 2개)을 부어 반숙 지단을 만든다.",
+      "케첩라이스를 접시에 담고 지단을 덮은 뒤, 위에 케첩을 뿌린다."
+    ],
+    "tips": ["계란을 완전히 익히지 말고 반숙일 때 밥 위에 덮으면 부드럽다."]
+  },
+  {
+    "id": "western-gambas",
+    "title": { "ko": "감바스 알 아히요", "ja": "ガンバス(エビのアヒージョ)" },
+    "category": "양식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["안주", "새우", "올리브유"],
+    "ingredients": [
+      { "name": { "ko": "새우(냉동)", "ja": "むきえび(冷凍)" }, "amount": 12, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 4, "unit": "쪽", "scaleType": "count" },
+      { "name": { "ko": "올리브유", "ja": "オリーブオイル" }, "amount": 100, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "페페론치노(마른 고추)", "ja": "鷹の爪" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "바게트", "ja": "バゲット" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "새우는 해동해 물기를 닦고, 마늘은 편으로 썬다.",
+      "작은 팬(또는 무쇠팬)에 올리브유·마늘·페페론치노를 넣고 약불로 마늘 향을 낸다.",
+      "마늘이 노릇해지면 새우를 넣고 소금 간을 해 익힌다.",
+      "새우가 익으면 불을 끄고, 바게트를 곁들여 기름에 찍어 먹는다."
+    ],
+    "tips": ["약불에서 천천히 마늘 향을 우려야 쓴맛 없이 고소하다."]
+  }
+]

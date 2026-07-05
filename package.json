@@ -1,0 +1,12 @@
+{
+  "name": "food-recipy",
+  "version": "1.0.0",
+  "description": "일본 슈퍼 재료로 만드는 요리 레시피 웹앱 (정적, 빌드 없음)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "validate:recipes": "node scripts/validate-recipes.js",
+    "test:all": "npm run validate:recipes && npm test"
+  }
+}

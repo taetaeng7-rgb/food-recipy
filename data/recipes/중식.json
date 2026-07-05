@@ -1,0 +1,82 @@
+[
+  {
+    "id": "chinese-egg-fried-rice",
+    "title": { "ko": "계란볶음밥", "ja": "卵チャーハン" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "계란", "볶음"],
+    "ingredients": [
+      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 3, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "대파를 잘게 썰고, 계란은 풀어둔다.",
+      "팬에 기름을 두르고 대파를 볶아 파기름을 낸 뒤 풀어둔 계란을 넣어 스크램블한다.",
+      "계란이 반쯤 익으면 밥을 넣고 센불에서 눌러가며 볶는다.",
+      "굴소스·간장을 팬 가장자리에 둘러 향을 내고, 소금·후추로 간해 마무리한다."
+    ],
+    "tips": ["찬밥과 센불이 고슬고슬한 볶음밥의 비결이다."]
+  },
+  {
+    "id": "chinese-mapo-tofu",
+    "title": { "ko": "마파두부", "ja": "麻婆豆腐" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 15 },
+    "difficulty": "normal",
+    "tags": ["밥반찬", "두부", "매운맛"],
+    "ingredients": [
+      { "name": { "ko": "두부", "ja": "豆腐" }, "amount": 1, "unit": "모", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "다진 돼지고기", "ja": "豚ひき肉" }, "amount": 120, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "두반장", "ja": "豆板醤" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 150, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "물 1큰술에 개어 전분물로" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt", "optional": true }
+    ],
+    "steps": [
+      "두부는 깍둑썰고, 대파는 잘게 썬다. 전분은 물에 개어 전분물을 만든다.",
+      "팬에 기름을 두르고 다진 마늘·대파 절반을 볶아 향을 낸 뒤 다진 고기를 볶는다.",
+      "두반장(과 고춧가루)을 넣어 볶아 매운 향을 내고, 물·굴소스·간장을 넣어 끓인다.",
+      "두부를 넣고 으깨지지 않게 2~3분 끓인 뒤, 전분물을 둘러 걸쭉하게 만든다.",
+      "남은 대파를 올려 마무리한다."
+    ],
+    "tips": ["두부를 넣은 뒤엔 세게 젓지 말고 팬을 흔들어 섞어야 모양이 산다."]
+  },
+  {
+    "id": "chinese-bokchoy-oyster",
+    "title": { "ko": "청경채 굴소스볶음", "ja": "チンゲン菜のオイスター炒め" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["반찬", "채소", "볶음"],
+    "ingredients": [
+      { "name": { "ko": "청경채", "ja": "チンゲン菜" }, "amount": 3, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "청경채는 밑동을 갈라 4~6등분하고 흐르는 물에 씻는다.",
+      "팬에 기름을 두르고 다진 마늘을 볶아 향을 낸다.",
+      "청경채 줄기부터 넣어 센불에 볶다가 잎을 넣는다.",
+      "굴소스와 물을 넣고 1~2분 볶아 숨이 살짝 죽으면 소금으로 간해 마무리한다."
+    ],
+    "tips": ["센불에 짧게 볶아야 아삭함이 살아 있다."]
+  }
+]

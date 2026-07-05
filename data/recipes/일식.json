@@ -1,0 +1,85 @@
+[
+  {
+    "id": "jp-oyakodon",
+    "title": { "ko": "오야코동", "ja": "親子丼" },
+    "category": "일식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "계란", "닭고기"],
+    "ingredients": [
+      { "name": { "ko": "닭다리살", "ja": "鶏もも肉" }, "amount": 250, "unit": "g", "scaleType": "linear", "note": "한입 크기" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 4, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "따뜻한 밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 150, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "미림", "ja": "みりん" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "다시", "ja": "だしの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "파드득나물·쪽파", "ja": "三つ葉/青ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "닭다리살은 한입 크기로, 양파는 채썬다. 계란은 흰자가 살짝 남을 정도로만 가볍게 푼다.",
+      "작은 팬에 물·간장·미림·설탕·다시를 넣고 끓인다.",
+      "양파를 넣어 2~3분 익힌다.",
+      "닭고기를 넣고 중불에서 5~6분, 속까지 익힌다.",
+      "풀어둔 계란의 2/3를 원을 그리며 붓고, 반쯤 익으면 나머지를 부어 뚜껑을 덮고 30초~1분 뜸을 들여 반숙으로 만든다.",
+      "밥 위에 국물째 얹고 파드득나물·쪽파를 올린다."
+    ],
+    "tips": ["계란은 완전히 익히지 말고 촉촉할 때 불을 끈다. 닭 대신 돼지고기면 他人丼(타닌동)."]
+  },
+  {
+    "id": "jp-gyudon",
+    "title": { "ko": "규동(소고기덮밥)", "ja": "牛丼" },
+    "category": "일식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "소고기"],
+    "ingredients": [
+      { "name": { "ko": "소고기(얇게 썬 것)", "ja": "牛こま切れ肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "따뜻한 밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 100, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "미림", "ja": "みりん" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "다시", "ja": "だしの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "쪽파", "ja": "青ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "홍생강", "ja": "紅しょうが" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "양파는 채썬다.",
+      "팬에 물·간장·미림·설탕·다시를 넣고 끓인 뒤 양파를 넣어 익힌다.",
+      "소고기를 넣고 풀어가며 익힌다. 거품이 뜨면 걷어낸다.",
+      "국물이 자작해질 때까지 5~7분 조린다.",
+      "밥 위에 국물째 얹고 쪽파·홍생강을 곁들인다."
+    ],
+    "tips": ["소고기는 오래 끓이면 질겨지니 색이 변하면 바로 불을 줄인다."]
+  },
+  {
+    "id": "jp-misoshiru",
+    "title": { "ko": "미소시루(된장국)", "ja": "味噌汁" },
+    "category": "일식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["국물", "두부", "미역"],
+    "ingredients": [
+      { "name": { "ko": "물", "ja": "水" }, "amount": 400, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "미소된장", "ja": "味噌" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "다시", "ja": "だしの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "두부", "ja": "豆腐" }, "amount": 0.5, "unit": "모", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "마른 미역", "ja": "乾燥わかめ" }, "amount": 2, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "쪽파(고명)", "ja": "青ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "냄비에 물과 다시를 넣고 끓인다. 미역은 물에 잠깐 불려둔다.",
+      "두부를 깍둑썰어 넣고 데운다.",
+      "불을 약하게 줄이고 미소된장을 체에 걸러 풀어 넣는다. (끓이면 향이 날아가니 끓기 직전에)",
+      "불린 미역과 송송 썬 대파를 넣고 바로 불을 끈다."
+    ],
+    "tips": ["미소는 넣은 뒤 팔팔 끓이지 않는다 — 향과 풍미가 살아 있게."]
+  }
+]
