@@ -78,5 +78,122 @@
       "굴소스와 물을 넣고 1~2분 볶아 숨이 살짝 죽으면 소금으로 간해 마무리한다."
     ],
     "tips": ["센불에 짧게 볶아야 아삭함이 살아 있다."]
+  },
+  {
+    "id": "chinese-jjajang",
+    "title": { "ko": "간짜장", "ja": "ジャージャー麺(チャジャン)" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 15 },
+    "difficulty": "normal",
+    "tags": ["한그릇", "면", "춘장"],
+    "ingredients": [
+      { "name": { "ko": "중화면(또는 우동면)", "ja": "中華麺" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "돼지고기", "ja": "豚肉" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "양배추", "ja": "キャベツ" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "춘장", "ja": "チュンジャン/甜麺醤" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "note": "일본 甜麺醤로 대체 가능(단맛↑→설탕 줄임)" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "물 2큰술에 개기" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 200, "unit": "ml", "scaleType": "linear" }
+    ],
+    "steps": [
+      "돼지고기·양파·양배추를 깍둑 썬다. 전분은 물 2큰술에 개어 둔다.",
+      "팬에 식용유를 넉넉히 두르고 춘장을 1~2분 볶아 쓴맛을 날린다.",
+      "돼지고기를 넣어 볶고 양파·양배추를 넣어 볶는다.",
+      "물·설탕을 넣어 끓인 뒤 전분물을 둘러 걸쭉하게 만든다.",
+      "삶은 면 위에 얹는다."
+    ],
+    "tips": [
+      "한국 춘장이 없으면 일본 甜麺醤로 대체(단맛이 강하니 설탕을 줄인다).",
+      "춘장은 반드시 기름에 먼저 볶아야 쓴맛이 사라진다."
+    ]
+  },
+  {
+    "id": "chinese-ebi-chili",
+    "title": { "ko": "새우칠리", "ja": "エビチリ" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 10 },
+    "difficulty": "normal",
+    "tags": ["밥반찬", "새우", "매운맛"],
+    "ingredients": [
+      { "name": { "ko": "새우(냉동)", "ja": "むきえび" }, "amount": 12, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "다진 생강", "ja": "おろし生姜" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "두반장", "ja": "豆板醤" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 100, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "note": "물에 개기" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "새우는 해동해 물기를 닦고, 대파는 잘게 썬다. 전분은 물 1큰술에 갠다.",
+      "팬에 식용유를 두르고 다진 마늘·생강·두반장을 약불에 볶아 향을 낸다.",
+      "케첩·설탕·물을 넣어 끓이고 새우를 넣어 익힌다.",
+      "전분물을 둘러 농도를 맞추고 대파를 넣어 마무리한다."
+    ],
+    "tips": [
+      "두반장 양으로 매운맛을 조절한다.",
+      "마요네즈를 살짝 더하면 부드러운 맛이 난다."
+    ]
+  },
+  {
+    "id": "chinese-tomato-egg",
+    "title": { "ko": "토마토 계란볶음", "ja": "トマトと卵の炒め" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["밥반찬", "계란", "토마토"],
+    "ingredients": [
+      { "name": { "ko": "토마토", "ja": "トマト" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 3, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "토마토는 큼직하게 썰고, 계란은 소금 약간 넣어 푼다. 대파는 송송 썬다.",
+      "팬에 기름을 두르고 계란을 부드럽게 스크램블해 덜어 둔다.",
+      "같은 팬에 토마토를 넣어 볶다가 설탕(·굴소스)을 넣는다.",
+      "토마토가 물러지면 계란을 다시 넣어 살짝 섞고 대파를 뿌린다."
+    ],
+    "tips": [
+      "계란은 반쯤 익혀 덜어냈다가 마지막에 합치면 부드럽다.",
+      "밥에 올려 덮밥으로도 좋다."
+    ]
+  },
+  {
+    "id": "chinese-buchu-pork",
+    "title": { "ko": "부추 돼지고기 볶음", "ja": "ニラと豚肉の炒め" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["밥반찬", "부추", "볶음"],
+    "ingredients": [
+      { "name": { "ko": "부추", "ja": "ニラ" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "돼지고기(채썬 것)", "ja": "豚肉細切り" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "부추는 5cm로 썰고, 양파는 채썬다. 돼지고기는 채썬다.",
+      "팬에 기름을 두르고 다진 마늘·돼지고기를 볶는다.",
+      "양파를 넣어 볶다가 굴소스·간장·후추로 간한다.",
+      "마지막에 부추를 넣어 센불에 살짝만 볶아 마무리한다."
+    ],
+    "tips": ["부추는 맨 마지막에 넣어 숨만 죽여야 향이 산다."]
   }
 ]

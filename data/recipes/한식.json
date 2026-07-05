@@ -143,5 +143,134 @@
       "대파를 넣고 한소끔 끓여 마무리한다."
     ],
     "tips": ["묵은지일수록 깊은 맛이 난다. 신맛이 강하면 설탕을 조금 더 넣어 균형을 잡는다."]
+  },
+  {
+    "id": "kr-jeyuk-bokkeum",
+    "title": { "ko": "제육볶음", "ja": "豚肉のコチュジャン炒め" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 15, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["밥반찬", "매운맛", "돼지고기"],
+    "ingredients": [
+      { "name": { "ko": "돼지고기(앞다리·삼겹)", "ja": "豚肉(肩ロース/バラ)" }, "amount": 300, "unit": "g", "scaleType": "linear", "note": "한입 크기" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "고추장", "ja": "コチュジャン" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "진간장", "ja": "濃口醤油" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "청주(요리술)", "ja": "料理酒" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
+      { "name": { "ko": "통깨", "ja": "いりごま" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "돼지고기는 한입 크기로 썬다. 양파는 굵게 채썰고 대파는 어슷 썬다.",
+      "볼에 고추장·고춧가루·진간장·다진 마늘·청주를 섞어 양념장을 만든다.",
+      "팬에 식용유를 두르고 돼지고기를 센불에 볶다가 겉면이 익으면 설탕을 넣고 30초 더 볶는다.",
+      "양념장을 넣어 고기에 골고루 배도록 3~4분 볶는다.",
+      "양파·대파를 넣어 숨이 죽을 때까지 볶고, 참기름·통깨를 둘러 마무리한다."
+    ],
+    "tips": [
+      "백종원 스타일 양념 비율(설탕·고추장·간장·고춧가루)을 참고해 재구성. 설탕을 먼저 고기에 입히면 단맛이 잘 밴다.",
+      "덜 맵게 하려면 고춧가루를 줄이고 설탕을 살짝 늘린다."
+    ]
+  },
+  {
+    "id": "kr-bulgogi",
+    "title": { "ko": "소불고기", "ja": "プルコギ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 20, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["밥반찬", "소고기", "손님상"],
+    "ingredients": [
+      { "name": { "ko": "소고기(불고기용·얇게)", "ja": "牛薄切り肉" }, "amount": 300, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 40, "unit": "g", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "진간장", "ja": "濃口醤油" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "배즙(또는 사과즙)", "ja": "すりおろし梨/りんご" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "optional": true, "note": "없으면 설탕을 조금 더" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "통깨", "ja": "いりごま" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "양파는 채썰고 대파는 어슷, 당근은 얇게 썬다.",
+      "볼에 진간장·설탕·배즙·다진 마늘·참기름·후추를 섞고 소고기를 넣어 15분 재운다.",
+      "달군 팬에 재운 고기와 채소를 넣어 센불에 볶는다.",
+      "고기가 익고 국물이 자작해지면 통깨를 뿌려 마무리한다."
+    ],
+    "tips": [
+      "배즙(또는 사과즙)이 고기를 부드럽게 하고 은은한 단맛을 낸다. 없으면 설탕을 조금 더.",
+      "당면·채소를 더 넣고 육수를 부으면 불고기전골로도 좋다."
+    ]
+  },
+  {
+    "id": "kr-japchae",
+    "title": { "ko": "잡채", "ja": "チャプチェ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 30, "cookMin": 20 },
+    "difficulty": "normal",
+    "tags": ["손님상", "당면", "채소"],
+    "ingredients": [
+      { "name": { "ko": "당면(고구마전분)", "ja": "韓国春雨" }, "amount": 120, "unit": "g", "scaleType": "linear", "note": "찬물에 30분 이상 불리기" },
+      { "name": { "ko": "소고기·돼지고기(채썬 것)", "ja": "牛/豚薄切り肉" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "시금치", "ja": "ほうれん草" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 40, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "표고버섯", "ja": "しいたけ" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "진간장", "ja": "濃口醤油" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "통깨", "ja": "いりごま" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "당면은 찬물에 30분 이상 불린다. 시금치는 데쳐 물기를 짠다.",
+      "고기·양파·당근·표고·대파를 채썰어 각각 볶아 둔다(따로 볶아야 물이 안 생겨 안 붇는다).",
+      "불린 당면을 끓는 물에 30초~1분 삶아 건진 뒤, 진간장·설탕·참기름·다진 마늘을 넣고 약불에 조리듯 볶는다.",
+      "볶아둔 채소·고기와 시금치를 넣어 골고루 버무리고 통깨를 뿌린다."
+    ],
+    "tips": [
+      "간장5:설탕3:참기름3 비율 참고(백종원 스타일). 삶은 당면에 참기름을 바로 코팅하면 하루 지나도 안 붇는다.",
+      "재료를 따로 볶아 마지막에 합치는 것이 안 붇는 핵심."
+    ]
+  },
+  {
+    "id": "kr-tteokbokki",
+    "title": { "ko": "떡볶이", "ja": "トッポギ" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 15 },
+    "difficulty": "easy",
+    "tags": ["분식", "매운맛", "떡"],
+    "ingredients": [
+      { "name": { "ko": "떡볶이떡", "ja": "トッポギ用餅" }, "amount": 300, "unit": "g", "scaleType": "linear", "note": "굳었으면 따뜻한 물에 불리기" },
+      { "name": { "ko": "어묵", "ja": "さつま揚げ" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "물", "ja": "水" }, "amount": 400, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "고추장", "ja": "コチュジャン" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "note": "단맛은 취향껏 2~3" },
+      { "name": { "ko": "진간장", "ja": "濃口醤油" }, "amount": 2.5, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "삶은 계란", "ja": "ゆで卵" }, "amount": 2, "unit": "개", "scaleType": "count", "optional": true }
+    ],
+    "steps": [
+      "떡은 굳었으면 따뜻한 물에 불리고, 어묵은 한입 크기로, 대파는 어슷 썬다.",
+      "팬에 물·고추장·고춧가루·설탕·진간장을 넣고 끓인다.",
+      "끓으면 떡과 어묵을 넣고 중불에서 저어가며 끓인다.",
+      "국물이 걸쭉해지고 떡이 말랑해지면 대파(와 삶은 계란)를 넣어 마무리한다."
+    ],
+    "tips": [
+      "백종원 분식 스타일 비율 참고(2인분: 물 2컵·설탕 3·간장 2.5·고추장 1·고춧가루 1.5).",
+      "국물떡볶이로 즐기려면 물을 조금 더 넣는다."
+    ]
   }
 ]
