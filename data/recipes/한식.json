@@ -306,5 +306,42 @@
       "고춧가루를 참기름에 볶아 고추기름을 내면 국물 색과 맛이 깊어진다(태우면 쓴맛).",
       "바지락·새우를 넣으면 시원한 해물 순두부가 된다."
     ]
+  },
+  {
+    "id": "kr-doenjang-jjigae",
+    "title": { "ko": "된장찌개", "ja": "テンジャンチゲ(韓国味噌チゲ)" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 10, "cookMin": 20 },
+    "difficulty": "easy",
+    "tags": ["국물", "된장", "두부"],
+    "ingredients": [
+      { "name": { "ko": "된장(한국 된장 또는 일본 미소)", "ja": "韓国味噌/味噌" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt", "note": "일본 미소로 대체 시 미소 1.5큰술+고추장 1큰술, 赤味噌·麦味噌가 한국 된장에 가장 가까움" },
+      { "name": { "ko": "고추장", "ja": "コチュジャン" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt", "note": "된장:고추장 = 2:1" },
+      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 0.5, "unit": "큰술", "scaleType": "sqrt", "optional": true },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "두부", "ja": "木綿豆腐" }, "amount": 0.5, "unit": "모", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "애호박(주키니)", "ja": "ズッキーニ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "감자", "ja": "じゃがいも" }, "amount": 1, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "표고버섯", "ja": "しいたけ" }, "amount": 2, "unit": "개", "scaleType": "count", "optional": true },
+      { "name": { "ko": "청양고추(또는 시시토)", "ja": "青唐辛子/ししとう" }, "amount": 1, "unit": "개", "scaleType": "count", "optional": true, "note": "ししとう는 덜 매움" },
+      { "name": { "ko": "바지락(또는 소고기·조개)", "ja": "あさり" }, "amount": 100, "unit": "g", "scaleType": "linear", "optional": true, "note": "해감한 것, 감칠맛용" },
+      { "name": { "ko": "물(멸치·다시마 육수 또는 쌀뜨물)", "ja": "水/煮干しだし" }, "amount": 500, "unit": "ml", "scaleType": "linear" },
+      { "name": { "ko": "다시(멸치·가쓰오)", "ja": "だしの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "note": "멸치육수 안 쓸 때" }
+    ],
+    "steps": [
+      "냄비에 물(멸치·다시마 육수 또는 쌀뜨물)과 다시를 넣고 끓인다. (멸치·다시마를 넣었다면 끓인 뒤 건진다)",
+      "감자·양파를 먼저 넣어 익히기 시작한다.",
+      "된장을 국자·체에 풀어 덩어리 없이 넣고, 고추장·고춧가루·다진 마늘을 넣어 끓인다.",
+      "애호박·두부·표고버섯을 넣고 5~7분 더 끓인다. (바지락을 쓰면 여기서 넣어 입을 벌린다)",
+      "대파·청양고추를 넣고 한소끔 끓인다. 간은 된장으로만 맞추고, 싱거우면 된장을 조금 더 푼다."
+    ],
+    "tips": [
+      "백종원 스타일: 된장:고추장 = 2:1, 간은 소금·간장 말고 '된장으로만'. 고깃집 맛을 원하면 고춧가루·다진 마늘을 넉넉히.",
+      "일본 미소로 대체: 미소만 쓰면 달고 밍밍하니 미소 1.5큰술+고추장 1큰술. 특히 赤味噌(아카미소)·麦味噌가 한국 된장에 가깝고, 赤味噌+간장 소량이면 더 근접.",
+      "육수: 이리코(煮干し)+다시마를 찬물에 30분 우리거나 だしの素로 간편하게. 쌀뜨물을 쓰면 구수함이 산다."
+    ]
   }
 ]
