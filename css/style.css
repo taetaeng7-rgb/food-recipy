@@ -129,10 +129,11 @@ h1, h2 { margin: 0; }
 /* 조리 단계 */
 .steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .step {
-  display: flex; align-items: flex-start; gap: 10px; padding: 14px;
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px; padding: 14px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   font-size: 17px; line-height: 1.65;
 }
+.step-text { min-width: 0; }
 .step-num { font-size: 20px; color: var(--primary); flex: 0 0 auto; }
 .step-text { flex: 1; }
 .step-check { font-size: 20px; color: var(--text2); flex: 0 0 auto; }
