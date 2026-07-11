@@ -373,5 +373,58 @@
       "초간단 버전(콩 안 삶기): 무조정 두유(無調整豆乳) 500ml + 두부(또는 순두부) ½모 + 땅콩버터 1큰술을 믹서에 갈고 소금으로 간하면 바로 콩국물.",
       "삶는 시간이 핵심 — 끓고 딱 10분. 껍질을 벗기면 비린내가 줄고 국물이 곱다."
     ]
+  },
+  {
+    "id": "kr-sukju-namul",
+    "title": { "ko": "숙주나물", "ja": "もやしナムル" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 5 },
+    "difficulty": "easy",
+    "tags": ["반찬", "숙주", "간편"],
+    "ingredients": [
+      { "name": { "ko": "숙주", "ja": "もやし" }, "amount": 200, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 0.5, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "통깨", "ja": "いりごま" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "쪽파", "ja": "青ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "끓는 물에 소금 약간을 넣고 숙주를 30초~1분만 데쳐 찬물에 헹군 뒤 물기를 꼭 짠다.",
+      "볼에 숙주·다진 마늘·참기름·소금·통깨를 넣어 조물조물 무친다.",
+      "쪽파를 넣어 마무리한다."
+    ],
+    "tips": [
+      "살짝만 데쳐야 아삭하다(오래 데치면 물러진다).",
+      "물기를 잘 짜야 무침이 질척이지 않는다."
+    ]
+  },
+  {
+    "id": "kr-gyeranjjim",
+    "title": { "ko": "계란찜", "ja": "ケランチム(韓国茶碗蒸し風)" },
+    "category": "한식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["반찬", "계란", "부드러움"],
+    "ingredients": [
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 4, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "물(또는 육수)", "ja": "水/だし" }, "amount": 200, "unit": "ml", "scaleType": "linear", "note": "계란:물 대략 1:1" },
+      { "name": { "ko": "치킨스톡(또는 다시)", "ja": "鶏がらスープの素/だし" }, "amount": 0.5, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "note": "새우젓이 있으면 더 감칠맛" },
+      { "name": { "ko": "대파(고명)", "ja": "長ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "참기름", "ja": "ごま油" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "계란을 잘 풀어 물(육수)·치킨스톡·소금을 넣고 체에 한 번 거르면 매끈하다.",
+      "뚝배기(또는 내열 그릇)에 부어 중약불에 올리고, 처음엔 저어가며 몽글하게 익힌다.",
+      "어느 정도 엉기면 뚜껑을 덮고 약불에 3~4분, 부풀 때까지 익힌다.",
+      "송송 썬 대파·참기름을 올린다. (전자레인지: 랩을 씌워 30초씩 나눠 2~3분)"
+    ],
+    "tips": [
+      "체에 거르고 약불로 익히면 수플레처럼 부드럽다.",
+      "새우젓으로 간하면 감칠맛이 확 산다(있으면)."
+    ]
   }
 ]

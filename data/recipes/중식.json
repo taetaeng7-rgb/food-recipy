@@ -353,5 +353,38 @@
       "게맛살(カニカマ)은 저렴하고 감칠맛이 좋아 볶음밥에 제격.",
       "굴소스가 감칠맛을 더한다."
     ]
+  },
+  {
+    "id": "chinese-yasai-itame",
+    "title": { "ko": "야채볶음", "ja": "野菜炒め" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 8, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["밥반찬", "양배추", "숙주"],
+    "ingredients": [
+      { "name": { "ko": "양배추", "ja": "キャベツ" }, "amount": 200, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "숙주", "ja": "もやし" }, "amount": 150, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 40, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "돼지고기(얇게)", "ja": "豚バラ薄切り" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count", "optional": true },
+      { "name": { "ko": "치킨스톡", "ja": "鶏がらスープの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
+      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "양배추는 큼직하게, 당근은 얇게, 돼지고기는 먹기 좋게 썬다. 숙주는 씻어 물기를 뺀다.",
+      "(계란 사용 시) 팬에 기름을 두르고 계란을 스크램블해 덜어 둔다.",
+      "팬에 기름·다진 마늘·돼지고기를 넣어 볶고, 당근→양배추 순으로 센불에 볶는다.",
+      "숙주를 넣고 굴소스·치킨스톡·간장으로 간해 재빨리 볶는다(숙주는 오래 볶으면 물이 생긴다).",
+      "계란을 다시 넣고 소금·후추로 마무리한다."
+    ],
+    "tips": [
+      "숙주·양배추는 센불에 짧게 볶아야 아삭하다.",
+      "냉장고 자투리 채소 정리에 좋은 만능 볶음."
+    ]
   }
 ]
