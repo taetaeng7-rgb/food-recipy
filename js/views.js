@@ -64,6 +64,36 @@ function stepGlyph(i) { return i < 20 ? String.fromCodePoint(0x2460 + i) : `${i 
 // 다이어트(저탄수) 레시피 표시 — tags에 '다이어트'가 있으면 🥗 배지
 function isDiet(r) { return (r.tags || []).includes('다이어트'); }
 
+// 요리 종류별 썸네일 아이콘 — 태그·제목(한/일)으로 판별. 없으면 카테고리 아이콘 폴백.
+// 명시적으로 r.icon 이 있으면 그것을 우선 사용.
+const ICON_RULES = [
+  [/샐러드|サラダ|コールスロー/, '🥗'],
+  [/떡볶이|トッポギ/, '🌶️'],
+  [/찌개|전골|국밥|육개장|삼계탕|미역국|콩나물국|계란탕|순두부|어니언|スープ|味噌汁|미소시루|국물/, '🍲'],
+  [/가지|なす|茄子/, '🍆'],
+  [/볶음밥|チャーハン|덮밥|丼|김밥|キンパ|비빔밥|ビビンバ|오므라이스|オムライス|솥밥|炊き込み|ガーリックライス|오야코동|규동/, '🍚'],
+  [/파스타|스파게티|スパゲ|パスタ|나폴리탄|ナポリタン|미트소스|리조또|リゾット|알리오|올리오|アーリオ|ペペロンチーノ/, '🍝'],
+  [/빠에야|パエリア|필라프/, '🥘'],
+  [/고추잡채|青椒|チンジャオ/, '🫑'],
+  [/국수|우동|소바|라멘|야키소바|焼きそば|ラーメン|うどん|そば|麺|春雨|잡채|チャプチェ|짜장|ジャージャー|콩국수/, '🍜'],
+  [/가라아게|唐揚げ|치킨|チキン|닭|鶏/, '🍗'],
+  [/피망|파프리카|ピーマン/, '🫑'],
+  [/새우|エビ|えび|감바스|ガンバス|튀김|탕수육|酢豚|칠리|チリ/, '🍤'],
+  [/토스트|トースト/, '🍞'],
+  [/양배추|キャベツ|나물|무침|야채|野菜|숙주|もやし|청경채|チンゲン/, '🥬'],
+  [/계란|卵|たまご|茶碗蒸し|오믈렛/, '🍳'],
+  [/두부|豆腐|마파|麻婆/, '🥘'],
+  [/스테이크|ステーキ|함박|ハンバーグ|불고기|プルコギ|제육|생강구이|生姜焼き|니쿠자가|肉じゃが|카쿠니|角煮|고기|牛|豚/, '🍖'],
+  [/오코노미야키|お好み焼き|부침|전/, '🥘'],
+];
+function iconFor(r) {
+  if (r.icon) return r.icon;
+  const s = [...(r.tags || []), r.title.ko, r.title.ja].join(' ');
+  for (const [re, emoji] of ICON_RULES) if (re.test(s)) return emoji;
+  const m = categoryMeta(r.category);
+  return m ? m.icon : '🍽';
+}
+
 // 언어별 텍스트 선택 헬퍼
 function titleOf(r) { return (isJa() ? r.title.ja : r.title.ko) + (isDiet(r) ? ' 🥗' : ''); }
 function subTitleOf(r) { return isJa() ? r.title.ko : r.title.ja; }
@@ -123,7 +153,7 @@ function heartButton(r) {
 
 function menuCard(r) {
   const meta = categoryMeta(r.category);
-  const thumb = el('div', { class: 'thumb', text: meta ? meta.icon : '🍽',
+  const thumb = el('div', { class: 'thumb', text: iconFor(r),
     style: `background:${meta ? meta.color : '#ccc'}22;color:${meta ? meta.color : '#888'}` });
   const info = el('div', { class: 'card-info' }, [
     el('div', { class: 'card-title' }, [
@@ -270,7 +300,7 @@ export function renderRecipe(app, recipe, initialServings) {
 
   // 히어로
   const hero = el('div', { class: 'hero', style: `background:${meta ? meta.color : '#888'}` }, [
-    el('span', { class: 'hero-icon', text: meta ? meta.icon : '🍽' }),
+    el('span', { class: 'hero-icon', text: iconFor(recipe) }),
   ]);
   const titleBlock = el('div', { class: 'recipe-title' }, [
     el('h1', { text: titleOf(recipe) }),
