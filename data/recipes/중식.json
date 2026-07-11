@@ -1,109 +1,445 @@
 [
   {
     "id": "chinese-egg-fried-rice",
-    "title": { "ko": "계란볶음밥", "ja": "卵チャーハン" },
+    "title": {
+      "ko": "계란볶음밥",
+      "ja": "卵チャーハン"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 10 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 10
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "계란", "볶음"],
+    "tags": [
+      "한그릇",
+      "계란",
+      "볶음"
+    ],
     "ingredients": [
-      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 3, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "밥(찬밥)",
+          "ja": "ご飯(冷やご飯)"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 3,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
-      "대파를 잘게 썰고, 계란은 풀어둔다.",
-      "팬에 기름을 두르고 대파를 볶아 파기름을 낸 뒤 풀어둔 계란을 넣어 스크램블한다.",
-      "계란이 반쯤 익으면 밥을 넣고 센불에서 눌러가며 볶는다.",
-      "굴소스·간장을 팬 가장자리에 둘러 향을 내고, 소금·후추로 간해 마무리한다."
+      "대파는 5mm 두께로 송송 썰고, 계란은 소금 한 꼬집 넣어 젓가락으로 곱게 풀어둔다.",
+      "찬밥은 미리 꺼내 주걱으로 덩어리를 눌러 풀어두면 볶을 때 고루 흩어진다.",
+      "팬에 기름을 두르고 중불에서 대파를 30초~1분 볶아 가장자리가 노릇해지면 파기름이 난 것이다.",
+      "센불로 올려 풀어둔 계란을 붓고, 가장자리가 부풀면 크게 저어 반쯤만 익힌다.",
+      "계란이 반쯤 익으면 바로 밥을 넣고 주걱으로 눌러 펴가며 센불에서 볶는다.",
+      "밥알이 낱낱이 흩어지면 굴소스·간장을 팬 가장자리에 둘러 향을 낸다.",
+      "고루 섞고 소금·후추로 간해 마무리한다."
     ],
-    "tips": ["찬밥과 센불이 고슬고슬한 볶음밥의 비결이다."]
+    "tips": [
+      "찬밥과 센불이 고슬고슬한 볶음밥의 비결이다."
+    ]
   },
   {
     "id": "chinese-mapo-tofu",
-    "title": { "ko": "마파두부", "ja": "麻婆豆腐" },
+    "title": {
+      "ko": "마파두부",
+      "ja": "麻婆豆腐"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 15 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 15
+    },
     "difficulty": "normal",
-    "tags": ["밥반찬", "두부", "매운맛"],
+    "tags": [
+      "밥반찬",
+      "두부",
+      "매운맛"
+    ],
     "ingredients": [
-      { "name": { "ko": "두부", "ja": "豆腐" }, "amount": 1, "unit": "모", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "다진 돼지고기", "ja": "豚ひき肉" }, "amount": 120, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "두반장", "ja": "豆板醤" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 150, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "물 1큰술에 개어 전분물로" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "고춧가루", "ja": "粉唐辛子" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt", "optional": true }
+      {
+        "name": {
+          "ko": "두부",
+          "ja": "豆腐"
+        },
+        "amount": 1,
+        "unit": "모",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "다진 돼지고기",
+          "ja": "豚ひき肉"
+        },
+        "amount": 120,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "두반장",
+          "ja": "豆板醤"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 150,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "전분",
+          "ja": "片栗粉"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "note": "물 1큰술에 개어 전분물로"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "고춧가루",
+          "ja": "粉唐辛子"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "optional": true
+      }
     ],
     "steps": [
-      "두부는 깍둑썰고, 대파는 잘게 썬다. 전분은 물에 개어 전분물을 만든다.",
-      "팬에 기름을 두르고 다진 마늘·대파 절반을 볶아 향을 낸 뒤 다진 고기를 볶는다.",
-      "두반장(과 고춧가루)을 넣어 볶아 매운 향을 내고, 물·굴소스·간장을 넣어 끓인다.",
-      "두부를 넣고 으깨지지 않게 2~3분 끓인 뒤, 전분물을 둘러 걸쭉하게 만든다.",
+      "두부는 2cm 크기로 깍둑썰고, 대파는 5mm로 잘게 썬다. 전분은 물 1큰술에 개어 둔다.",
+      "다진 고기는 키친타월로 눌러 핏물을 제거해 두면 잡내가 줄어든다.",
+      "팬에 기름을 두르고 약불에서 다진 마늘과 대파 절반을 볶아 향을 낸다.",
+      "중불로 올려 다진 고기를 넣고, 뭉치지 않게 풀어가며 색이 완전히 변할 때까지 볶는다.",
+      "두반장(과 고춧가루)을 넣고 약불에서 30초 볶는다. 붉은 기름이 돌면 매운 향이 난 것이다.",
+      "물·굴소스·간장을 넣고 센불에서 한소끔 끓인다.",
+      "두부를 넣고 중불에서 2~3분 끓인다. 젓지 말고 팬을 흔들어 섞어야 으깨지지 않는다.",
+      "불을 약하게 줄이고, 전분물을 다시 한 번 저어 조금씩 둘러 넣으며 걸쭉하게 만든다.",
       "남은 대파를 올려 마무리한다."
     ],
-    "tips": ["두부를 넣은 뒤엔 세게 젓지 말고 팬을 흔들어 섞어야 모양이 산다."]
+    "tips": [
+      "두부를 넣은 뒤엔 세게 젓지 말고 팬을 흔들어 섞어야 모양이 산다."
+    ]
   },
   {
     "id": "chinese-bokchoy-oyster",
-    "title": { "ko": "청경채 굴소스볶음", "ja": "チンゲン菜のオイスター炒め" },
+    "title": {
+      "ko": "청경채 굴소스볶음",
+      "ja": "チンゲン菜のオイスター炒め"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 8 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 8
+    },
     "difficulty": "easy",
-    "tags": ["반찬", "채소", "볶음"],
+    "tags": [
+      "반찬",
+      "채소",
+      "볶음"
+    ],
     "ingredients": [
-      { "name": { "ko": "청경채", "ja": "チンゲン菜" }, "amount": 3, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "청경채",
+          "ja": "チンゲン菜"
+        },
+        "amount": 3,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
-      "청경채는 밑동을 갈라 4~6등분하고 흐르는 물에 씻는다.",
-      "팬에 기름을 두르고 다진 마늘을 볶아 향을 낸다.",
-      "청경채 줄기부터 넣어 센불에 볶다가 잎을 넣는다.",
-      "굴소스와 물을 넣고 1~2분 볶아 숨이 살짝 죽으면 소금으로 간해 마무리한다."
+      "청경채는 밑동을 십자로 갈라 4~6등분하고, 밑동 사이 흙까지 흐르는 물에 씻어 물기를 턴다.",
+      "두꺼운 줄기와 잎을 대강 나눠 두면 넣는 순서를 지키기 쉽다.",
+      "팬에 기름을 두르고 약불에서 다진 마늘을 20~30초, 노릇해지기 전에 향만 나게 볶는다.",
+      "센불로 올려 단단한 줄기부터 넣어 1분 볶다가 잎을 넣는다.",
+      "굴소스와 물을 넣고 1~2분 볶아, 잎의 숨이 살짝 죽고 줄기가 아삭할 때 불을 끈다.",
+      "부족한 간은 소금으로 맞춰 마무리한다."
     ],
-    "tips": ["센불에 짧게 볶아야 아삭함이 살아 있다."]
+    "tips": [
+      "센불에 짧게 볶아야 아삭함이 살아 있다."
+    ]
   },
   {
     "id": "chinese-jjajang",
-    "title": { "ko": "간짜장", "ja": "ジャージャー麺(チャジャン)" },
+    "title": {
+      "ko": "간짜장",
+      "ja": "ジャージャー麺(チャジャン)"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 15 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 15
+    },
     "difficulty": "normal",
-    "tags": ["한그릇", "면", "춘장"],
+    "tags": [
+      "한그릇",
+      "면",
+      "춘장"
+    ],
     "ingredients": [
-      { "name": { "ko": "중화면(또는 우동면)", "ja": "中華麺" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "돼지고기", "ja": "豚肉" }, "amount": 150, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "양배추", "ja": "キャベツ" }, "amount": 150, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "춘장", "ja": "チュンジャン/甜麺醤" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "note": "일본 甜麺醤로 대체 가능(단맛↑→설탕 줄임)" },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "물 2큰술에 개기" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 200, "unit": "ml", "scaleType": "linear" }
+      {
+        "name": {
+          "ko": "중화면(또는 우동면)",
+          "ja": "中華麺"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "돼지고기",
+          "ja": "豚肉"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "양배추",
+          "ja": "キャベツ"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "춘장",
+          "ja": "チュンジャン/甜麺醤"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "note": "일본 甜麺醤로 대체 가능(단맛↑→설탕 줄임)"
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "전분",
+          "ja": "片栗粉"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "note": "물 2큰술에 개기"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 200,
+        "unit": "ml",
+        "scaleType": "linear"
+      }
     ],
     "steps": [
-      "돼지고기·양파·양배추를 깍둑 썬다. 전분은 물 2큰술에 개어 둔다.",
-      "팬에 식용유를 넉넉히 두르고 춘장을 1~2분 볶아 쓴맛을 날린다.",
-      "돼지고기를 넣어 볶고 양파·양배추를 넣어 볶는다.",
-      "물·설탕을 넣어 끓인 뒤 전분물을 둘러 걸쭉하게 만든다.",
-      "삶은 면 위에 얹는다."
+      "양파·양배추는 1.5cm 크기로 깍둑 썬다. 양배추 심지 쪽은 두꺼우니 조금 작게 썬다.",
+      "돼지고기도 1.5cm로 깍둑 썰어 키친타월로 핏물을 닦는다. 전분은 물 2큰술에 개어 둔다.",
+      "팬에 식용유를 넉넉히 두르고 약불에서 춘장을 1~2분 볶는다. 고소한 향이 나면 쓴맛이 날아간 것이다.",
+      "춘장을 팬 한쪽으로 밀고, 빈 자리에 돼지고기를 넣어 중불에서 색이 변할 때까지 볶는다.",
+      "센불로 올려 양파를 먼저 1분 볶고, 양배추를 넣어 숨이 살짝 죽으면 춘장과 고루 섞는다.",
+      "물·설탕을 넣어 한소끔 끓인 뒤, 불을 줄이고 전분물을 저어가며 둘러 걸쭉하게 만든다.",
+      "면은 포장 표시 시간대로 삶아 그릇에 담고, 뜨거운 소스를 얹는다."
     ],
     "tips": [
       "한국 춘장이 없으면 일본 甜麺醤로 대체(단맛이 강하니 설탕을 줄인다).",
@@ -112,30 +448,132 @@
   },
   {
     "id": "chinese-ebi-chili",
-    "title": { "ko": "새우칠리", "ja": "エビチリ" },
+    "title": {
+      "ko": "새우칠리",
+      "ja": "エビチリ"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 10 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 10
+    },
     "difficulty": "normal",
-    "tags": ["밥반찬", "새우", "매운맛"],
+    "tags": [
+      "밥반찬",
+      "새우",
+      "매운맛"
+    ],
     "ingredients": [
-      { "name": { "ko": "새우(냉동)", "ja": "むきえび" }, "amount": 12, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "다진 생강", "ja": "おろし生姜" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "두반장", "ja": "豆板醤" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 100, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "note": "물에 개기" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "새우(냉동)",
+          "ja": "むきえび"
+        },
+        "amount": 12,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "다진 생강",
+          "ja": "おろし生姜"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "두반장",
+          "ja": "豆板醤"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 100,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "전분",
+          "ja": "片栗粉"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear",
+        "note": "물에 개기"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
-      "새우는 해동해 물기를 닦고, 대파는 잘게 썬다. 전분은 물 1큰술에 갠다.",
-      "팬에 식용유를 두르고 다진 마늘·생강·두반장을 약불에 볶아 향을 낸다.",
-      "케첩·설탕·물을 넣어 끓이고 새우를 넣어 익힌다.",
-      "전분물을 둘러 농도를 맞추고 대파를 넣어 마무리한다."
+      "새우는 해동해 키친타월로 물기를 꼭 닦는다(물기가 있으면 소스가 묽어진다). 대파는 잘게 썬다.",
+      "전분은 물 1큰술에 개어 둔다.",
+      "팬에 식용유를 두르고 약불에서 다진 마늘·생강·두반장을 30초 볶는다. 붉은 기름이 돌면 향이 난 것.",
+      "케첩·설탕·물을 넣고 중불에서 한소끔 끓인다.",
+      "새우를 넣고 C자로 말리며 분홍색이 될 때까지 2~3분 익힌다.",
+      "전분물을 저어 조금씩 둘러 걸쭉해지면 대파를 넣어 마무리한다."
     ],
     "tips": [
       "두반장 양으로 매운맛을 조절한다.",
@@ -144,20 +582,88 @@
   },
   {
     "id": "chinese-tomato-egg",
-    "title": { "ko": "토마토 계란볶음", "ja": "トマトと卵の炒め" },
+    "title": {
+      "ko": "토마토 계란볶음",
+      "ja": "トマトと卵の炒め"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 8 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 8
+    },
     "difficulty": "easy",
-    "tags": ["밥반찬", "계란", "토마토"],
+    "tags": [
+      "밥반찬",
+      "계란",
+      "토마토"
+    ],
     "ingredients": [
-      { "name": { "ko": "토마토", "ja": "トマト" }, "amount": 2, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 3, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "optional": true },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "토마토",
+          "ja": "トマト"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 3,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "토마토는 큼직하게 썰고, 계란은 소금 약간 넣어 푼다. 대파는 송송 썬다.",
@@ -172,21 +678,96 @@
   },
   {
     "id": "chinese-buchu-pork",
-    "title": { "ko": "부추 돼지고기 볶음", "ja": "ニラと豚肉の炒め" },
+    "title": {
+      "ko": "부추 돼지고기 볶음",
+      "ja": "ニラと豚肉の炒め"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 8 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 8
+    },
     "difficulty": "easy",
-    "tags": ["밥반찬", "부추", "볶음"],
+    "tags": [
+      "밥반찬",
+      "부추",
+      "볶음"
+    ],
     "ingredients": [
-      { "name": { "ko": "부추", "ja": "ニラ" }, "amount": 100, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "돼지고기(채썬 것)", "ja": "豚肉細切り" }, "amount": 150, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "부추",
+          "ja": "ニラ"
+        },
+        "amount": 100,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "돼지고기(채썬 것)",
+          "ja": "豚肉細切り"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "부추는 5cm로 썰고, 양파는 채썬다. 돼지고기는 채썬다.",
@@ -194,28 +775,131 @@
       "양파를 넣어 볶다가 굴소스·간장·후추로 간한다.",
       "마지막에 부추를 넣어 센불에 살짝만 볶아 마무리한다."
     ],
-    "tips": ["부추는 맨 마지막에 넣어 숨만 죽여야 향이 산다."]
+    "tips": [
+      "부추는 맨 마지막에 넣어 숨만 죽여야 향이 산다."
+    ]
   },
   {
     "id": "chinese-hoegwayuk",
-    "title": { "ko": "회과육(양배추 제육볶음)", "ja": "回鍋肉(ホイコーロー)" },
+    "title": {
+      "ko": "회과육(양배추 제육볶음)",
+      "ja": "回鍋肉(ホイコーロー)"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 12 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 12
+    },
     "difficulty": "normal",
-    "tags": ["양배추", "밥반찬", "매운맛"],
+    "tags": [
+      "양배추",
+      "밥반찬",
+      "매운맛"
+    ],
     "ingredients": [
-      { "name": { "ko": "양배추", "ja": "キャベツ" }, "amount": 250, "unit": "g", "scaleType": "linear", "note": "이 요리의 메인" },
-      { "name": { "ko": "돼지고기(삼겹·목살 얇게)", "ja": "豚バラ薄切り" }, "amount": 150, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "피망", "ja": "ピーマン" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "두반장", "ja": "豆板醤" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "춘장/톈멘장", "ja": "甜麺醤" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "없으면 된장+설탕으로 대체" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" }
+      {
+        "name": {
+          "ko": "양배추",
+          "ja": "キャベツ"
+        },
+        "amount": 250,
+        "unit": "g",
+        "scaleType": "linear",
+        "note": "이 요리의 메인"
+      },
+      {
+        "name": {
+          "ko": "돼지고기(삼겹·목살 얇게)",
+          "ja": "豚バラ薄切り"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "피망",
+          "ja": "ピーマン"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "두반장",
+          "ja": "豆板醤"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "춘장/톈멘장",
+          "ja": "甜麺醤"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "note": "없으면 된장+설탕으로 대체"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      }
     ],
     "steps": [
       "양배추는 큼직하게 썰고 피망은 한입 크기, 대파는 어슷 썬다. 돼지고기는 먹기 좋게 썬다.",
@@ -231,28 +915,166 @@
   },
   {
     "id": "chinese-tangsuyuk",
-    "title": { "ko": "탕수육", "ja": "酢豚" },
+    "title": {
+      "ko": "탕수육",
+      "ja": "酢豚"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 20, "cookMin": 20 },
+    "time": {
+      "prepMin": 20,
+      "cookMin": 20
+    },
     "difficulty": "hard",
-    "tags": ["튀김", "돼지고기", "손님상"],
+    "tags": [
+      "튀김",
+      "돼지고기",
+      "손님상"
+    ],
     "ingredients": [
-      { "name": { "ko": "돼지고기(등심·목살, 깍둑)", "ja": "豚肉(角切り)" }, "amount": 250, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "청주(밑간)", "ja": "料理酒" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "소금·후추(밑간)", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "계란(튀김옷)", "ja": "卵" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "전분(가타쿠리코)", "ja": "片栗粉" }, "amount": 4, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "피망", "ja": "ピーマン" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 40, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "튀김용 기름", "ja": "揚げ油" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "식초", "ja": "酢" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 4, "unit": "큰술", "scaleType": "linear", "group": "단초소스" },
-      { "name": { "ko": "전분(소스용)", "ja": "片栗粉" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "group": "단초소스", "note": "물에 개기" }
+      {
+        "name": {
+          "ko": "돼지고기(등심·목살, 깍둑)",
+          "ja": "豚肉(角切り)"
+        },
+        "amount": 250,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "청주(밑간)",
+          "ja": "料理酒"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "소금·후추(밑간)",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "계란(튀김옷)",
+          "ja": "卵"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "전분(가타쿠리코)",
+          "ja": "片栗粉"
+        },
+        "amount": 4,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "피망",
+          "ja": "ピーマン"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "당근",
+          "ja": "にんじん"
+        },
+        "amount": 40,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "튀김용 기름",
+          "ja": "揚げ油"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "식초",
+          "ja": "酢"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "단초소스"
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "단초소스"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "단초소스"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "단초소스"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 4,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "단초소스"
+      },
+      {
+        "name": {
+          "ko": "전분(소스용)",
+          "ja": "片栗粉"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear",
+        "group": "단초소스",
+        "note": "물에 개기"
+      }
     ],
     "steps": [
       "돼지고기는 깍둑 썰어 청주·소금·후추로 밑간하고 계란·전분을 넣어 튀김옷을 입힌다.",
@@ -268,20 +1090,88 @@
   },
   {
     "id": "chinese-egg-drop-soup",
-    "title": { "ko": "중화 계란탕", "ja": "中華風たまごスープ(かきたま)" },
+    "title": {
+      "ko": "중화 계란탕",
+      "ja": "中華風たまごスープ(かきたま)"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 3, "cookMin": 7 },
+    "time": {
+      "prepMin": 3,
+      "cookMin": 7
+    },
     "difficulty": "easy",
-    "tags": ["국물", "계란", "간편"],
+    "tags": [
+      "국물",
+      "계란",
+      "간편"
+    ],
     "ingredients": [
-      { "name": { "ko": "물", "ja": "水" }, "amount": 500, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "치킨스톡(닭육수 분말)", "ja": "鶏がらスープの素" }, "amount": 2, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "전분", "ja": "片栗粉" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "note": "물 1큰술에 개기" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "참기름(마무리)", "ja": "ごま油" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 500,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "치킨스톡(닭육수 분말)",
+          "ja": "鶏がらスープの素"
+        },
+        "amount": 2,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "전분",
+          "ja": "片栗粉"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear",
+        "note": "물 1큰술에 개기"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "참기름(마무리)",
+          "ja": "ごま油"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "냄비에 물과 치킨스톡(鶏がらスープの素)을 넣고 끓인다. 대파는 송송 썰고, 전분은 물 1큰술에 갠다.",
@@ -296,22 +1186,106 @@
   },
   {
     "id": "chinese-shrimp-fried-rice",
-    "title": { "ko": "새우볶음밥", "ja": "エビチャーハン" },
+    "title": {
+      "ko": "새우볶음밥",
+      "ja": "エビチャーハン"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 8, "cookMin": 10 },
+    "time": {
+      "prepMin": 8,
+      "cookMin": 10
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "볶음밥", "새우"],
+    "tags": [
+      "한그릇",
+      "볶음밥",
+      "새우"
+    ],
     "ingredients": [
-      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "새우(냉동)", "ja": "むきえび" }, "amount": 10, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "냉동 믹스베지", "ja": "ミックスベジタブル" }, "amount": 50, "unit": "g", "scaleType": "linear", "optional": true },
-      { "name": { "ko": "치킨스톡", "ja": "鶏がらスープの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "밥(찬밥)",
+          "ja": "ご飯(冷やご飯)"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "새우(냉동)",
+          "ja": "むきえび"
+        },
+        "amount": 10,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "냉동 믹스베지",
+          "ja": "ミックスベジタブル"
+        },
+        "amount": 50,
+        "unit": "g",
+        "scaleType": "linear",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "치킨스톡",
+          "ja": "鶏がらスープの素"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1.5,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "새우는 해동해 물기를 닦고, 대파는 송송 썬다. 계란은 푼다.",
@@ -326,22 +1300,106 @@
   },
   {
     "id": "chinese-crab-stick-fried-rice",
-    "title": { "ko": "게맛살볶음밥", "ja": "カニカマチャーハン" },
+    "title": {
+      "ko": "게맛살볶음밥",
+      "ja": "カニカマチャーハン"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 10 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 10
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "볶음밥", "간편"],
+    "tags": [
+      "한그릇",
+      "볶음밥",
+      "간편"
+    ],
     "ingredients": [
-      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "게맛살", "ja": "カニカマ" }, "amount": 100, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "치킨스톡", "ja": "鶏がらスープの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "통깨·쪽파", "ja": "いりごま・青ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "밥(찬밥)",
+          "ja": "ご飯(冷やご飯)"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "게맛살",
+          "ja": "カニカマ"
+        },
+        "amount": 100,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "대파",
+          "ja": "長ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "대",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "치킨스톡",
+          "ja": "鶏がらスープの素"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1.5,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "통깨·쪽파",
+          "ja": "いりごま・青ねぎ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "게맛살은 결대로 찢고 대파는 송송 썬다. 계란은 푼다.",
@@ -356,24 +1414,123 @@
   },
   {
     "id": "chinese-yasai-itame",
-    "title": { "ko": "야채볶음", "ja": "野菜炒め" },
+    "title": {
+      "ko": "야채볶음",
+      "ja": "野菜炒め"
+    },
     "category": "중식",
     "baseServings": 2,
-    "time": { "prepMin": 8, "cookMin": 8 },
+    "time": {
+      "prepMin": 8,
+      "cookMin": 8
+    },
     "difficulty": "easy",
-    "tags": ["밥반찬", "양배추", "숙주"],
+    "tags": [
+      "밥반찬",
+      "양배추",
+      "숙주"
+    ],
     "ingredients": [
-      { "name": { "ko": "양배추", "ja": "キャベツ" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "숙주", "ja": "もやし" }, "amount": 150, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "당근", "ja": "にんじん" }, "amount": 40, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "돼지고기(얇게)", "ja": "豚バラ薄切り" }, "amount": 100, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count", "optional": true },
-      { "name": { "ko": "치킨스톡", "ja": "鶏がらスープの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "양배추",
+          "ja": "キャベツ"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "숙주",
+          "ja": "もやし"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "당근",
+          "ja": "にんじん"
+        },
+        "amount": 40,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "돼지고기(얇게)",
+          "ja": "豚バラ薄切り"
+        },
+        "amount": 100,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "치킨스톡",
+          "ja": "鶏がらスープの素"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "굴소스",
+          "ja": "オイスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "양배추는 큼직하게, 당근은 얇게, 돼지고기는 먹기 좋게 썬다. 숙주는 씻어 물기를 뺀다.",

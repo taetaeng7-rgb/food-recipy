@@ -1,109 +1,452 @@
 [
   {
     "id": "western-napolitan",
-    "title": { "ko": "나폴리탄 스파게티", "ja": "ナポリタン" },
+    "title": {
+      "ko": "나폴리탄 스파게티",
+      "ja": "ナポリタン"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 15 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 15
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "면", "케첩"],
+    "tags": [
+      "한그릇",
+      "면",
+      "케첩"
+    ],
     "ingredients": [
-      { "name": { "ko": "스파게티면", "ja": "スパゲッティ" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "피망", "ja": "ピーマン" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "비엔나 소시지", "ja": "ウインナー" }, "amount": 4, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 4, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "우스터소스", "ja": "ウスターソース" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "optional": true },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "파마산 치즈가루", "ja": "粉チーズ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "스파게티면",
+          "ja": "スパゲッティ"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "피망",
+          "ja": "ピーマン"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "비엔나 소시지",
+          "ja": "ウインナー"
+        },
+        "amount": 4,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 4,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "버터",
+          "ja": "バター"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "우스터소스",
+          "ja": "ウスターソース"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "파마산 치즈가루",
+          "ja": "粉チーズ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
-      "끓는 물에 소금을 넣고 스파게티면을 봉지 표기보다 1~2분 더 삶는다.",
-      "양파·피망은 채썰고 소시지는 어슷하게 썬다.",
-      "팬에 버터를 녹여 소시지·양파·피망을 볶는다.",
-      "케첩을 넣고 1분간 볶아 신맛을 날린 뒤 삶은 면을 넣어 버무린다.",
-      "우스터소스·소금·후추로 간하고, 그릇에 담아 치즈가루를 뿌린다."
+      "냄비에 물을 팔팔 끓여 물 1L당 소금 1큰술을 넣고, 스파게티면을 봉지 표기보다 1~2분 더 삶는다.",
+      "면을 건지기 전에 면수 반 컵을 떠 둔다(나중에 소스 농도 조절용).",
+      "양파는 반 갈라 결대로 0.5cm 폭으로 채썰고, 피망은 씨를 빼고 같은 폭으로 채썬다.",
+      "소시지는 어슷하게 5mm 두께로 썬다.",
+      "팬에 버터를 녹여 중불에서 소시지를 먼저 볶다가, 양파를 넣어 투명해질 때까지 볶는다.",
+      "피망을 넣고 30초만 살짝 볶는다(오래 볶으면 색과 식감이 죽는다).",
+      "케첩을 넣고 1분간 볶아 신맛을 날린 뒤 삶은 면을 넣어 골고루 버무린다.",
+      "소스가 뻑뻑하면 면수를 조금 넣는다. 우스터소스·소금·후추로 간하고 치즈가루를 뿌린다."
     ],
-    "tips": ["면을 푹 삶아 살짝 불은 듯한 식감이 나폴리탄 특유의 매력이다."]
+    "tips": [
+      "면을 푹 삶아 살짝 불은 듯한 식감이 나폴리탄 특유의 매력이다."
+    ]
   },
   {
     "id": "western-omurice",
-    "title": { "ko": "오므라이스", "ja": "オムライス" },
+    "title": {
+      "ko": "오므라이스",
+      "ja": "オムライス"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 15 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 15
+    },
     "difficulty": "normal",
-    "tags": ["한그릇", "계란", "케첩"],
+    "tags": [
+      "한그릇",
+      "계란",
+      "케첩"
+    ],
     "ingredients": [
-      { "name": { "ko": "밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 4, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "닭고기(또는 햄)", "ja": "鶏肉/ハム" }, "amount": 100, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "밥",
+          "ja": "ご飯"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 4,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "닭고기(또는 햄)",
+          "ja": "鶏肉/ハム"
+        },
+        "amount": 100,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "버터",
+          "ja": "バター"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
-      "양파와 닭고기(또는 햄)를 잘게 썬다.",
-      "팬에 버터를 녹여 양파·닭고기를 볶고, 밥과 케첩을 넣어 볶은 뒤 소금·후추로 간해 케첩라이스를 만든다.",
-      "다른 팬에 풀어둔 계란(1인분 2개)을 부어 반숙 지단을 만든다.",
-      "케첩라이스를 접시에 담고 지단을 덮은 뒤, 위에 케첩을 뿌린다."
+      "양파는 0.5cm 크기로 잘게 다지고, 닭고기는 1.5cm 깍둑썰기(햄이면 1cm 크기)로 썬다.",
+      "닭고기는 키친타월로 핏물을 닦고 소금·후추로 밑간한다.",
+      "팬에 버터를 녹여 중불에서 닭고기를 겉이 하얗게 될 때까지 볶고, 양파를 넣어 투명해질 때까지 볶는다.",
+      "밥을 넣고 주걱으로 눌러 풀며 볶다가, 케첩을 넣어 고루 섞고 소금·후추로 간해 케첩라이스를 만든다.",
+      "계란(1인분 2개)은 소금 한 꼬집을 넣고 흰자 덩어리가 없게 충분히 푼다.",
+      "다른 팬을 중불로 달궈 버터나 기름을 살짝 두르고 계란물을 붓는다.",
+      "가장자리가 익기 시작하면 젓가락으로 크게 저어 반숙 상태의 지단을 만든다.",
+      "케첩라이스를 접시에 담고 반숙 지단을 덮은 뒤, 위에 케첩을 뿌린다."
     ],
-    "tips": ["계란을 완전히 익히지 말고 반숙일 때 밥 위에 덮으면 부드럽다."]
+    "tips": [
+      "계란을 완전히 익히지 말고 반숙일 때 밥 위에 덮으면 부드럽다."
+    ]
   },
   {
     "id": "western-gambas",
-    "title": { "ko": "감바스 알 아히요", "ja": "ガンバス(エビのアヒージョ)" },
+    "title": {
+      "ko": "감바스 알 아히요",
+      "ja": "ガンバス(エビのアヒージョ)"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 10 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 10
+    },
     "difficulty": "easy",
-    "tags": ["안주", "새우", "올리브유"],
+    "tags": [
+      "안주",
+      "새우",
+      "올리브유"
+    ],
     "ingredients": [
-      { "name": { "ko": "새우(냉동)", "ja": "むきえび(冷凍)" }, "amount": 12, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 4, "unit": "쪽", "scaleType": "count" },
-      { "name": { "ko": "올리브유", "ja": "オリーブオイル" }, "amount": 100, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "페페론치노(마른 고추)", "ja": "鷹の爪" }, "amount": 2, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "바게트", "ja": "バゲット" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "새우(냉동)",
+          "ja": "むきえび(冷凍)"
+        },
+        "amount": 12,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "마늘",
+          "ja": "にんにく"
+        },
+        "amount": 4,
+        "unit": "쪽",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "올리브유",
+          "ja": "オリーブオイル"
+        },
+        "amount": 100,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "페페론치노(마른 고추)",
+          "ja": "鷹の爪"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "바게트",
+          "ja": "バゲット"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
-      "새우는 해동해 물기를 닦고, 마늘은 편으로 썬다.",
-      "작은 팬(또는 무쇠팬)에 올리브유·마늘·페페론치노를 넣고 약불로 마늘 향을 낸다.",
-      "마늘이 노릇해지면 새우를 넣고 소금 간을 해 익힌다.",
-      "새우가 익으면 불을 끄고, 바게트를 곁들여 기름에 찍어 먹는다."
+      "새우는 해동해 키친타월로 물기를 꾹꾹 눌러 닦는다(물기가 남으면 기름이 튄다).",
+      "마늘은 2~3mm 두께의 편으로 썰고, 페페론치노는 반 갈라 씨를 털어낸다.",
+      "작은 팬(또는 무쇠팬)에 올리브유·마늘·페페론치노를 차가운 상태부터 넣고 약불로 천천히 향을 낸다.",
+      "마늘 가장자리가 연갈색이 되면(더 태우면 쓴맛) 새우를 넣고 소금 간을 한다.",
+      "새우가 붉게 변하고 몸이 C자로 말리면 익은 것. 불을 끄고 바게트를 곁들여 기름에 찍어 먹는다."
     ],
-    "tips": ["약불에서 천천히 마늘 향을 우려야 쓴맛 없이 고소하다."]
+    "tips": [
+      "약불에서 천천히 마늘 향을 우려야 쓴맛 없이 고소하다."
+    ]
   },
   {
     "id": "western-meat-sauce-pasta",
-    "title": { "ko": "미트소스 파스타", "ja": "ミートソーススパゲッティ" },
+    "title": {
+      "ko": "미트소스 파스타",
+      "ja": "ミートソーススパゲッティ"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 20 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 20
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "면", "토마토"],
+    "tags": [
+      "한그릇",
+      "면",
+      "토마토"
+    ],
     "ingredients": [
-      { "name": { "ko": "스파게티면", "ja": "スパゲッティ" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "다진 고기(소·돼지 혼합)", "ja": "合いびき肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 2, "unit": "쪽", "scaleType": "count" },
-      { "name": { "ko": "토마토 통조림(또는 파스타소스)", "ja": "カットトマト缶" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "우스터소스", "ja": "ウスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "올리브유", "ja": "オリーブオイル" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "파마산 치즈가루", "ja": "粉チーズ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "스파게티면",
+          "ja": "スパゲッティ"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 고기(소·돼지 혼합)",
+          "ja": "合いびき肉"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "마늘",
+          "ja": "にんにく"
+        },
+        "amount": 2,
+        "unit": "쪽",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "토마토 통조림(또는 파스타소스)",
+          "ja": "カットトマト缶"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "우스터소스",
+          "ja": "ウスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "올리브유",
+          "ja": "オリーブオイル"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "파마산 치즈가루",
+          "ja": "粉チーズ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
-      "양파·마늘을 잘게 다진다.",
-      "팬에 올리브유를 두르고 마늘·양파를 볶다가 다진 고기를 넣어 노릇하게 볶는다.",
-      "토마토 통조림·케첩·우스터소스를 넣고 소금·후추로 간해 10분 이상 졸인다.",
-      "삶은 스파게티면을 넣어 버무리고, 그릇에 담아 치즈가루를 뿌린다."
+      "양파는 0.5cm 크기로 잘게 다지고, 마늘도 곱게 다진다.",
+      "다진 고기는 키친타월로 눌러 핏물을 제거하고 소금·후추로 밑간한다.",
+      "팬에 올리브유를 두르고 약불에서 마늘 향을 낸 뒤, 양파를 넣어 중불로 투명해질 때까지 볶는다.",
+      "다진 고기를 넣고 중불에서 주걱으로 풀어가며, 붉은기가 없어지고 노릇해질 때까지 볶는다.",
+      "토마토 통조림·케첩·우스터소스를 넣고 소금·후추로 간해 중약불로 10분 이상 저어가며 졸인다.",
+      "그동안 물 1L당 소금 1큰술 넣은 끓는 물에 면을 봉지 표기대로 삶는다(심이 살짝 남는 알덴테).",
+      "소스에 면과 면수 2~3큰술을 넣어 버무리고, 그릇에 담아 치즈가루를 뿌린다."
     ],
     "tips": [
       "토마토 통조림 대신 시판 파스타소스를 써도 된다.",
@@ -112,24 +455,125 @@
   },
   {
     "id": "western-hamburg",
-    "title": { "ko": "함박스테이크", "ja": "ハンバーグ" },
+    "title": {
+      "ko": "함박스테이크",
+      "ja": "ハンバーグ"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 15, "cookMin": 15 },
+    "time": {
+      "prepMin": 15,
+      "cookMin": 15
+    },
     "difficulty": "normal",
-    "tags": ["고기", "경양식"],
+    "tags": [
+      "고기",
+      "경양식"
+    ],
     "ingredients": [
-      { "name": { "ko": "다진 고기(소·돼지 혼합)", "ja": "合いびき肉" }, "amount": 300, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "빵가루", "ja": "パン粉" }, "amount": 4, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "우유", "ja": "牛乳" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "group": "소스" },
-      { "name": { "ko": "우스터소스", "ja": "ウスターソース" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "소스" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "소스" }
+      {
+        "name": {
+          "ko": "다진 고기(소·돼지 혼합)",
+          "ja": "合いびき肉"
+        },
+        "amount": 300,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "빵가루",
+          "ja": "パン粉"
+        },
+        "amount": 4,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "우유",
+          "ja": "牛乳"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "소스"
+      },
+      {
+        "name": {
+          "ko": "우스터소스",
+          "ja": "ウスターソース"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "소스"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "소스"
+      }
     ],
     "steps": [
       "양파를 잘게 다져 살짝 볶아 식힌다. 빵가루는 우유에 적신다.",
@@ -144,29 +588,122 @@
   },
   {
     "id": "western-cream-shrimp-pasta",
-    "title": { "ko": "크림 새우 파스타", "ja": "エビのクリームパスタ" },
+    "title": {
+      "ko": "크림 새우 파스타",
+      "ja": "エビのクリームパスタ"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 15 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 15
+    },
     "difficulty": "normal",
-    "tags": ["한그릇", "면", "새우"],
+    "tags": [
+      "한그릇",
+      "면",
+      "새우"
+    ],
     "ingredients": [
-      { "name": { "ko": "스파게티면", "ja": "スパゲッティ" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "새우(냉동)", "ja": "むきえび(冷凍)" }, "amount": 10, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 2, "unit": "쪽", "scaleType": "count" },
-      { "name": { "ko": "생크림", "ja": "生クリーム" }, "amount": 200, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "우유", "ja": "牛乳" }, "amount": 100, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "파마산 치즈가루", "ja": "粉チーズ" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "스파게티면",
+          "ja": "スパゲッティ"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "새우(냉동)",
+          "ja": "むきえび(冷凍)"
+        },
+        "amount": 10,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "마늘",
+          "ja": "にんにく"
+        },
+        "amount": 2,
+        "unit": "쪽",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "생크림",
+          "ja": "生クリーム"
+        },
+        "amount": 200,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "우유",
+          "ja": "牛乳"
+        },
+        "amount": 100,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "버터",
+          "ja": "バター"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "파마산 치즈가루",
+          "ja": "粉チーズ"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
-      "새우는 해동해 물기를 닦는다. 양파·마늘은 다진다.",
-      "팬에 버터를 녹여 마늘·양파·새우를 볶는다.",
-      "생크림·우유를 붓고 끓으면 치즈가루·소금·후추로 간해 살짝 졸인다.",
-      "삶은 스파게티면을 넣어 버무린다."
+      "새우는 해동해 키친타월로 물기를 꼭 닦는다(물기가 남으면 기름이 튄다). 양파·마늘은 잘게 다진다.",
+      "물 1L에 소금 1큰술을 넣고 끓여 면을 포장 표기보다 1분 짧게 삶는다. 면수는 한 컵 남겨 둔다.",
+      "팬에 버터를 녹여 약불에서 마늘을 볶아 향을 내고, 양파를 넣어 중불에서 투명해질 때까지 볶는다.",
+      "새우를 넣고 C자로 말리며 분홍색이 될 때까지만 볶는다(오래 볶으면 질겨진다).",
+      "생크림·우유를 붓고 약불에서 끓기 시작하면 치즈가루·소금·후추로 간해 2~3분 졸인다.",
+      "면을 넣어 버무리고, 되직하면 남겨둔 면수로 농도를 맞춘다."
     ],
     "tips": [
       "소스가 너무 되면 면 삶은 물로 농도를 맞춘다.",
@@ -175,19 +712,77 @@
   },
   {
     "id": "western-french-toast",
-    "title": { "ko": "프렌치토스트", "ja": "フレンチトースト" },
+    "title": {
+      "ko": "프렌치토스트",
+      "ja": "フレンチトースト"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 10 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 10
+    },
     "difficulty": "easy",
-    "tags": ["아침", "계란", "간식"],
+    "tags": [
+      "아침",
+      "계란",
+      "간식"
+    ],
     "ingredients": [
-      { "name": { "ko": "식빵", "ja": "食パン" }, "amount": 4, "unit": "장", "scaleType": "count" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "우유", "ja": "牛乳" }, "amount": 150, "unit": "ml", "scaleType": "linear" },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "메이플시럽(또는 꿀)", "ja": "メープルシロップ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "식빵",
+          "ja": "食パン"
+        },
+        "amount": 4,
+        "unit": "장",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "우유",
+          "ja": "牛乳"
+        },
+        "amount": 150,
+        "unit": "ml",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "버터",
+          "ja": "バター"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "메이플시럽(또는 꿀)",
+          "ja": "メープルシロップ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "볼에 계란·우유·설탕을 잘 섞어 계란물을 만든다.",
@@ -202,24 +797,128 @@
   },
   {
     "id": "western-cabbage-roll",
-    "title": { "ko": "양배추롤", "ja": "ロールキャベツ" },
+    "title": {
+      "ko": "양배추롤",
+      "ja": "ロールキャベツ"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 20, "cookMin": 25 },
+    "time": {
+      "prepMin": 20,
+      "cookMin": 25
+    },
     "difficulty": "normal",
-    "tags": ["양배추", "고기", "국물"],
+    "tags": [
+      "양배추",
+      "고기",
+      "국물"
+    ],
     "ingredients": [
-      { "name": { "ko": "양배추 잎", "ja": "キャベツの葉" }, "amount": 6, "unit": "장", "scaleType": "count", "note": "큰 잎, 1인분 3장" },
-      { "name": { "ko": "다진 고기(소·돼지 혼합)", "ja": "合いびき肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "빵가루", "ja": "パン粉" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 400, "unit": "ml", "scaleType": "linear", "group": "국물" },
-      { "name": { "ko": "콘소메(고형)", "ja": "コンソメ" }, "amount": 1, "unit": "개", "scaleType": "count", "group": "국물" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "국물" },
-      { "name": { "ko": "월계수잎", "ja": "ローリエ" }, "amount": 1, "unit": "장", "scaleType": "fixed", "optional": true }
+      {
+        "name": {
+          "ko": "양배추 잎",
+          "ja": "キャベツの葉"
+        },
+        "amount": 6,
+        "unit": "장",
+        "scaleType": "count",
+        "note": "큰 잎, 1인분 3장"
+      },
+      {
+        "name": {
+          "ko": "다진 고기(소·돼지 혼합)",
+          "ja": "合いびき肉"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "빵가루",
+          "ja": "パン粉"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "후추",
+          "ja": "こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 400,
+        "unit": "ml",
+        "scaleType": "linear",
+        "group": "국물"
+      },
+      {
+        "name": {
+          "ko": "콘소메(고형)",
+          "ja": "コンソメ"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count",
+        "group": "국물"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "국물"
+      },
+      {
+        "name": {
+          "ko": "월계수잎",
+          "ja": "ローリエ"
+        },
+        "amount": 1,
+        "unit": "장",
+        "scaleType": "fixed",
+        "optional": true
+      }
     ],
     "steps": [
       "양배추 잎을 통째로 데쳐 부드럽게 만들고 두꺼운 심을 저며 낸다.",
@@ -235,28 +934,167 @@
   },
   {
     "id": "western-hamburg-demiglace",
-    "title": { "ko": "정통 함바그 스테이크(데미글라스)", "ja": "煮込みハンバーグ" },
+    "title": {
+      "ko": "정통 함바그 스테이크(데미글라스)",
+      "ja": "煮込みハンバーグ"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 20, "cookMin": 20 },
+    "time": {
+      "prepMin": 20,
+      "cookMin": 20
+    },
     "difficulty": "hard",
-    "tags": ["고기", "경양식", "정통"],
+    "tags": [
+      "고기",
+      "경양식",
+      "정통"
+    ],
     "ingredients": [
-      { "name": { "ko": "다진 고기(소7:돼3)", "ja": "合いびき肉" }, "amount": 300, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5, "note": "볶아서 완전히 식히기" },
-      { "name": { "ko": "빵가루", "ja": "パン粉" }, "amount": 4, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "우유", "ja": "牛乳" }, "amount": 3, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "계란", "ja": "卵" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "note": "고기에 먼저 넣어 치대기" },
-      { "name": { "ko": "후추·넛맥", "ja": "こしょう・ナツメグ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "버터(양파볶기)", "ja": "バター" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "레드와인(또는 청주)", "ja": "赤ワイン" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "group": "데미글라스 소스" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "group": "데미글라스 소스" },
-      { "name": { "ko": "우스터소스", "ja": "ウスターソース" }, "amount": 2, "unit": "큰술", "scaleType": "linear", "group": "데미글라스 소스" },
-      { "name": { "ko": "물", "ja": "水" }, "amount": 3, "unit": "큰술", "scaleType": "linear", "group": "데미글라스 소스" },
-      { "name": { "ko": "설탕", "ja": "砂糖" }, "amount": 1, "unit": "작은술", "scaleType": "linear", "group": "데미글라스 소스" },
-      { "name": { "ko": "버터(마무리)", "ja": "バター" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt", "group": "데미글라스 소스" }
+      {
+        "name": {
+          "ko": "다진 고기(소7:돼3)",
+          "ja": "合いびき肉"
+        },
+        "amount": 300,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5,
+        "note": "볶아서 완전히 식히기"
+      },
+      {
+        "name": {
+          "ko": "빵가루",
+          "ja": "パン粉"
+        },
+        "amount": 4,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "우유",
+          "ja": "牛乳"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "계란",
+          "ja": "卵"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "note": "고기에 먼저 넣어 치대기"
+      },
+      {
+        "name": {
+          "ko": "후추·넛맥",
+          "ja": "こしょう・ナツメグ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "버터(양파볶기)",
+          "ja": "バター"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "레드와인(또는 청주)",
+          "ja": "赤ワイン"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "데미글라스 소스"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "데미글라스 소스"
+      },
+      {
+        "name": {
+          "ko": "우스터소스",
+          "ja": "ウスターソース"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "데미글라스 소스"
+      },
+      {
+        "name": {
+          "ko": "물",
+          "ja": "水"
+        },
+        "amount": 3,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "group": "데미글라스 소스"
+      },
+      {
+        "name": {
+          "ko": "설탕",
+          "ja": "砂糖"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "linear",
+        "group": "데미글라스 소스"
+      },
+      {
+        "name": {
+          "ko": "버터(마무리)",
+          "ja": "バター"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "group": "데미글라스 소스"
+      }
     ],
     "steps": [
       "양파를 곱게 다져 버터에 갈색이 돌 때까지 볶아 완전히 식힌다(뜨거우면 지방이 녹아 육즙이 샌다).",
@@ -274,26 +1112,147 @@
   },
   {
     "id": "western-paella-seafood",
-    "title": { "ko": "해물 빠에야", "ja": "シーフードパエリア" },
+    "title": {
+      "ko": "해물 빠에야",
+      "ja": "シーフードパエリア"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 15, "cookMin": 30 },
+    "time": {
+      "prepMin": 15,
+      "cookMin": 30
+    },
     "difficulty": "hard",
-    "tags": ["한그릇", "해물", "손님상"],
+    "tags": [
+      "한그릇",
+      "해물",
+      "손님상"
+    ],
     "ingredients": [
-      { "name": { "ko": "쌀(씻지 않은 것)", "ja": "米(洗わない)" }, "amount": 160, "unit": "g", "scaleType": "linear", "note": "씻지 않고 그대로" },
-      { "name": { "ko": "물(또는 해물육수)", "ja": "水/だし" }, "amount": 320, "unit": "ml", "scaleType": "linear", "note": "쌀:물 = 1:2" },
-      { "name": { "ko": "새우(머리째면 더 좋음)", "ja": "えび" }, "amount": 6, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "오징어", "ja": "いか" }, "amount": 100, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "바지락(또는 홍합)", "ja": "あさり/ムール貝" }, "amount": 150, "unit": "g", "scaleType": "linear", "note": "해감한 것" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 2, "unit": "쪽", "scaleType": "count" },
-      { "name": { "ko": "파프리카(빨강)", "ja": "パプリカ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "토마토(다진 것)", "ja": "トマト" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "올리브유", "ja": "オリーブオイル" }, "amount": 2, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "사프란", "ja": "サフラン" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "note": "한 꼬집, 없으면 강황(ターメリック)으로 색만 대체" },
-      { "name": { "ko": "소금", "ja": "塩" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "레몬", "ja": "レモン" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "쌀(씻지 않은 것)",
+          "ja": "米(洗わない)"
+        },
+        "amount": 160,
+        "unit": "g",
+        "scaleType": "linear",
+        "note": "씻지 않고 그대로"
+      },
+      {
+        "name": {
+          "ko": "물(또는 해물육수)",
+          "ja": "水/だし"
+        },
+        "amount": 320,
+        "unit": "ml",
+        "scaleType": "linear",
+        "note": "쌀:물 = 1:2"
+      },
+      {
+        "name": {
+          "ko": "새우(머리째면 더 좋음)",
+          "ja": "えび"
+        },
+        "amount": 6,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "오징어",
+          "ja": "いか"
+        },
+        "amount": 100,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "바지락(또는 홍합)",
+          "ja": "あさり/ムール貝"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear",
+        "note": "해감한 것"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "마늘",
+          "ja": "にんにく"
+        },
+        "amount": 2,
+        "unit": "쪽",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "파프리카(빨강)",
+          "ja": "パプリカ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "토마토(다진 것)",
+          "ja": "トマト"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "올리브유",
+          "ja": "オリーブオイル"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "사프란",
+          "ja": "サフラン"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "note": "한 꼬집, 없으면 강황(ターメリック)으로 색만 대체"
+      },
+      {
+        "name": {
+          "ko": "소금",
+          "ja": "塩"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "레몬",
+          "ja": "レモン"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "사프란은 분량의 물 약간에 담가 색과 향을 우린다. 새우·오징어·바지락을 손질한다.",
@@ -311,19 +1270,79 @@
   },
   {
     "id": "western-garlic-butter-rice",
-    "title": { "ko": "갈릭 버터 볶음밥", "ja": "ガーリックライス" },
+    "title": {
+      "ko": "갈릭 버터 볶음밥",
+      "ja": "ガーリックライス"
+    },
     "category": "양식",
     "baseServings": 2,
-    "time": { "prepMin": 5, "cookMin": 8 },
+    "time": {
+      "prepMin": 5,
+      "cookMin": 8
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "볶음밥", "마늘"],
+    "tags": [
+      "한그릇",
+      "볶음밥",
+      "마늘"
+    ],
     "ingredients": [
-      { "name": { "ko": "밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 3, "unit": "쪽", "scaleType": "count" },
-      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
-      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "마무리 향내기" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "파슬리", "ja": "パセリ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "밥",
+          "ja": "ご飯"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "마늘",
+          "ja": "にんにく"
+        },
+        "amount": 3,
+        "unit": "쪽",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "버터",
+          "ja": "バター"
+        },
+        "amount": 1.5,
+        "unit": "큰술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "간장",
+          "ja": "醤油"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear",
+        "note": "마무리 향내기"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "파슬리",
+          "ja": "パセリ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "마늘은 편으로 썰거나 다진다.",
