@@ -42,3 +42,16 @@ export function formatAmount(value, unit) {
   const num = Number.isInteger(value) ? String(value) : toFraction(value);
   return `${num} ${unit}`;
 }
+
+// 일본어 표기: 단위 변환 + 일본식 어순(大さじ2 처럼 스푼·컵은 단위가 앞)
+const UNIT_JA = {
+  '큰술': '大さじ', '작은술': '小さじ', '컵': 'カップ',
+  '개': '個', '모': '丁', '대': '本', '장': '枚', '쪽': 'かけ', '줌': 'つかみ', '적당량': '適量',
+};
+export function formatAmountJa(value, unit) {
+  if (value == null || unit === '적당량' || value === 0) return 'お好みで';
+  const num = Number.isInteger(value) ? String(value) : toFraction(value);
+  const ju = UNIT_JA[unit] || unit; // g·ml 등은 그대로
+  if (ju === '大さじ' || ju === '小さじ' || ju === 'カップ') return `${ju}${num}`;
+  return `${num} ${ju}`;
+}

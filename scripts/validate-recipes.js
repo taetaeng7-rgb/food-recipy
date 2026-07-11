@@ -49,6 +49,18 @@ for (const cat of CATEGORIES) {
     if (!Array.isArray(r.steps) || r.steps.length === 0 || r.steps.some((s) => !s || !String(s).trim())) {
       errors.push(at('R12 steps 배열·비어있지 않음'));
     }
+    // R16: 일본어 단계 번역(있으면 steps와 같은 길이, 빈 항목 없음 — 타이머·체크가 인덱스로 대응)
+    if (r.stepsJa !== undefined) {
+      if (!Array.isArray(r.stepsJa) || r.stepsJa.length !== (r.steps || []).length || r.stepsJa.some((s) => !s || !String(s).trim())) {
+        errors.push(at('R16 stepsJa는 steps와 같은 길이의 비어있지 않은 배열'));
+      }
+    }
+    // R17: 일본어 팁 번역(있으면 tips와 같은 길이)
+    if (r.tipsJa !== undefined) {
+      if (!Array.isArray(r.tipsJa) || r.tipsJa.length !== (r.tips || []).length || r.tipsJa.some((s) => !s || !String(s).trim())) {
+        errors.push(at('R17 tipsJa는 tips와 같은 길이의 비어있지 않은 배열'));
+      }
+    }
 
     (r.ingredients || []).forEach((ing, ii) => {
       const iat = (m) => at(`ingredients[${ii}] ${m}`);
@@ -62,6 +74,10 @@ for (const cat of CATEGORIES) {
       }
       if (ing.scaleType === 'count' && !COUNT_UNITS.includes(ing.unit)) {
         errors.push(iat(`R11 count는 개수 단위(개/모/대/장/쪽)여야 함: ${ing.unit}`));
+      }
+      // R18: noteJa(있으면 비어있지 않은 문자열, note가 있을 때만 의미)
+      if (ing.noteJa !== undefined && (!ing.noteJa || typeof ing.noteJa !== 'string')) {
+        errors.push(iat('R18 noteJa는 비어있지 않은 문자열'));
       }
       // R14: 기준 인분으로 재계산 시 원본과 동일 (계산 무결성)
       if (ing.scaleType !== 'to-taste' && typeof ing.amount === 'number') {
