@@ -61,9 +61,13 @@ function totalTime(r) {
 }
 function stepGlyph(i) { return i < 20 ? String.fromCodePoint(0x2460 + i) : `${i + 1}.`; }
 
+// 다이어트(저탄수) 레시피 표시 — tags에 '다이어트'가 있으면 🥗 배지
+function isDiet(r) { return (r.tags || []).includes('다이어트'); }
+
 // 언어별 텍스트 선택 헬퍼
-function titleOf(r) { return isJa() ? r.title.ja : r.title.ko; }
+function titleOf(r) { return (isJa() ? r.title.ja : r.title.ko) + (isDiet(r) ? ' 🥗' : ''); }
 function subTitleOf(r) { return isJa() ? r.title.ko : r.title.ja; }
+function dietLabel() { return isJa() ? '🥗 低糖質' : '🥗 저탄수'; }
 function nameOf(ing) { return isJa() ? ing.name.ja : ing.name.ko; }
 function subNameOf(ing) { return isJa() ? ing.name.ko : ing.name.ja; }
 function stepsOf(r) {
@@ -77,7 +81,8 @@ function tipsOf(r) {
 function noteOf(ing) { return (isJa() && ing.noteJa) ? ing.noteJa : ing.note; }
 function catLabel(c) { return isJa() ? c.ja : c.key; }
 function metaLine(r) {
-  return `⏱ ${t().minutes(totalTime(r))} · ★ ${t().diff[r.difficulty] || r.difficulty || ''}`;
+  const base = `⏱ ${t().minutes(totalTime(r))} · ★ ${t().diff[r.difficulty] || r.difficulty || ''}`;
+  return isDiet(r) ? `${base} · ${dietLabel()}` : base;
 }
 
 // ---------- 공통 컴포넌트 ----------
