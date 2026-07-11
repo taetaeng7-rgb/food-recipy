@@ -264,5 +264,64 @@
       "핵심: ① 겉을 지지고 오래 밑삶기 해 지방·잡내 제거 ② 낮은 불로 뭉근히(끓이면 질겨짐) ③ 식히는 동안 맛이 밴다 — 하룻밤 재우면 최고.",
       "쌀뜨물로 밑삶기하면 더 부드럽다. 압력솥이 있으면 조림 시간을 크게 줄일 수 있다."
     ]
+  },
+  {
+    "id": "jp-natto-fried-rice",
+    "title": { "ko": "낫토볶음밥", "ja": "納豆チャーハン" },
+    "category": "일식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "볶음밥", "낫토"],
+    "ingredients": [
+      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "낫토", "ja": "納豆" }, "amount": 2, "unit": "개", "scaleType": "count", "note": "1인분 1팩, 딸린 타레 포함" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "치킨스톡(또는 다시)", "ja": "鶏がらスープの素/だし" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "김가루·가쓰오부시", "ja": "きざみのり・かつお節" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true },
+      { "name": { "ko": "후추", "ja": "こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "낫토는 딸려온 타레(소스)와 섞어 둔다. 대파는 송송, 계란은 푼다.",
+      "팬에 기름을 두르고 계란을 스크램블하고 밥을 넣어 센불에 볶는다.",
+      "간장·치킨스톡으로 간하고, 불을 끄기 직전 낫토를 넣어 살짝만 볶는다(오래 볶으면 끈기·향이 죽는다).",
+      "대파·후추를 넣고 김가루·가쓰오부시를 올린다."
+    ],
+    "tips": [
+      "낫토는 맨 마지막에 넣어 향과 식감을 살린다.",
+      "김치나 김가루를 더하면 더 맛있다."
+    ]
+  },
+  {
+    "id": "jp-tuna-mayo-fried-rice",
+    "title": { "ko": "참치마요 볶음밥", "ja": "ツナマヨチャーハン" },
+    "category": "일식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "볶음밥", "간편"],
+    "ingredients": [
+      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "참치캔(기름 뺀 것)", "ja": "ツナ缶" }, "amount": 1, "unit": "개", "scaleType": "count", "note": "약 70g 1캔" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파(또는 양파)", "ja": "長ねぎ/玉ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "마요네즈", "ja": "マヨネーズ" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "참치캔은 기름(물)을 뺀다. 대파는 잘게, 계란은 푼다.",
+      "밥에 마요네즈를 미리 살짝 버무려 두면 고슬하게 볶인다.",
+      "팬에 기름을 두르고 계란을 스크램블한 뒤 밥·참치를 넣어 센불에 볶는다.",
+      "간장·소금·후추로 간하고 대파를 넣어 마무리한다."
+    ],
+    "tips": [
+      "마요네즈를 밥에 먼저 버무리면 기름 코팅 효과로 고슬고슬해진다.",
+      "참치캔 하나로 든든한 한 그릇."
+    ]
   }
 ]

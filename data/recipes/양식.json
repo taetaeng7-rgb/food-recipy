@@ -308,5 +308,32 @@
       "핵심: ① 쌀을 씻지도 젓지도 않는다(부서짐·질척임 방지) ② 쌀:물=1:2 ③ 마지막 센불로 바닥 누룽지가 별미.",
       "사프란이 없으면 강황으로 색만 낸다. 냉동 해물믹스(シーフードミックス)를 쓰면 간편하다."
     ]
+  },
+  {
+    "id": "western-garlic-butter-rice",
+    "title": { "ko": "갈릭 버터 볶음밥", "ja": "ガーリックライス" },
+    "category": "양식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 8 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "볶음밥", "마늘"],
+    "ingredients": [
+      { "name": { "ko": "밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 3, "unit": "쪽", "scaleType": "count" },
+      { "name": { "ko": "버터", "ja": "バター" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "큰술", "scaleType": "linear", "note": "마무리 향내기" },
+      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "파슬리", "ja": "パセリ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "마늘은 편으로 썰거나 다진다.",
+      "팬에 버터를 녹여 마늘을 약불에 노릇하게 볶아 향을 낸다(태우지 않게).",
+      "밥을 넣어 센불에 볶고 소금·후추로 간한다.",
+      "팬 가장자리에 간장을 둘러 향을 낸 뒤 파슬리를 뿌린다. (스테이크·새우를 곁들이면 근사하다)"
+    ],
+    "tips": [
+      "마늘은 약불로 천천히 볶아야 쓴맛 없이 고소하다.",
+      "스테이크 곁들임(ステーキ用ガーリックライス)으로 특히 좋다."
+    ]
   }
 ]

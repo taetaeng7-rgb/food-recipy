@@ -293,5 +293,65 @@
       "전분물을 먼저 넣어 살짝 걸쭉하게 하면 계란이 곱게 퍼진다. 안 넣으면 계란이 뭉친다.",
       "鶏がらスープの素는 볶음밥·나물무침·마파두부 등 어디나 쓰는 만능 감칠맛. 두부·게맛살·옥수수·시금치를 더해도 좋다."
     ]
+  },
+  {
+    "id": "chinese-shrimp-fried-rice",
+    "title": { "ko": "새우볶음밥", "ja": "エビチャーハン" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 8, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "볶음밥", "새우"],
+    "ingredients": [
+      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "새우(냉동)", "ja": "むきえび" }, "amount": 10, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "냉동 믹스베지", "ja": "ミックスベジタブル" }, "amount": 50, "unit": "g", "scaleType": "linear", "optional": true },
+      { "name": { "ko": "치킨스톡", "ja": "鶏がらスープの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "간장", "ja": "醤油" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+    ],
+    "steps": [
+      "새우는 해동해 물기를 닦고, 대파는 송송 썬다. 계란은 푼다.",
+      "팬에 기름을 두르고 새우를 볶아 겉이 익으면 꺼내 둔다.",
+      "같은 팬에 계란을 넣어 스크램블하고 밥을 넣어 센불에 눌러가며 볶는다.",
+      "대파·믹스베지·새우를 넣고 치킨스톡·간장·소금·후추로 간해 고슬하게 볶는다."
+    ],
+    "tips": [
+      "찬밥 + 센불이 고슬고슬의 비결.",
+      "鶏がらスープの素로 감칠맛을 잡으면 실패가 없다."
+    ]
+  },
+  {
+    "id": "chinese-crab-stick-fried-rice",
+    "title": { "ko": "게맛살볶음밥", "ja": "カニカマチャーハン" },
+    "category": "중식",
+    "baseServings": 2,
+    "time": { "prepMin": 5, "cookMin": 10 },
+    "difficulty": "easy",
+    "tags": ["한그릇", "볶음밥", "간편"],
+    "ingredients": [
+      { "name": { "ko": "밥(찬밥)", "ja": "ご飯(冷やご飯)" }, "amount": 400, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "게맛살", "ja": "カニカマ" }, "amount": 100, "unit": "g", "scaleType": "linear" },
+      { "name": { "ko": "계란", "ja": "卵" }, "amount": 2, "unit": "개", "scaleType": "count" },
+      { "name": { "ko": "대파", "ja": "長ねぎ" }, "amount": 0.5, "unit": "대", "scaleType": "count", "roundStep": 0.5 },
+      { "name": { "ko": "치킨스톡", "ja": "鶏がらスープの素" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "굴소스", "ja": "オイスターソース" }, "amount": 1, "unit": "작은술", "scaleType": "linear" },
+      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 1.5, "unit": "큰술", "scaleType": "sqrt" },
+      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
+      { "name": { "ko": "통깨·쪽파", "ja": "いりごま・青ねぎ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+    ],
+    "steps": [
+      "게맛살은 결대로 찢고 대파는 송송 썬다. 계란은 푼다.",
+      "팬에 기름을 두르고 계란을 스크램블한 뒤 밥을 넣어 센불에 볶는다.",
+      "게맛살·대파를 넣고 치킨스톡·굴소스·소금·후추로 간해 볶는다.",
+      "통깨·쪽파를 뿌린다."
+    ],
+    "tips": [
+      "게맛살(カニカマ)은 저렴하고 감칠맛이 좋아 볶음밥에 제격.",
+      "굴소스가 감칠맛을 더한다."
+    ]
   }
 ]
