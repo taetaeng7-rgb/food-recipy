@@ -5,6 +5,7 @@ export const CATEGORIES = [
   { key: '중식', ja: '中華料理', icon: '🥟', color: '#C0392B' },
   { key: '일식', ja: '和食', icon: '🍣', color: '#4A6FA5' },
   { key: '멕시칸', ja: 'メキシコ料理', icon: '🌮', color: '#2E9E5B' },
+  { key: '태국', ja: 'タイ料理', icon: '🥥', color: '#8E44AD' },
 ];
 
 export const DEFAULT_SERVINGS = 2;
