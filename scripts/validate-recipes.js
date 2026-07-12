@@ -7,7 +7,7 @@ import { scaleIngredient } from '../js/scaler.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIR = join(__dirname, '..', 'data', 'recipes');
 
-const CATEGORIES = ['한식', '양식', '중식', '일식'];
+const CATEGORIES = ['한식', '양식', '중식', '일식', '멕시칸'];
 const UNITS = ['g', 'ml', '큰술', '작은술', '컵', '개', '모', '대', '장', '쪽', '줌', '적당량'];
 const SCALE_TYPES = ['linear', 'sqrt', 'count', 'fixed', 'to-taste'];
 const COUNT_UNITS = ['개', '모', '대', '장', '쪽'];
