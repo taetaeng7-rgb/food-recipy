@@ -1,8 +1,9 @@
 // DOM 렌더러 — 데이터는 textContent로 안전 렌더(XSS 마진). (기획서 §4, §5.5)
 // 언어(ko/ja): getLang() 기준으로 UI 문자열·재료명·단계(stepsJa 폴백)를 전환.
 import { CATEGORIES, categoryMeta, MIN_SERVINGS, MAX_SERVINGS, UI, getLang, setLang } from './config.js';
-import { formatAmountJa } from './format.js';
+import { roundByUnit, formatAmount, formatAmountJa } from './format.js';
 import { scaleRecipe } from './scaler.js';
+import { estimateNutrition } from './nutrition.js';
 import { go } from './router.js';
 import * as store from './store.js';
 
@@ -123,9 +124,11 @@ function tabBar(active) {
       attrs: { type: 'button', 'aria-label': label },
       on: { click: handler },
     }, [el('span', { class: 'tab-icon', text: icon }), el('span', { class: 'tab-label', text: label })]);
+  const n = store.cartCount();
   return el('nav', { class: 'tabbar' }, [
     tab('🏠', t().home, () => go('#/'), 'home'),
     tab('🔍', t().search, () => go('#/search'), 'search'),
+    tab('🛒', t().tabShopping + (n ? ` (${n})` : ''), () => go('#/shopping'), 'shopping'),
     tab('♡', t().favorites, () => go('#/favorites'), 'fav'),
     tab('🌐', t().langToggle, () => {
       setLang(isJa() ? 'ko' : 'ja');
@@ -259,6 +262,10 @@ export function renderHome(app, allRecipes) {
     header('', { right: el('span', { class: 'subcopy', text: t().subcopy }) }),
     el('div', { class: 'screen' }, [grid]),
   ];
+  sections[1].append(el('button', {
+    class: 'fridge-entry', attrs: { type: 'button' }, text: t().fridgeEntry,
+    on: { click: () => go('#/fridge') },
+  }));
 
   const recentKeys = store.getRecent();
   const recent = recentKeys.map((k) => allRecipes.find((r) => key(r) === k)).filter(Boolean);
@@ -329,6 +336,25 @@ export function renderRecipe(app, recipe, initialServings) {
   clearBtn.addEventListener('click', () => { store.clearChecks(key(recipe)); update(); });
   const ingActions = el('div', { class: 'ing-actions' }, [shopBtn, clearBtn]);
 
+  // 영양정보(추정) — update()에서 채움
+  const nutriBox = el('div', { class: 'nutrition' });
+
+  // 쿡모드 시작 · 장보기 담기
+  const cookBtn = el('button', {
+    class: 'primary-btn', text: t().cookStart, attrs: { type: 'button' },
+    on: { click: () => go(`#/cook/${enc(recipe.category)}/${enc(recipe.id)}?n=${servings}`) },
+  });
+  const cartBtn = el('button', { class: 'ghost-btn', text: store.inCart(key(recipe)) ? t().cartAdded : t().cartAdd, attrs: { type: 'button' } });
+  cartBtn.addEventListener('click', () => {
+    const was = store.inCart(key(recipe));
+    store.addToCart(key(recipe), servings);
+    cartBtn.textContent = was ? t().cartUpdate : t().cartAdded;
+    setTimeout(() => { cartBtn.textContent = t().cartAdd; }, 1500);
+  });
+  const actions = el('div', { class: 'recipe-actions' }, [cookBtn, cartBtn]);
+
+  const notesBlock = buildNotes(recipe);
+
   // 조리 단계
   const steps = stepsOf(recipe);
   const total = steps.length;
@@ -385,6 +411,20 @@ export function renderRecipe(app, recipe, initialServings) {
     }));
     bulkNote.hidden = scaled.ratio < 3;
     if (scaled.ratio >= 3) bulkNote.textContent = t().bulkNote;
+    const nut = estimateNutrition(scaled);
+    if (nut) {
+      nutriBox.hidden = false;
+      nutriBox.replaceChildren(
+        el('h2', { class: 'section-title', text: t().nutriTitle }),
+        el('div', { class: 'nutri-row' }, [
+          el('div', { class: 'nutri-cell kcal' }, [el('b', { text: String(nut.perServing.kcal) }), el('span', { text: ' ' + t().nutriKcal })]),
+          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriCarb }), el('b', { text: nut.perServing.carb + 'g' })]),
+          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriProtein }), el('b', { text: nut.perServing.protein + 'g' })]),
+          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriFat }), el('b', { text: nut.perServing.fat + 'g' })]),
+        ]),
+        el('p', { class: 'nutri-note', text: t().nutriApprox(Math.round(nut.coverage * 100)) }),
+      );
+    } else { nutriBox.hidden = true; }
     history.replaceState(null, '', `#/recipe/${enc(recipe.category)}/${enc(recipe.id)}?n=${servings}`);
   }
   minus.addEventListener('click', () => { if (servings > MIN_SERVINGS) { servings--; update(); } });
@@ -417,12 +457,13 @@ export function renderRecipe(app, recipe, initialServings) {
   app.append(
     header2,
     el('div', { class: 'screen recipe' }, [
-      hero, titleBlock,
+      hero, titleBlock, nutriBox,
+      actions,
       stepper,
       ingLabel, ingActions, ingBox, bulkNote,
       el('h2', { class: 'section-title' }, [document.createTextNode(t().stepsTitle + ' '), progress]),
       stepsBox, celebrate,
-      tips, cooking,
+      tips, notesBlock, cooking,
     ]),
     tabBar('home'),
   );
@@ -480,6 +521,209 @@ export function renderFavorites(app, allRecipes) {
     ? el('div', { class: 'menu-list' }, favs.map(menuCard))
     : emptyState('♡', t().favEmpty, t().browse, '#/');
   app.append(header(t().favorites, { back: true }), el('div', { class: 'screen' }, [body]), tabBar('fav'));
+}
+
+// ---------- 냉장고 재료로 찾기: 선택 가능한 주재료 ----------
+const FRIDGE_GROUPS = [
+  { label: { ko: '채소', ja: '野菜' }, items: [
+    ['양배추', 'キャベツ', /양배추|キャベツ/], ['양파', '玉ねぎ', /양파|玉ねぎ/], ['대파', '長ねぎ', /대파|長ねぎ/],
+    ['당근', 'にんじん', /당근|にんじん/], ['감자', 'じゃがいも', /감자|じゃがいも/], ['가지', 'なす', /가지|なす|茄子/],
+    ['오이', 'きゅうり', /오이|きゅうり/], ['토마토', 'トマト', /토마토|トマト/], ['피망·파프리카', 'ピーマン', /피망|파프리카|ピーマン|パプリカ/],
+    ['애호박', 'ズッキーニ', /애호박|ズッキーニ/], ['시금치', 'ほうれん草', /시금치|ほうれん草/], ['콩나물', '大豆もやし', /콩나물/],
+    ['숙주', 'もやし', /숙주/], ['부추', 'ニラ', /부추|ニラ/], ['청경채', 'チンゲン菜', /청경채|チンゲン/],
+    ['버섯', 'きのこ', /버섯|きのこ|표고|しいたけ|しめじ|えのき|まいたけ|팽이|만가닥/], ['배추', '白菜', /배추|白菜/], ['양상추', 'レタス', /양상추|レタス|베이비리프/],
+  ] },
+  { label: { ko: '육류·해물', ja: '肉・魚介' }, items: [
+    ['소고기', '牛肉', /소고기|牛/], ['돼지고기', '豚肉', /돼지|豚/], ['다진 고기', 'ひき肉', /다진 고기|다진 소|다진 돼지|합|ひき肉/],
+    ['닭고기', '鶏肉', /닭|鶏/], ['베이컨', 'ベーコン', /베이컨|ベーコン/], ['스팸', 'ランチョンミート', /스팸|런천|ランチョン/],
+    ['소시지', 'ウインナー', /소시지|비엔나|ウインナー/], ['새우', 'えび', /새우|えび|エビ/], ['오징어', 'いか', /오징어|いか/],
+    ['바지락', 'あさり', /바지락|あさり/], ['게맛살', 'カニカマ', /게맛살|カニカマ/], ['참치캔', 'ツナ', /참치캔|ツナ/],
+  ] },
+  { label: { ko: '기타', ja: 'その他' }, items: [
+    ['계란', '卵', /계란|卵|달걀/], ['두부', '豆腐', /두부|豆腐/], ['낫토', '納豆', /낫토|納豆/], ['김치', 'キムチ', /김치|キムチ/],
+    ['밥', 'ご飯', /밥|ご飯|米/], ['면류', '麺', /면|스파게티|소면|우동|중화면|야키소바|파스타|麺|春雨|당면/], ['떡', '餅', /떡볶이떡|떡|餅/],
+    ['치즈', 'チーズ', /치즈|チーズ/], ['우유', '牛乳', /우유|牛乳/], ['두유', '豆乳', /두유|豆乳/],
+  ] },
+];
+function recipeFridgeItems(r) {
+  const hay = r.ingredients.map((i) => i.name.ko + ' ' + i.name.ja).join(' ');
+  const out = [];
+  for (const g of FRIDGE_GROUPS) for (const [ko, ja, re] of g.items) if (re.test(hay)) out.push({ ko, ja });
+  return out;
+}
+
+// 메모·별점 블록
+function buildNotes(r) {
+  const k = key(r);
+  const note = store.getNote(k);
+  let rating = note.rating || 0;
+  const stars = el('div', { class: 'stars' });
+  const memo = el('textarea', { class: 'note-memo', attrs: { placeholder: t().notePlaceholder, rows: '2' } });
+  memo.value = note.memo || '';
+  const saved = el('span', { class: 'note-saved', text: '' });
+  const save = () => { store.setNote(k, { rating, memo: memo.value }); saved.textContent = t().noteSaved; setTimeout(() => { saved.textContent = ''; }, 1500); };
+  const paint = () => {
+    stars.replaceChildren(...[1, 2, 3, 4, 5].map((num) => el('button', {
+      class: 'star' + (num <= rating ? ' on' : ''), text: num <= rating ? '★' : '☆',
+      attrs: { type: 'button', 'aria-label': num + '점' },
+      on: { click: () => { rating = rating === num ? 0 : num; paint(); save(); } },
+    })));
+  };
+  memo.addEventListener('change', save);
+  paint();
+  const saveBtn = el('button', { class: 'ghost-btn', text: t().noteSave, attrs: { type: 'button' }, on: { click: save } });
+  return el('div', { class: 'notes' }, [
+    el('h2', { class: 'section-title', text: t().noteTitle }),
+    stars, memo, el('div', { class: 'note-actions' }, [saveBtn, saved]),
+  ]);
+}
+
+// ---------- 화면: 냉장고 재료로 찾기 ----------
+export function renderFridge(app, allRecipes) {
+  clear(app);
+  const selected = new Set();
+  const chipsWrap = el('div', { class: 'fridge-chips' });
+  const resultWrap = el('div', { class: 'menu-list' });
+  const countLine = el('p', { class: 'fridge-count' });
+  const recIndex = allRecipes.map((r) => ({ r, items: recipeFridgeItems(r) }));
+
+  const chip = (ko, ja) => el('button', {
+    class: 'chip' + (selected.has(ko) ? ' on' : ''), text: isJa() ? ja : ko, attrs: { type: 'button' },
+    on: { click: () => { if (selected.has(ko)) selected.delete(ko); else selected.add(ko); run(); } },
+  });
+  function renderChips() {
+    chipsWrap.replaceChildren(...FRIDGE_GROUPS.map((g) => el('div', { class: 'fridge-group' }, [
+      el('div', { class: 'fridge-group-label', text: isJa() ? g.label.ja : g.label.ko }),
+      el('div', { class: 'chips wrap' }, g.items.map(([ko, ja]) => chip(ko, ja))),
+    ])));
+  }
+  function run() {
+    renderChips();
+    countLine.textContent = t().fridgePick(selected.size);
+    if (selected.size === 0) { resultWrap.replaceChildren(el('p', { class: 'search-hint', text: t().fridgeNone })); return; }
+    const scored = recIndex
+      .map(({ r, items }) => ({ r, items, matched: items.filter((it) => selected.has(it.ko)), missing: items.filter((it) => !selected.has(it.ko)) }))
+      .filter((x) => x.matched.length >= 1)
+      .sort((a, b) => (b.matched.length - a.matched.length) || (a.missing.length - b.missing.length) || (totalTime(a.r) - totalTime(b.r)));
+    if (!scored.length) { resultWrap.replaceChildren(emptyState('🧊', t().noResult)); return; }
+    resultWrap.replaceChildren(...scored.map((x) => {
+      const makeable = x.missing.length === 0;
+      const cap = el('div', { class: 'fridge-cap' + (makeable ? ' makeable' : '') }, [
+        el('span', {
+          text: makeable
+            ? t().fridgeMakeable
+            : t().fridgeHave(x.matched.length, x.items.length) + ' · ' + t().fridgeMissing + x.missing.map((m) => (isJa() ? m.ja : m.ko)).join(', '),
+        }),
+      ]);
+      return el('div', { class: 'fridge-result' }, [menuCard(x.r), cap]);
+    }));
+  }
+  const clearBtn = el('button', { class: 'ghost-btn', text: t().fridgeClear, attrs: { type: 'button' }, on: { click: () => { selected.clear(); run(); } } });
+  app.append(
+    header(t().fridgeTitle, { back: true }),
+    el('div', { class: 'screen' }, [el('p', { class: 'fridge-hint', text: t().fridgeHint }), chipsWrap, countLine, clearBtn, resultWrap]),
+    tabBar('home'),
+  );
+  run();
+}
+
+// ---------- 화면: 통합 장보기 리스트 ----------
+export function renderShopping(app, allRecipes) {
+  clear(app);
+  const byKey = new Map(allRecipes.map((r) => [`${r.category}/${r.id}`, r]));
+  const entries = store.getCart().map((c) => ({ recipe: byKey.get(c.key), servings: c.servings, key: c.key })).filter((e) => e.recipe);
+  const screen = el('div', { class: 'screen' });
+  if (!entries.length) {
+    screen.append(emptyState('🛒', t().cartEmpty, t().browse, '#/'));
+    app.append(header(t().cartTitle, { back: true }), screen, tabBar('shopping'));
+    return;
+  }
+  const recipeChips = el('div', { class: 'chips wrap' }, entries.map((e) => el('button', {
+    class: 'chip on', attrs: { type: 'button' }, text: `${titleOf(e.recipe)} (${e.servings}) ✕`,
+    on: { click: () => { store.removeFromCart(e.key); renderShopping(app, allRecipes); } },
+  })));
+  const merged = new Map();
+  for (const e of entries) {
+    for (const ing of scaleRecipe(e.recipe, e.servings).ingredients) {
+      const mk = ing.name.ko + '|' + ing.unit;
+      if (!merged.has(mk)) merged.set(mk, { ko: ing.name.ko, ja: ing.name.ja, unit: ing.unit, value: 0, toTaste: false });
+      const m = merged.get(mk);
+      if (ing.scaleType === 'to-taste' || ing.value == null) m.toTaste = true; else m.value += ing.value;
+    }
+  }
+  const items = [...merged.values()].sort((a, b) => a.ko.localeCompare(b.ko, 'ko'));
+  const checked = store.getCartChecked();
+  const dispOf = (m) => m.value > 0
+    ? (isJa() ? formatAmountJa(roundByUnit(m.value, m.unit), m.unit) : formatAmount(roundByUnit(m.value, m.unit), m.unit))
+    : (isJa() ? 'お好みで' : '기호에 따라');
+  const list = el('ul', { class: 'ingredients' }, items.map((m) => {
+    const chk = el('input', { class: 'ing-chk', attrs: { type: 'checkbox', 'aria-label': m.ko } });
+    chk.checked = !!checked[m.ko];
+    const row = el('li', { class: 'ing' + (chk.checked ? ' checked' : '') }, [
+      chk,
+      el('span', { class: 'ing-name' }, [el('span', { class: 'ko', text: isJa() ? m.ja : m.ko }), el('span', { class: 'ja', text: isJa() ? m.ko : m.ja })]),
+      el('span', { class: 'ing-amt', text: dispOf(m) }),
+    ]);
+    chk.addEventListener('change', () => row.classList.toggle('checked', store.toggleCartChecked(m.ko)));
+    return row;
+  }));
+  const copyBtn = el('button', { class: 'ghost-btn', text: t().cartCopy, attrs: { type: 'button' } });
+  copyBtn.addEventListener('click', () => {
+    const lines = [t().cartTitle, ...items.map((m) => `□ ${isJa() ? m.ja : m.ko}(${isJa() ? m.ko : m.ja})${m.value > 0 ? ' — ' + dispOf(m) : ''}`)];
+    const text = lines.join('\n');
+    const ok = () => { copyBtn.textContent = t().copied; setTimeout(() => { copyBtn.textContent = t().cartCopy; }, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok).catch(() => fallbackCopy(text, ok));
+    else fallbackCopy(text, ok);
+  });
+  const clearBtn = el('button', { class: 'ghost-btn', text: t().cartClear, attrs: { type: 'button' }, on: { click: () => { store.clearCart(); renderShopping(app, allRecipes); } } });
+  screen.append(
+    el('div', { class: 'fridge-group-label', text: t().cartRecipes }), recipeChips,
+    el('h2', { class: 'section-title', text: t().cartItems }), list,
+    el('div', { class: 'ing-actions' }, [copyBtn, clearBtn]),
+  );
+  app.append(header(t().cartTitle, { back: true }), screen, tabBar('shopping'));
+}
+
+// ---------- 화면: 쿡 모드 (풀스크린 단계) ----------
+export function renderCook(app, recipe, servings) {
+  clear(app);
+  if ('wakeLock' in navigator) { navigator.wakeLock.request('screen').then((l) => { wakeLock = l; }).catch(() => {}); }
+  const steps = stepsOf(recipe);
+  const total = steps.length;
+  let idx = 0;
+  const stepNum = el('div', { class: 'cook-step-num' });
+  const stepText = el('p', { class: 'cook-step-text' });
+  const timerSlot = el('div', { class: 'cook-timer' });
+  const prog = el('div', { class: 'cook-progress' });
+  const prevB = el('button', { class: 'cook-nav', text: t().cookPrev, attrs: { type: 'button' } });
+  const nextB = el('button', { class: 'cook-nav primary', text: t().cookNext, attrs: { type: 'button' } });
+  function paint() {
+    clearTimers();
+    if (idx >= total) {
+      stepNum.textContent = ''; stepText.textContent = t().cookDone; timerSlot.replaceChildren();
+      prog.textContent = `${total} / ${total}`; prevB.disabled = false; nextB.textContent = t().goHome;
+      return;
+    }
+    stepNum.textContent = t().cookStep(idx + 1, total);
+    stepText.textContent = steps[idx];
+    prog.textContent = `${idx + 1} / ${total}`;
+    const mins = stepMinutes(steps[idx]);
+    timerSlot.replaceChildren(mins ? stepTimerButton(mins) : document.createTextNode(''));
+    prevB.disabled = idx === 0;
+    nextB.textContent = idx === total - 1 ? t().cookDone : t().cookNext;
+  }
+  prevB.addEventListener('click', () => { if (idx > 0) { idx--; paint(); } });
+  nextB.addEventListener('click', () => {
+    if (idx >= total) { go(`#/recipe/${enc(recipe.category)}/${enc(recipe.id)}?n=${servings}`); return; }
+    idx += 1; paint();
+  });
+  const exit = el('button', { class: 'icon-btn', text: t().cookExit, attrs: { type: 'button' }, on: { click: () => history.back() } });
+  app.append(el('div', { class: 'cook' }, [
+    el('div', { class: 'cook-head' }, [el('span', { class: 'cook-title', text: titleOf(recipe) }), exit]),
+    prog, stepNum, stepText, timerSlot,
+    el('div', { class: 'cook-controls' }, [prevB, nextB]),
+  ]));
+  paint();
 }
 
 // ---------- 화면: 없음 / 에러 ----------

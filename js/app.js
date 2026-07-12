@@ -19,6 +19,14 @@ async function render() {
       const recipe = await getRecipe(parts[1], parts[2]);
       if (!recipe) { views.renderNotFound(app); return; }
       views.renderRecipe(app, recipe, sanitizeServings(params.get('n'), recipe.baseServings));
+    } else if (parts[0] === 'cook' && parts[1] && parts[2]) {
+      const recipe = await getRecipe(parts[1], parts[2]);
+      if (!recipe) { views.renderNotFound(app); return; }
+      views.renderCook(app, recipe, sanitizeServings(params.get('n'), recipe.baseServings));
+    } else if (parts[0] === 'fridge') {
+      views.renderFridge(app, await loadAll());
+    } else if (parts[0] === 'shopping') {
+      views.renderShopping(app, await loadAll());
     } else if (parts[0] === 'search') {
       views.renderSearch(app, await loadAll());
     } else if (parts[0] === 'favorites') {
