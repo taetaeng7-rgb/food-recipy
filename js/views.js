@@ -119,6 +119,49 @@ function tipsOf(r) {
   return r.tips;
 }
 function noteOf(ing) { return (isJa() && ing.noteJa) ? ing.noteJa : ing.note; }
+// 특정 조리 단계에 붙는 '🔎 왜?' 조리 원리 노트 (stepNotes[i] = {ko, ja})
+function stepNoteOf(r, i) {
+  const sn = r.stepNotes && (r.stepNotes[i] != null ? r.stepNotes[i] : r.stepNotes[String(i)]);
+  if (!sn) return null;
+  return isJa() ? (sn.ja || sn.ko) : sn.ko;
+}
+
+// ---------- 하위 분류 (카테고리 안 큰 묶음) ----------
+const SUBCATS = [
+  ['soup', '국·탕·찌개', '汁物・鍋'],
+  ['noodle', '면류', '麺類'],
+  ['rice', '밥·덮밥', 'ご飯・丼'],
+  ['stirfry', '볶음·구이', '炒め・焼き'],
+  ['fry', '튀김', '揚げ物'],
+  ['jeon', '전·부침', 'チヂミ・焼き'],
+  ['braise', '조림·찜', '煮物・蒸し'],
+  ['banchan', '반찬·나물', 'おかず・ナムル'],
+  ['bunsik', '분식·떡', '粉もの・餅'],
+  ['salad', '샐러드', 'サラダ'],
+  ['snack', '간식·토스트', '軽食・トースト'],
+  ['etc', '기타', 'その他'],
+];
+const SUBCAT_LABEL = Object.fromEntries(SUBCATS.map(([k, ko, ja]) => [k, { ko, ja }]));
+function subLabelOf(k) { const m = SUBCAT_LABEL[k]; return m ? (isJa() ? m.ja : m.ko) : k; }
+// 태그+제목으로 하나의 큰 묶음에 배정 (우선순위 순서대로 최초 매칭)
+function subCatOf(r) {
+  const t = r.title.ko || '';
+  const tags = r.tags || [];
+  const has = (w) => tags.includes(w);
+  const re = (rx) => rx.test(t);
+  if (has('샐러드') || re(/샐러드|코울슬로/)) return 'salad';
+  if (re(/김치전|감자전|파전|부침|치지미|오코노미야키/)) return 'jeon';
+  if (has('튀김') || re(/튀김|가라아게|탕수육|유린기|가츠|돈카츠/)) return 'fry';
+  if (has('국물') || re(/찌개|전골|국밥|육개장|삼계탕|갈비탕|미역국|콩나물국|계란탕|순두부|미소시루|어니언|스튜/)) return 'soup';
+  if (has('면') || re(/국수|우동|소바|라멘|짬뽕|짜장|야키소바|파스타|스파게티|카르보나라|나폴리탄|알리오|미트소스|팟타이|잡채|볶음우동|라자냐|라자니아/)) return 'noodle';
+  if (has('분식') || re(/떡볶이|라볶이/)) return 'bunsik';
+  if (has('한그릇') || re(/볶음밥|덮밥|비빔밥|김밥|리조또|도리아|오므라이스|타코라이스|가파오|솥밥|빠에야|부리토|규동|오야코동|카레라이스/)) return 'rice';
+  if (re(/조림|찜|카쿠니|니쿠자가/)) return 'braise';
+  if (has('볶음') || has('구이') || re(/볶음|구이|스테이크|함바그|불고기|제육|생강구이|닭갈비|감바스|아히요/)) return 'stirfry';
+  if (has('반찬') || has('밥반찬') || has('나물') || re(/나물|무침/)) return 'banchan';
+  if (has('아침') || has('간식') || re(/토스트|피자|팬케이크/)) return 'snack';
+  return 'etc';
+}
 function catLabel(c) { return isJa() ? c.ja : c.key; }
 function metaLine(r) {
   const base = `⏱ ${t().minutes(totalTime(r))} · ★ ${t().diff[r.difficulty] || r.difficulty || ''}`;
@@ -306,12 +349,30 @@ export function renderCategory(app, category, recipes) {
       text: catLabel(c),
     })
   ));
-  const list = recipes.length
-    ? el('div', { class: 'menu-list' }, recipes.map(menuCard))
-    : emptyState('🍽', t().catEmpty, t().otherCat, '#/');
-
   const meta = categoryMeta(category);
-  app.append(header(meta ? catLabel(meta) : category, { back: true }), el('div', { class: 'screen' }, [tabs, list]), tabBar('home'));
+  const listWrap = el('div', { class: 'menu-list' });
+  const chipsWrap = el('div', { class: 'chips wrap subcat-chips' });
+  const counts = {};
+  for (const r of recipes) { const k = subCatOf(r); counts[k] = (counts[k] || 0) + 1; }
+  const present = SUBCATS.map(([k]) => k).filter((k) => counts[k]);
+  let sel = 'all';
+  function draw() {
+    const mk = (key, label, n) => el('button', {
+      class: 'chip' + (sel === key ? ' on' : ''), text: `${label} ${n}`, attrs: { type: 'button' },
+      on: { click: () => { sel = key; draw(); } },
+    });
+    chipsWrap.replaceChildren(
+      mk('all', isJa() ? 'すべて' : '전체', recipes.length),
+      ...present.map((k) => mk(k, subLabelOf(k), counts[k])),
+    );
+    const filtered = sel === 'all' ? recipes : recipes.filter((r) => subCatOf(r) === sel);
+    listWrap.replaceChildren(...filtered.map(menuCard));
+  }
+  const body = recipes.length
+    ? (present.length > 1 ? [tabs, chipsWrap, listWrap] : [tabs, listWrap])
+    : [tabs, emptyState('🍽', t().catEmpty, t().otherCat, '#/')];
+  app.append(header(meta ? catLabel(meta) : category, { back: true }), el('div', { class: 'screen' }, body), tabBar('home'));
+  if (recipes.length) draw();
 }
 
 // ---------- 화면: 레시피 상세 ----------
@@ -400,6 +461,8 @@ export function renderRecipe(app, recipe, initialServings) {
     ]);
     const mins = stepMinutes(text);
     if (mins) li.append(stepTimerButton(mins));
+    const why = stepNoteOf(recipe, i);
+    if (why) li.append(el('div', { class: 'step-why', text: '🔎 ' + why }));
     const toggle = () => {
       const now = li.classList.toggle('done');
       check.textContent = now ? '☑' : '☐';
@@ -724,6 +787,7 @@ export function renderCook(app, recipe, servings) {
   let idx = 0;
   const stepNum = el('div', { class: 'cook-step-num' });
   const stepText = el('p', { class: 'cook-step-text' });
+  const stepWhy = el('p', { class: 'cook-why', attrs: { hidden: 'hidden' } });
   const timerSlot = el('div', { class: 'cook-timer' });
   const prog = el('div', { class: 'cook-progress' });
   const prevB = el('button', { class: 'cook-nav', text: t().cookPrev, attrs: { type: 'button' } });
@@ -732,11 +796,15 @@ export function renderCook(app, recipe, servings) {
     clearTimers();
     if (idx >= total) {
       stepNum.textContent = ''; stepText.textContent = t().cookDone; timerSlot.replaceChildren();
+      stepWhy.textContent = ''; stepWhy.hidden = true;
       prog.textContent = `${total} / ${total}`; prevB.disabled = false; nextB.textContent = t().goHome;
       return;
     }
     stepNum.textContent = t().cookStep(idx + 1, total);
     stepText.textContent = steps[idx];
+    const why = stepNoteOf(recipe, idx);
+    stepWhy.textContent = why ? '🔎 ' + why : '';
+    stepWhy.hidden = !why;
     prog.textContent = `${idx + 1} / ${total}`;
     const mins = stepMinutes(steps[idx]);
     timerSlot.replaceChildren(mins ? stepTimerButton(mins) : document.createTextNode(''));
@@ -752,7 +820,7 @@ export function renderCook(app, recipe, servings) {
   app.append(el('div', { class: 'cook' }, [
     el('div', { class: 'cook-head' }, [el('span', { class: 'cook-title', text: titleOf(recipe) }), exit]),
     prog,
-    el('div', { class: 'cook-body' }, [stepNum, stepText, timerSlot]),
+    el('div', { class: 'cook-body' }, [stepNum, stepText, stepWhy, timerSlot]),
     el('div', { class: 'cook-controls' }, [prevB, nextB]),
   ]));
   paint();
