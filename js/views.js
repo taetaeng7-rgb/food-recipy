@@ -265,9 +265,16 @@ export function renderHome(app, allRecipes) {
     ])
   ));
 
+  const homeSearch = el('input', { class: 'search-input', attrs: { type: 'search', placeholder: t().searchPh, 'aria-label': t().search } });
+  const goSearch = () => { const q = homeSearch.value.trim(); go('#/search' + (q ? '?q=' + encodeURIComponent(q) : '')); };
+  homeSearch.addEventListener('keydown', (e) => { if (e.key === 'Enter') goSearch(); });
+  const searchRow = el('div', { class: 'home-search-row' }, [
+    homeSearch,
+    el('button', { class: 'home-search-btn', text: '🔍', attrs: { type: 'button', 'aria-label': t().search }, on: { click: goSearch } }),
+  ]);
   const sections = [
     header('', { right: el('span', { class: 'subcopy', text: t().subcopy }) }),
-    el('div', { class: 'screen' }, [grid]),
+    el('div', { class: 'screen' }, [searchRow, grid]),
   ];
   sections[1].append(el('button', {
     class: 'fridge-entry', attrs: { type: 'button' }, text: t().fridgeEntry,
@@ -479,10 +486,11 @@ export function renderRecipe(app, recipe, initialServings) {
 }
 
 // ---------- 화면: 검색 ----------
-export function renderSearch(app, allRecipes) {
+export function renderSearch(app, allRecipes, initialQuery = '') {
   clear(app);
   let cat = null, tag = null;
   const input = el('input', { class: 'search-input', attrs: { type: 'search', placeholder: t().searchPh, 'aria-label': t().search } });
+  input.value = initialQuery || '';
   const results = el('div', { class: 'menu-list' });
   const hint = el('div', { class: 'search-hint' }, [el('p', { text: t().searchHint })]);
   const catRow = el('div', { class: 'chips' });

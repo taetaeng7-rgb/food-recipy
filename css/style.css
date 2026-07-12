@@ -177,6 +177,12 @@ h1, h2 { margin: 0; }
 .btn { padding: 12px 20px; border: none; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 700; }
 .err-detail { color: var(--text2); font-size: 12px; white-space: pre-wrap; word-break: break-all; }
 
+/* 홈 검색창 */
+.home-search-row { display: flex; gap: 8px; margin: 4px 0 14px; }
+.home-search-row .search-input { flex: 1; }
+.home-search-btn { flex: 0 0 auto; min-width: 52px; border: none; border-radius: 999px; background: var(--primary); color: #fff; font-size: 18px; }
+.home-search-btn:active { filter: brightness(.95); }
+
 /* 냉장고 재료로 찾기 */
 .fridge-entry { display: block; width: 100%; margin: 14px 0 4px; padding: 16px; border: none; border-radius: var(--radius);
   background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #2a8)); color: #fff; font-weight: 800; font-size: 16px; box-shadow: var(--shadow); }

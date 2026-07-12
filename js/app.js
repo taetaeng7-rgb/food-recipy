@@ -28,7 +28,7 @@ async function render() {
     } else if (parts[0] === 'shopping') {
       views.renderShopping(app, await loadAll());
     } else if (parts[0] === 'search') {
-      views.renderSearch(app, await loadAll());
+      views.renderSearch(app, await loadAll(), params.get('q') || '');
     } else if (parts[0] === 'favorites') {
       views.renderFavorites(app, await loadAll());
     } else {
