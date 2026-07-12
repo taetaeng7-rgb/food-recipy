@@ -531,34 +531,38 @@ export function renderFavorites(app, allRecipes) {
   app.append(header(t().favorites, { back: true }), el('div', { class: 'screen' }, [body]), tabBar('fav'));
 }
 
-// ---------- 냉장고 재료로 찾기: 선택 가능한 주재료 ----------
-const FRIDGE_GROUPS = [
-  { label: { ko: '채소', ja: '野菜' }, items: [
-    ['양배추', 'キャベツ', /양배추|キャベツ/], ['양파', '玉ねぎ', /양파|玉ねぎ/], ['대파', '長ねぎ', /대파|長ねぎ/],
-    ['당근', 'にんじん', /당근|にんじん/], ['감자', 'じゃがいも', /감자|じゃがいも/], ['가지', 'なす', /가지|なす|茄子/],
-    ['오이', 'きゅうり', /오이|きゅうり/], ['토마토', 'トマト', /토마토|トマト/], ['피망·파프리카', 'ピーマン', /피망|파프리카|ピーマン|パプリカ/],
-    ['애호박', 'ズッキーニ', /애호박|ズッキーニ/], ['시금치', 'ほうれん草', /시금치|ほうれん草/], ['콩나물', '大豆もやし', /콩나물/],
-    ['숙주', 'もやし', /숙주/], ['부추', 'ニラ', /부추|ニラ/], ['청경채', 'チンゲン菜', /청경채|チンゲン/],
-    ['버섯', 'きのこ', /버섯|きのこ|표고|しいたけ|しめじ|えのき|まいたけ|팽이|만가닥/], ['배추', '白菜', /배추|白菜/], ['양상추', 'レタス', /양상추|レタス|베이비리프/],
-  ] },
-  { label: { ko: '육류·해물', ja: '肉・魚介' }, items: [
-    ['소고기', '牛肉', /소고기|牛/], ['돼지고기', '豚肉', /돼지|豚/], ['다진 고기', 'ひき肉', /다진 고기|다진 소|다진 돼지|합|ひき肉/],
-    ['닭고기', '鶏肉', /닭|鶏/], ['베이컨', 'ベーコン', /베이컨|ベーコン/], ['스팸', 'ランチョンミート', /스팸|런천|ランチョン/],
-    ['소시지', 'ウインナー', /소시지|비엔나|ウインナー/], ['새우', 'えび', /새우|えび|エビ/], ['오징어', 'いか', /오징어|いか/],
-    ['바지락', 'あさり', /바지락|あさり/], ['게맛살', 'カニカマ', /게맛살|カニカマ/], ['참치캔', 'ツナ', /참치캔|ツナ/],
-  ] },
-  { label: { ko: '기타', ja: 'その他' }, items: [
-    ['계란', '卵', /계란|卵|달걀/], ['두부', '豆腐', /두부|豆腐/], ['낫토', '納豆', /낫토|納豆/], ['김치', 'キムチ', /김치|キムチ/],
-    ['밥', 'ご飯', /밥|ご飯|米/], ['면류', '麺', /면|스파게티|소면|우동|중화면|야키소바|파스타|麺|春雨|당면/], ['떡', '餅', /떡볶이떡|떡|餅/],
-    ['치즈', 'チーズ', /치즈|チーズ/], ['우유', '牛乳', /우유|牛乳/], ['두유', '豆乳', /두유|豆乳/],
-  ] },
-];
-function recipeFridgeItems(r) {
-  const hay = r.ingredients.map((i) => i.name.ko + ' ' + i.name.ja).join(' ');
-  const out = [];
-  for (const g of FRIDGE_GROUPS) for (const [ko, ja, re] of g.items) if (re.test(hay)) out.push({ ko, ja });
-  return out;
+// ---------- 냉장고 재료로 찾기: 재료 목록을 레시피 데이터에서 자동 수집(중복 제거) ----------
+// 조미료·양념(소금·간장·기름·케첩·남쁠라 등, 누구나 가진 것)과 고명(to-taste)은 제외하고 실제 재료만 칩으로.
+const FRIDGE_PANTRY = /^(물|소금|후추|설탕|간장|진간장|국간장|식용유|올리브유|참기름|다진 마늘|다진 생강|미림|맛술|청주|료리술|다시|국물용 다시|치킨스톡|통깨|고춧가루|고추장|된장|미소된장|굴소스|두반장|케첩|마요네즈|버터|전분|참치액|식초|우스터소스|밀가루|부침가루|빵가루|치즈가루|춘장|톈멘장|에리스리톨|올리고당|콘소메|월계수잎|파슬리|넛맥|라유|아오노리|가쓰오|김가루|사프란|살사|타바스코|메이플|시럽|소스|남쁠라|남플라|피시소스|타마린드|라임|레몬)/;
+const FRIDGE_VEG = /양배추|양파|대파|쪽파|당근|감자|가지|오이|토마토|피망|파프리카|애호박|주키니|시금치|콩나물|숙주|부추|청경채|버섯|표고|팽이|만가닥|무|배추|양상추|베이비리프|고사리|아보카도|마늘|생강|고추|바질|파드득|미나리|나물/;
+const FRIDGE_MEAT = /소고기|돼지|닭|고기|베이컨|스팸|소시지|비엔나|새우|오징어|바지락|게맛살|참치|연어|어묵|햄|미역|조개|해물|낫토|두부|유부|계란|달걀/;
+// 조미료·향신료·소스·육수 등(재료가 아닌 것) 추가 제외 — 이름 어디에 있어도 매칭
+const FRIDGE_EXCLUDE = /파우더|시즈닝|소스|육수|면수|와인|페이스트|시럽|드레싱|쿠민|칠리|머스터드|배즙|사과즙|치즈가루|스톡|타레|피시소스|남쁠라|타마린드|라유|깨/;
+const FRIDGE_GLABEL = { veg: { ko: '채소', ja: '野菜' }, meat: { ko: '육류·해물·계란·두부', ja: '肉・魚介・卵・豆腐' }, etc: { ko: '기타(면·빵·유제품 등)', ja: 'その他(麺・パン・乳製品など)' } };
+const FRIDGE_JA_FIX = { '다진 고기': 'ひき肉', '닭고기': '鶏肉', '소고기': '牛肉', '돼지고기': '豚肉', '계란': '卵', '피망·파프리카': 'ピーマン', '양배추': 'キャベツ', '버섯': 'きのこ', '밥': 'ご飯', '소시지': 'ウインナー', '게맛살': 'カニカマ' };
+function fridgeCanon(s) { return String(s).replace(/[（(][^）)]*[）)]/g, '').trim(); }
+// 비슷한 재료 변형을 대표 이름으로 병합 (다진 소/돼지/닭고기 → 다진 고기, 피망/파프리카 → 하나 등)
+function fridgeKey(ko) {
+  if (/게맛살/.test(ko)) return '게맛살';
+  if (/다진.*(고기|소|돼지|닭)|ひき/.test(ko)) return '다진 고기';
+  if (/닭|영계|鶏/.test(ko)) return '닭고기';
+  if (/소고기|牛/.test(ko)) return '소고기';
+  if (/돼지|豚|삼겹/.test(ko)) return '돼지고기';
+  if (/계란|달걀|卵/.test(ko)) return '계란';
+  if (/피망|파프리카/.test(ko)) return '피망·파프리카';
+  if (/양배추/.test(ko)) return '양배추';
+  if (/버섯|표고|팽이|만가닥/.test(ko)) return '버섯';
+  if (/소시지|비엔나/.test(ko)) return '소시지';
+  if (/밥$/.test(ko)) return '밥';
+  return ko;
 }
+function fridgeIsIngredient(ing) {
+  if (ing.scaleType === 'to-taste') return false;
+  const ko = fridgeCanon(ing.name.ko);
+  return !!ko && !FRIDGE_PANTRY.test(ko) && !FRIDGE_EXCLUDE.test(ko);
+}
+function fridgeGroupOf(ko) { return FRIDGE_VEG.test(ko) ? 'veg' : FRIDGE_MEAT.test(ko) ? 'meat' : 'etc'; }
+function recipeFridgeSet(r) { return new Set(r.ingredients.filter(fridgeIsIngredient).map((i) => fridgeKey(fridgeCanon(i.name.ko)))); }
 
 // 메모·별점 블록
 function buildNotes(r) {
@@ -590,19 +594,27 @@ function buildNotes(r) {
 export function renderFridge(app, allRecipes) {
   clear(app);
   const selected = new Set();
+  // 모든 레시피에서 재료를 수집해 중복 제거 (조미료·고명 제외)
+  const itemMap = new Map(); // key → { ko, ja, group }
+  for (const r of allRecipes) for (const ing of r.ingredients) {
+    if (!fridgeIsIngredient(ing)) continue;
+    const key = fridgeKey(fridgeCanon(ing.name.ko));
+    if (!itemMap.has(key)) itemMap.set(key, { ko: key, ja: FRIDGE_JA_FIX[key] || fridgeCanon(ing.name.ja), group: fridgeGroupOf(key) });
+  }
+  const groups = ['veg', 'meat', 'etc'].map((g) => ({ g, list: [...itemMap.values()].filter((it) => it.group === g).sort((a, b) => a.ko.localeCompare(b.ko, 'ko')) }));
+  const recIndex = allRecipes.map((r) => ({ r, set: recipeFridgeSet(r) }));
   const chipsWrap = el('div', { class: 'fridge-chips' });
   const resultWrap = el('div', { class: 'menu-list' });
   const countLine = el('p', { class: 'fridge-count' });
-  const recIndex = allRecipes.map((r) => ({ r, items: recipeFridgeItems(r) }));
 
-  const chip = (ko, ja) => el('button', {
-    class: 'chip' + (selected.has(ko) ? ' on' : ''), text: isJa() ? ja : ko, attrs: { type: 'button' },
-    on: { click: () => { if (selected.has(ko)) selected.delete(ko); else selected.add(ko); run(); } },
+  const chip = (it) => el('button', {
+    class: 'chip' + (selected.has(it.ko) ? ' on' : ''), text: isJa() ? (it.ja || it.ko) : it.ko, attrs: { type: 'button' },
+    on: { click: () => { if (selected.has(it.ko)) selected.delete(it.ko); else selected.add(it.ko); run(); } },
   });
   function renderChips() {
-    chipsWrap.replaceChildren(...FRIDGE_GROUPS.map((g) => el('div', { class: 'fridge-group' }, [
-      el('div', { class: 'fridge-group-label', text: isJa() ? g.label.ja : g.label.ko }),
-      el('div', { class: 'chips wrap' }, g.items.map(([ko, ja]) => chip(ko, ja))),
+    chipsWrap.replaceChildren(...groups.filter((x) => x.list.length).map((x) => el('div', { class: 'fridge-group' }, [
+      el('div', { class: 'fridge-group-label', text: (isJa() ? FRIDGE_GLABEL[x.g].ja : FRIDGE_GLABEL[x.g].ko) + ` (${x.list.length})` }),
+      el('div', { class: 'chips wrap' }, x.list.map(chip)),
     ])));
   }
   function run() {
@@ -610,18 +622,19 @@ export function renderFridge(app, allRecipes) {
     countLine.textContent = t().fridgePick(selected.size);
     if (selected.size === 0) { resultWrap.replaceChildren(el('p', { class: 'search-hint', text: t().fridgeNone })); return; }
     const scored = recIndex
-      .map(({ r, items }) => ({ r, items, matched: items.filter((it) => selected.has(it.ko)), missing: items.filter((it) => !selected.has(it.ko)) }))
+      .map(({ r, set }) => {
+        const keys = [...set];
+        return { r, total: keys.length, matched: keys.filter((k) => selected.has(k)), missing: keys.filter((k) => !selected.has(k)) };
+      })
       .filter((x) => x.matched.length >= 1)
       .sort((a, b) => (b.matched.length - a.matched.length) || (a.missing.length - b.missing.length) || (totalTime(a.r) - totalTime(b.r)));
     if (!scored.length) { resultWrap.replaceChildren(emptyState('🧊', t().noResult)); return; }
     resultWrap.replaceChildren(...scored.map((x) => {
       const makeable = x.missing.length === 0;
+      const shown = x.missing.slice(0, 6).map((k) => (isJa() ? (itemMap.get(k) ? itemMap.get(k).ja : k) : k));
+      const more = x.missing.length > 6 ? (isJa() ? ` 他${x.missing.length - 6}` : ` 외 ${x.missing.length - 6}`) : '';
       const cap = el('div', { class: 'fridge-cap' + (makeable ? ' makeable' : '') }, [
-        el('span', {
-          text: makeable
-            ? t().fridgeMakeable
-            : t().fridgeHave(x.matched.length, x.items.length) + ' · ' + t().fridgeMissing + x.missing.map((m) => (isJa() ? m.ja : m.ko)).join(', '),
-        }),
+        el('span', { text: makeable ? t().fridgeMakeable : t().fridgeHave(x.matched.length, x.total) + ' · ' + t().fridgeMissing + shown.join(', ') + more }),
       ]);
       return el('div', { class: 'fridge-result' }, [menuCard(x.r), cap]);
     }));
