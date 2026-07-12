@@ -1,6 +1,6 @@
 // 서비스 워커 — 오프라인 지원 (stale-while-revalidate). 기획서 §5.8
 // 캐시 버전을 올리면 이전 캐시를 정리한다. 배포 시 데이터/코드가 바뀌면 버전 갱신.
-const CACHE = 'food-recipy-v13';
+const CACHE = 'food-recipy-v14';
 const SHELL = [
   './', './index.html', './css/style.css', './manifest.webmanifest',
   './js/app.js', './js/config.js', './js/router.js', './js/data.js',

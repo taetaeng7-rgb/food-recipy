@@ -1,25 +1,135 @@
 [
   {
     "id": "mex-taco-rice",
-    "title": { "ko": "타코라이스", "ja": "タコライス" },
+    "title": {
+      "ko": "타코라이스",
+      "ja": "タコライス"
+    },
     "category": "멕시칸",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 15 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 15
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "밥", "고기"],
+    "tags": [
+      "한그릇",
+      "밥",
+      "고기"
+    ],
     "ingredients": [
-      { "name": { "ko": "따뜻한 밥", "ja": "ご飯" }, "amount": 400, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "다진 고기(소·돼지 혼합)", "ja": "合いびき肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "양상추", "ja": "レタス" }, "amount": 100, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "토마토", "ja": "トマト" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "슈레드 치즈", "ja": "ピザ用チーズ" }, "amount": 50, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 2, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "우스터소스", "ja": "ウスターソース" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "칠리파우더(또는 타코 시즈닝)", "ja": "チリパウダー" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt", "note": "업무슈퍼·카르디. 없으면 카레가루+고춧가루 소량으로 대체", "noteJa": "業務スーパーやカルディで。なければカレー粉+粉唐辛子少々で代用" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "살사·타바스코", "ja": "サルサ/タバスコ" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "따뜻한 밥",
+          "ja": "ご飯"
+        },
+        "amount": 400,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 고기(소·돼지 혼합)",
+          "ja": "合いびき肉"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "양상추",
+          "ja": "レタス"
+        },
+        "amount": 100,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "토마토",
+          "ja": "トマト"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "슈레드 치즈",
+          "ja": "ピザ用チーズ"
+        },
+        "amount": 50,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 2,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "우스터소스",
+          "ja": "ウスターソース"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "칠리파우더(또는 타코 시즈닝)",
+          "ja": "チリパウダー"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "note": "업무슈퍼·카르디. 없으면 카레가루+고춧가루 소량으로 대체",
+        "noteJa": "業務スーパーやカルディで。なければカレー粉+粉唐辛子少々で代用"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "살사·타바스코",
+          "ja": "サルサ/タバスコ"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "양파는 잘게 다지고, 양상추는 5mm 폭으로 채썬다. 토마토는 사방 1cm로 깍둑 썬다.",
@@ -48,25 +158,136 @@
   },
   {
     "id": "mex-tacos",
-    "title": { "ko": "타코스", "ja": "タコス" },
+    "title": {
+      "ko": "타코스",
+      "ja": "タコス"
+    },
     "category": "멕시칸",
     "baseServings": 2,
-    "time": { "prepMin": 15, "cookMin": 15 },
+    "time": {
+      "prepMin": 15,
+      "cookMin": 15
+    },
     "difficulty": "normal",
-    "tags": ["한그릇", "고기", "손님상"],
+    "tags": [
+      "한그릇",
+      "고기",
+      "손님상"
+    ],
     "ingredients": [
-      { "name": { "ko": "토르티야(소프트)", "ja": "トルティーヤ" }, "amount": 6, "unit": "장", "scaleType": "count", "note": "업무슈퍼·카르디. 옥수수/밀 둘 다 가능", "noteJa": "業務スーパー・カルディ。コーン/小麦どちらでも" },
-      { "name": { "ko": "다진 고기(소·돼지 혼합)", "ja": "合いびき肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "양상추", "ja": "レタス" }, "amount": 80, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "토마토", "ja": "トマト" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "슈레드 치즈", "ja": "ピザ用チーズ" }, "amount": 60, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "칠리파우더", "ja": "チリパウダー" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "쿠민(선택)", "ja": "クミン" }, "amount": 0.5, "unit": "작은술", "scaleType": "sqrt", "optional": true },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "라임·고수(선택)", "ja": "ライム・パクチー" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "토르티야(소프트)",
+          "ja": "トルティーヤ"
+        },
+        "amount": 6,
+        "unit": "장",
+        "scaleType": "count",
+        "note": "업무슈퍼·카르디. 옥수수/밀 둘 다 가능",
+        "noteJa": "業務スーパー・カルディ。コーン/小麦どちらでも"
+      },
+      {
+        "name": {
+          "ko": "다진 고기(소·돼지 혼합)",
+          "ja": "合いびき肉"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "양상추",
+          "ja": "レタス"
+        },
+        "amount": 80,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "토마토",
+          "ja": "トマト"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "슈레드 치즈",
+          "ja": "ピザ用チーズ"
+        },
+        "amount": 60,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "칠리파우더",
+          "ja": "チリパウダー"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "쿠민(선택)",
+          "ja": "クミン"
+        },
+        "amount": 0.5,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "라임·고수(선택)",
+          "ja": "ライム・パクチー"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "양파는 잘게 다지고, 양상추는 채썰고, 토마토는 사방 1cm로 깍둑 썬다.",
@@ -95,20 +316,93 @@
   },
   {
     "id": "mex-quesadilla",
-    "title": { "ko": "케사디야", "ja": "ケサディーヤ" },
+    "title": {
+      "ko": "케사디야",
+      "ja": "ケサディーヤ"
+    },
     "category": "멕시칸",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 10 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 10
+    },
     "difficulty": "easy",
-    "tags": ["한그릇", "치즈", "간편"],
+    "tags": [
+      "한그릇",
+      "치즈",
+      "간편"
+    ],
     "ingredients": [
-      { "name": { "ko": "토르티야", "ja": "トルティーヤ" }, "amount": 4, "unit": "장", "scaleType": "count" },
-      { "name": { "ko": "슈레드 치즈", "ja": "ピザ用チーズ" }, "amount": 120, "unit": "g", "scaleType": "linear", "note": "많을수록 잘 붙는다", "noteJa": "多いほどよくくっつく" },
-      { "name": { "ko": "닭고기(또는 햄)", "ja": "鶏肉/ハム" }, "amount": 120, "unit": "g", "scaleType": "linear", "optional": true },
-      { "name": { "ko": "피망·파프리카", "ja": "ピーマン/パプリカ" }, "amount": 1, "unit": "개", "scaleType": "count", "optional": true },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5, "optional": true },
-      { "name": { "ko": "식용유", "ja": "サラダ油" }, "amount": 0.5, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "살사·사워크림(선택)", "ja": "サルサ/サワークリーム" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "토르티야",
+          "ja": "トルティーヤ"
+        },
+        "amount": 4,
+        "unit": "장",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "슈레드 치즈",
+          "ja": "ピザ用チーズ"
+        },
+        "amount": 120,
+        "unit": "g",
+        "scaleType": "linear",
+        "note": "많을수록 잘 붙는다",
+        "noteJa": "多いほどよくくっつく"
+      },
+      {
+        "name": {
+          "ko": "닭고기(또는 햄)",
+          "ja": "鶏肉/ハム"
+        },
+        "amount": 120,
+        "unit": "g",
+        "scaleType": "linear",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "피망·파프리카",
+          "ja": "ピーマン/パプリカ"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5,
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "식용유",
+          "ja": "サラダ油"
+        },
+        "amount": 0.5,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "살사·사워크림(선택)",
+          "ja": "サルサ/サワークリーム"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "닭고기·피망·양파는 잘게 썰어 기름 두른 팬에 익힌 뒤 덜어 둔다.",
@@ -135,20 +429,94 @@
   },
   {
     "id": "mex-guacamole",
-    "title": { "ko": "과카몰리", "ja": "ワカモレ" },
+    "title": {
+      "ko": "과카몰리",
+      "ja": "ワカモレ"
+    },
     "category": "멕시칸",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 0 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 0
+    },
     "difficulty": "easy",
-    "tags": ["다이어트", "저탄수", "아보카도", "사이드"],
+    "tags": [
+      "다이어트",
+      "저탄수",
+      "아보카도",
+      "사이드"
+    ],
     "ingredients": [
-      { "name": { "ko": "아보카도", "ja": "アボカド" }, "amount": 2, "unit": "개", "scaleType": "count", "note": "말랑하게 잘 익은 것", "noteJa": "やわらかく熟したもの" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 40, "unit": "g", "scaleType": "linear", "note": "잘게 다져 찬물에 헹구면 매운맛↓", "noteJa": "みじん切りにして水にさらすと辛みが和らぐ" },
-      { "name": { "ko": "토마토", "ja": "トマト" }, "amount": 0.5, "unit": "개", "scaleType": "count", "roundStep": 0.5 },
-      { "name": { "ko": "라임즙(또는 레몬즙)", "ja": "ライム/レモン汁" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "다진 마늘", "ja": "おろしにんにく" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt", "optional": true },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" },
-      { "name": { "ko": "고수(선택)", "ja": "パクチー" }, "amount": null, "unit": "적당량", "scaleType": "to-taste", "optional": true }
+      {
+        "name": {
+          "ko": "아보카도",
+          "ja": "アボカド"
+        },
+        "amount": 2,
+        "unit": "개",
+        "scaleType": "count",
+        "note": "말랑하게 잘 익은 것",
+        "noteJa": "やわらかく熟したもの"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 40,
+        "unit": "g",
+        "scaleType": "linear",
+        "note": "잘게 다져 찬물에 헹구면 매운맛↓",
+        "noteJa": "みじん切りにして水にさらすと辛みが和らぐ"
+      },
+      {
+        "name": {
+          "ko": "토마토",
+          "ja": "トマト"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "라임즙(또는 레몬즙)",
+          "ja": "ライム/レモン汁"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "다진 마늘",
+          "ja": "おろしにんにく"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "고수(선택)",
+          "ja": "パクチー"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste",
+        "optional": true
+      }
     ],
     "steps": [
       "아보카도는 반 갈라 씨를 빼고 과육을 볼에 담아 포크로 원하는 정도로 으깬다.",
@@ -173,24 +541,125 @@
   },
   {
     "id": "mex-chili-con-carne",
-    "title": { "ko": "칠리 콘 카르네", "ja": "チリコンカン" },
+    "title": {
+      "ko": "칠리 콘 카르네",
+      "ja": "チリコンカン"
+    },
     "category": "멕시칸",
     "baseServings": 2,
-    "time": { "prepMin": 10, "cookMin": 25 },
+    "time": {
+      "prepMin": 10,
+      "cookMin": 25
+    },
     "difficulty": "normal",
-    "tags": ["국물", "콩", "고기"],
+    "tags": [
+      "국물",
+      "콩",
+      "고기"
+    ],
     "ingredients": [
-      { "name": { "ko": "다진 소고기", "ja": "牛ひき肉" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "믹스빈스(강낭콩 캔)", "ja": "ミックスビーンズ/金時豆缶" }, "amount": 150, "unit": "g", "scaleType": "linear", "note": "일반슈퍼·업무슈퍼 캔·팩", "noteJa": "スーパー・業務スーパーの缶/パック" },
-      { "name": { "ko": "양파", "ja": "玉ねぎ" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "토마토 통조림", "ja": "カットトマト缶" }, "amount": 200, "unit": "g", "scaleType": "linear" },
-      { "name": { "ko": "마늘", "ja": "にんにく" }, "amount": 2, "unit": "쪽", "scaleType": "count" },
-      { "name": { "ko": "칠리파우더", "ja": "チリパウダー" }, "amount": 1, "unit": "작은술", "scaleType": "sqrt" },
-      { "name": { "ko": "쿠민(선택)", "ja": "クミン" }, "amount": 0.5, "unit": "작은술", "scaleType": "sqrt", "optional": true },
-      { "name": { "ko": "케첩", "ja": "ケチャップ" }, "amount": 1, "unit": "큰술", "scaleType": "linear" },
-      { "name": { "ko": "콘소메(고형)", "ja": "コンソメ" }, "amount": 1, "unit": "개", "scaleType": "count" },
-      { "name": { "ko": "올리브유", "ja": "オリーブオイル" }, "amount": 1, "unit": "큰술", "scaleType": "fixed" },
-      { "name": { "ko": "소금·후추", "ja": "塩こしょう" }, "amount": null, "unit": "적당량", "scaleType": "to-taste" }
+      {
+        "name": {
+          "ko": "다진 소고기",
+          "ja": "牛ひき肉"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "믹스빈스(강낭콩 캔)",
+          "ja": "ミックスビーンズ/金時豆缶"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear",
+        "note": "일반슈퍼·업무슈퍼 캔·팩",
+        "noteJa": "スーパー・業務スーパーの缶/パック"
+      },
+      {
+        "name": {
+          "ko": "양파",
+          "ja": "玉ねぎ"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "토마토 통조림",
+          "ja": "カットトマト缶"
+        },
+        "amount": 200,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "마늘",
+          "ja": "にんにく"
+        },
+        "amount": 2,
+        "unit": "쪽",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "칠리파우더",
+          "ja": "チリパウダー"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt"
+      },
+      {
+        "name": {
+          "ko": "쿠민(선택)",
+          "ja": "クミン"
+        },
+        "amount": 0.5,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "콘소메(고형)",
+          "ja": "コンソメ"
+        },
+        "amount": 1,
+        "unit": "개",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "올리브유",
+          "ja": "オリーブオイル"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "fixed"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
     ],
     "steps": [
       "양파는 사방 1cm로 깍둑 썰고, 마늘은 다진다. 콩 캔은 체에 밭쳐 물기를 뺀다.",
@@ -215,6 +684,152 @@
     "tipsJa": [
       "辛さはチリパウダーの量で調整。長く煮込むほど味が濃くなる。",
       "ご飯にのせればチリライス、チーズをのせればさらにボリューム満点。"
+    ]
+  },
+  {
+    "id": "mex-burrito",
+    "title": {
+      "ko": "부리토",
+      "ja": "ブリトー"
+    },
+    "category": "멕시칸",
+    "baseServings": 2,
+    "time": {
+      "prepMin": 15,
+      "cookMin": 10
+    },
+    "difficulty": "easy",
+    "tags": [
+      "한그릇",
+      "고기",
+      "밥"
+    ],
+    "ingredients": [
+      {
+        "name": {
+          "ko": "토르티야(큰 것)",
+          "ja": "トルティーヤ(大)"
+        },
+        "amount": 2,
+        "unit": "장",
+        "scaleType": "count"
+      },
+      {
+        "name": {
+          "ko": "다진 고기(소·돼지 혼합)",
+          "ja": "合いびき肉"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "밥",
+          "ja": "ご飯"
+        },
+        "amount": 150,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "믹스빈스(강낭콩 캔)",
+          "ja": "ミックスビーンズ"
+        },
+        "amount": 80,
+        "unit": "g",
+        "scaleType": "linear",
+        "optional": true
+      },
+      {
+        "name": {
+          "ko": "양상추",
+          "ja": "レタス"
+        },
+        "amount": 60,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "토마토",
+          "ja": "トマト"
+        },
+        "amount": 0.5,
+        "unit": "개",
+        "scaleType": "count",
+        "roundStep": 0.5
+      },
+      {
+        "name": {
+          "ko": "슈레드 치즈",
+          "ja": "ピザ用チーズ"
+        },
+        "amount": 60,
+        "unit": "g",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "칠리파우더",
+          "ja": "チリパウダー"
+        },
+        "amount": 1,
+        "unit": "작은술",
+        "scaleType": "sqrt",
+        "note": "없으면 카레가루+고춧가루",
+        "noteJa": "なければカレー粉+粉唐辛子"
+      },
+      {
+        "name": {
+          "ko": "케첩",
+          "ja": "ケチャップ"
+        },
+        "amount": 1,
+        "unit": "큰술",
+        "scaleType": "linear"
+      },
+      {
+        "name": {
+          "ko": "살사·사워크림",
+          "ja": "サルサ/サワークリーム"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      },
+      {
+        "name": {
+          "ko": "소금·후추",
+          "ja": "塩こしょう"
+        },
+        "amount": null,
+        "unit": "적당량",
+        "scaleType": "to-taste"
+      }
+    ],
+    "steps": [
+      "양상추는 채썰고 토마토는 깍둑 썬다.",
+      "팬에 다진 고기를 볶아 칠리파우더·케첩·소금·후추로 간해 타코미트를 만든다.",
+      "토르티야를 마른 팬에 데워 부드럽게 한다.",
+      "토르티야 가운데에 밥 → 타코미트 → 콩 → 채소 → 치즈를 길게 올린다.",
+      "양옆을 접고 단단히 말아, 이음새가 아래로 가게 팬에 30초씩 구워 고정한다. 살사·사워크림을 곁들인다."
+    ],
+    "stepsJa": [
+      "レタスは千切り、トマトは角切りにする。",
+      "フライパンで合いびき肉を炒め、チリパウダー・ケチャップ・塩こしょうで味付けしてタコミートを作る。",
+      "トルティーヤを油なしのフライパンで温めてやわらかくする。",
+      "トルティーヤの中央にご飯→タコミート→豆→野菜→チーズを縦にのせる。",
+      "両端を折ってしっかり巻き、閉じ目を下にしてフライパンで30秒ずつ焼いて固定する。サルサ・サワークリームを添える。"
+    ],
+    "tips": [
+      "속을 너무 많이 넣으면 안 말리니 적당히. 이음새를 구우면 안 풀린다.",
+      "밥 대신 콩을 더 넣으면 가벼운 버전."
+    ],
+    "tipsJa": [
+      "具を入れすぎると巻けないので適量に。閉じ目を焼くとほどけない。",
+      "ご飯の代わりに豆を増やすと軽い版に。"
     ]
   }
 ]
