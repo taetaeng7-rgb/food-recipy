@@ -336,8 +336,23 @@ export function renderRecipe(app, recipe, initialServings) {
   clearBtn.addEventListener('click', () => { store.clearChecks(key(recipe)); update(); });
   const ingActions = el('div', { class: 'ing-actions' }, [shopBtn, clearBtn]);
 
-  // 영양정보(추정) — update()에서 채움
+  // 영양정보(추정) — 1인분 값은 인분과 무관하게 일정하므로 기준 인분으로 한 번만 계산.
   const nutriBox = el('div', { class: 'nutrition' });
+  {
+    const nut = estimateNutrition(scaleRecipe(recipe, recipe.baseServings));
+    if (nut) {
+      nutriBox.replaceChildren(
+        el('h2', { class: 'section-title', text: t().nutriTitle }),
+        el('div', { class: 'nutri-row' }, [
+          el('div', { class: 'nutri-cell kcal' }, [el('b', { text: String(nut.perServing.kcal) }), el('span', { text: ' ' + t().nutriKcal })]),
+          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriCarb }), el('b', { text: nut.perServing.carb + 'g' })]),
+          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriProtein }), el('b', { text: nut.perServing.protein + 'g' })]),
+          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriFat }), el('b', { text: nut.perServing.fat + 'g' })]),
+        ]),
+        el('p', { class: 'nutri-note', text: t().nutriApprox(Math.round(nut.coverage * 100)) }),
+      );
+    } else { nutriBox.hidden = true; }
+  }
 
   // 쿡모드 시작 · 장보기 담기
   const cookBtn = el('button', {
@@ -411,20 +426,6 @@ export function renderRecipe(app, recipe, initialServings) {
     }));
     bulkNote.hidden = scaled.ratio < 3;
     if (scaled.ratio >= 3) bulkNote.textContent = t().bulkNote;
-    const nut = estimateNutrition(scaled);
-    if (nut) {
-      nutriBox.hidden = false;
-      nutriBox.replaceChildren(
-        el('h2', { class: 'section-title', text: t().nutriTitle }),
-        el('div', { class: 'nutri-row' }, [
-          el('div', { class: 'nutri-cell kcal' }, [el('b', { text: String(nut.perServing.kcal) }), el('span', { text: ' ' + t().nutriKcal })]),
-          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriCarb }), el('b', { text: nut.perServing.carb + 'g' })]),
-          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriProtein }), el('b', { text: nut.perServing.protein + 'g' })]),
-          el('div', { class: 'nutri-cell' }, [el('span', { text: t().nutriFat }), el('b', { text: nut.perServing.fat + 'g' })]),
-        ]),
-        el('p', { class: 'nutri-note', text: t().nutriApprox(Math.round(nut.coverage * 100)) }),
-      );
-    } else { nutriBox.hidden = true; }
     history.replaceState(null, '', `#/recipe/${enc(recipe.category)}/${enc(recipe.id)}?n=${servings}`);
   }
   minus.addEventListener('click', () => { if (servings > MIN_SERVINGS) { servings--; update(); } });
