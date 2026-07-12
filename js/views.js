@@ -728,7 +728,8 @@ export function renderCook(app, recipe, servings) {
   const exit = el('button', { class: 'icon-btn', text: t().cookExit, attrs: { type: 'button' }, on: { click: () => history.back() } });
   app.append(el('div', { class: 'cook' }, [
     el('div', { class: 'cook-head' }, [el('span', { class: 'cook-title', text: titleOf(recipe) }), exit]),
-    prog, stepNum, stepText, timerSlot,
+    prog,
+    el('div', { class: 'cook-body' }, [stepNum, stepText, timerSlot]),
     el('div', { class: 'cook-controls' }, [prevB, nextB]),
   ]));
   paint();

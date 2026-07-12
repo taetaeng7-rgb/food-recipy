@@ -217,9 +217,11 @@ h1, h2 { margin: 0; }
 .cook-head { display: flex; align-items: center; justify-content: space-between; }
 .cook-title { font-weight: 800; font-size: 16px; }
 .cook-progress { text-align: center; color: var(--text2); font-weight: 700; margin: 10px 0; }
+/* 단계 글씨 + 타이머를 한 묶음으로 화면 중앙에 배치 (타이머가 바닥에 붙지 않게) */
+.cook-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; overflow-y: auto; padding: 8px 0; }
 .cook-step-num { text-align: center; color: var(--primary); font-weight: 800; font-size: 18px; }
-.cook-step-text { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 26px; line-height: 1.6; font-weight: 600; padding: 12px; }
-.cook-timer { display: flex; justify-content: center; min-height: 40px; }
+.cook-step-text { text-align: center; font-size: 26px; line-height: 1.6; font-weight: 600; padding: 4px 8px; }
+.cook-timer { display: flex; justify-content: center; }
 .cook-timer .timer-btn { flex-basis: auto; min-width: 60%; font-size: 16px; }
 .cook-controls { display: flex; gap: 10px; padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
 .cook-nav { flex: 1; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); color: var(--text); font-weight: 800; font-size: 17px; }
