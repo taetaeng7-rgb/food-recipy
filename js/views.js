@@ -4,6 +4,7 @@ import { CATEGORIES, categoryMeta, MIN_SERVINGS, MAX_SERVINGS, UI, getLang, setL
 import { roundByUnit, formatAmount, formatAmountJa } from './format.js';
 import { scaleRecipe } from './scaler.js';
 import { estimateNutrition } from './nutrition.js';
+import { SUB_GROUPS, SUBSTITUTES, subsFor } from './substitutes.js';
 import { go } from './router.js';
 import * as store from './store.js';
 
@@ -325,6 +326,10 @@ export function renderHome(app, allRecipes) {
     class: 'fridge-entry', attrs: { type: 'button' }, text: t().fridgeEntry,
     on: { click: () => go('#/fridge') },
   }));
+  sections[1].append(el('button', {
+    class: 'fridge-entry subs-entry', attrs: { type: 'button' }, text: t().subsEntry,
+    on: { click: () => go('#/substitutes') },
+  }));
 
   const recentKeys = store.getRecent();
   const recent = recentKeys.map((k) => allRecipes.find((r) => key(r) === k)).filter(Boolean);
@@ -447,6 +452,20 @@ export function renderRecipe(app, recipe, initialServings) {
 
   const notesBlock = buildNotes(recipe);
 
+  // 한국 재료 대체 팁 — 이 요리에 해당하는 항목만
+  const subMatches = subsFor(recipe);
+  const subsBlock = subMatches.length ? el('div', { class: 'recipe-subs' }, [
+    el('h2', { class: 'section-title', text: t().recipeSubs }),
+    el('ul', { class: 'subs-list' }, subMatches.map((e) => el('li', { class: 'sub-item' }, [
+      el('div', { class: 'sub-name' }, [
+        el('span', { class: 'ko', text: isJa() ? e.ja : e.ko }),
+        el('span', { class: 'ja', text: isJa() ? e.ko : e.ja }),
+      ]),
+      el('div', { class: 'sub-line', text: `${t().subsSub}: ${isJa() ? e.sub.ja : e.sub.ko}` }),
+      el('div', { class: 'sub-line buy', text: `${t().subsBuy}: ${isJa() ? e.buy.ja : e.buy.ko}` }),
+    ]))),
+  ]) : null;
+
   // 조리 단계
   const steps = stepsOf(recipe);
   const total = steps.length;
@@ -540,7 +559,7 @@ export function renderRecipe(app, recipe, initialServings) {
       hero, titleBlock, nutriBox,
       actions,
       stepper,
-      ingLabel, ingActions, ingBox, bulkNote,
+      ingLabel, ingActions, ingBox, bulkNote, subsBlock,
       el('h2', { class: 'section-title' }, [document.createTextNode(t().stepsTitle + ' '), progress]),
       stepsBox, celebrate,
       tips, notesBlock, cooking,
@@ -866,6 +885,26 @@ export function renderCook(app, recipe, servings) {
     el('div', { class: 'cook-controls' }, [prevB, nextB]),
   ]));
   paint();
+}
+
+// ---------- 화면: 재료 대체 가이드 ----------
+export function renderSubstitutes(app) {
+  clear(app);
+  const screen = el('div', { class: 'screen' }, [el('p', { class: 'fridge-hint', text: t().subsHint })]);
+  for (const [gkey, glabel] of SUB_GROUPS) {
+    const items = SUBSTITUTES.filter((e) => e.group === gkey);
+    if (!items.length) continue;
+    screen.append(el('div', { class: 'aisle-label', text: isJa() ? glabel.ja : glabel.ko }));
+    screen.append(el('div', { class: 'subs-guide' }, items.map((e) => el('div', { class: 'sub-card' }, [
+      el('div', { class: 'sub-name' }, [
+        el('span', { class: 'ko', text: isJa() ? e.ja : e.ko }),
+        el('span', { class: 'ja', text: isJa() ? e.ko : e.ja }),
+      ]),
+      el('div', { class: 'sub-line', text: `${t().subsSub}: ${isJa() ? e.sub.ja : e.sub.ko}` }),
+      el('div', { class: 'sub-line buy', text: `${t().subsBuy}: ${isJa() ? e.buy.ja : e.buy.ko}` }),
+    ]))));
+  }
+  app.append(header(t().subsTitle, { back: true }), screen, tabBar('home'));
 }
 
 // ---------- 화면: 없음 / 에러 ----------

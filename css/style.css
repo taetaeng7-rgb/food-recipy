@@ -210,6 +210,20 @@ h1, h2 { margin: 0; }
   display: flex; align-items: center; gap: 6px;
 }
 .shop-aisles .aisle-label:first-child { margin-top: 2px; }
+/* 재료 대체 가이드 */
+.subs-entry { margin-top: 8px; }
+.subs-guide { display: flex; flex-direction: column; gap: 8px; }
+.subs-list { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.recipe-subs { margin-top: 4px; }
+.sub-card, .sub-item {
+  padding: 11px 13px; background: color-mix(in srgb, var(--accent, #5FC98A) 10%, var(--surface));
+  border: 1px solid var(--border); border-left: 3px solid var(--accent, #5FC98A); border-radius: 10px;
+}
+.sub-name { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.sub-name .ko { font-weight: 800; font-size: 15px; color: var(--text); }
+.sub-name .ja { color: var(--text2); font-size: 12.5px; }
+.sub-line { font-size: 13.5px; line-height: 1.5; color: var(--text); }
+.sub-line.buy { color: var(--text2); margin-top: 2px; }
 .chips.wrap { flex-wrap: wrap; overflow: visible; }
 .fridge-count { color: var(--primary); font-weight: 700; margin: 8px 2px; }
 .fridge-result { margin-bottom: 12px; }
