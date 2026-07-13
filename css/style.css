@@ -204,6 +204,12 @@ h1, h2 { margin: 0; }
 .fridge-hint { color: var(--text2); margin: 4px 0 12px; }
 .fridge-group { margin-bottom: 12px; }
 .fridge-group-label { font-weight: 800; font-size: 14px; margin: 8px 2px 6px; color: var(--text2); }
+.shop-aisles { display: flex; flex-direction: column; gap: 6px; }
+.aisle-label {
+  font-weight: 800; font-size: 14px; margin: 14px 2px 6px; color: var(--primary);
+  display: flex; align-items: center; gap: 6px;
+}
+.shop-aisles .aisle-label:first-child { margin-top: 2px; }
 .chips.wrap { flex-wrap: wrap; overflow: visible; }
 .fridge-count { color: var(--primary); font-weight: 700; margin: 8px 2px; }
 .fridge-result { margin-bottom: 12px; }
